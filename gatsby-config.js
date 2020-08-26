@@ -12,6 +12,7 @@ module.exports = {
     primaryColor: config.primary_color,
     infoData: infoData
   },
+  pathPrefix: "/homemaker",
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-transformer-remark",
