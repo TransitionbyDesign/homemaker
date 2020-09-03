@@ -6,13 +6,18 @@ import SEO from "../components/seo";
 import Map from '../components/Map';
 import 'react-aspect-ratio/aspect-ratio.css';
 
+const mapSettings = {
+  center: [51.7522, -1.2560],
+  zoom: 12,
+};
+
 const MapPage = () => (
     <Layout>
     <SEO title="Map page" />
     <h1>Hi from the map page</h1>
-    <p>Welcome to the map page</p>
+    <p>Welcome to the Oxford map page</p>
     <AspectRatio ratio="560/315" style={{ width: '100%' }}>
-    <Map />
+    <Map settings={mapSettings}/>
     </AspectRatio>
     <Link to="/">Go back to the homepage</Link>
     </Layout>
