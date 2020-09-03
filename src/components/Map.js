@@ -20,7 +20,7 @@ if ( isDomAvailable ) {
   });
 }
 
-const Map = ({ children }) => {
+const Map = ({ children, settings }) => {
   if ( !isDomAvailable ) {
     return (
       <div className={mapStyles.map}>
@@ -33,7 +33,8 @@ const Map = ({ children }) => {
     className: mapStyles.mapBase,
     zoomControl: false,
     center: [0, 0],
-    zoom: 4
+    zoom: 4,
+    ...settings
   };
 
   return (
@@ -49,6 +50,7 @@ const Map = ({ children }) => {
 
 Map.propTypes = {
   children: PropTypes.node,
+  settings: PropTypes.object,
   className: PropTypes.string,
   defaultBaseMap: PropTypes.string,
   mapEffect: PropTypes.func,
