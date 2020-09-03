@@ -4,23 +4,41 @@ import Layout from "../components/layout";
 import AspectRatio from 'react-aspect-ratio';
 import SEO from "../components/seo";
 import Map from '../components/Map';
+import { Marker } from "react-leaflet";
 import 'react-aspect-ratio/aspect-ratio.css';
+import data from "../data.json";
 
 const mapSettings = {
   center: [51.7522, -1.2560],
   zoom: 12,
 };
-
-const MapPage = () => (
+function MapPage(){
+  const [activePark, setActivePark] = React.useState(null);
+  
+  return(
     <Layout>
     <SEO title="Map page" />
     <h1>Hi from the map page</h1>
     <p>Welcome to the Oxford map page</p>
     <AspectRatio ratio="560/315" style={{ width: '100%' }}>
-    <Map settings={mapSettings}/>
+    <Map settings={mapSettings}>
+      {data.features.map(park => (
+          <Marker
+            key={park.properties.PARK_ID}
+            position={[
+              park.geometry.coordinates[0],
+              park.geometry.coordinates[1]
+            ]}
+            onClick={() => {
+              setActivePark(park);
+            }}
+          />
+      ))}
+    </Map>
     </AspectRatio>
     <Link to="/">Go back to the homepage</Link>
     </Layout>
-);
+  );
+}
 
 export default MapPage;

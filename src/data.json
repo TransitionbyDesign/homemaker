@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 960,
+        "NAME": "Nonesuch Park",
+        "DESCRIPTION": "Nothing to see here"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.7846,-1.2624]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1219,
+        "NAME": "Alleged Park",
+        "DESCRIPTION": "Rumoured to be here"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.7317,-1.2425]
+      }
+    }
+  ]
+}
