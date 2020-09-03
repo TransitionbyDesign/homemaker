@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import AspectRatio from 'react-aspect-ratio';
 import SEO from "../components/seo";
 import Map from '../components/Map';
-import { Marker } from "react-leaflet";
+import { Marker, Popup } from "react-leaflet";
 import 'react-aspect-ratio/aspect-ratio.css';
 import data from "../data.json";
 
@@ -34,6 +34,22 @@ function MapPage(){
             }}
           />
       ))}
+        {activePark && (
+          <Popup
+            position={[
+              activePark.geometry.coordinates[0]+0.005,
+              activePark.geometry.coordinates[1]
+            ]}
+            onClose={() => {
+              setActivePark(null);
+            }}
+          >
+            <div>
+              <h2>{activePark.properties.NAME}</h2>
+              <p>{activePark.properties.DESCRIPTION}</p>
+            </div>
+          </Popup>
+        )}
     </Map>
     </AspectRatio>
     <Link to="/">Go back to the homepage</Link>
