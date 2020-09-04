@@ -1,10 +1,13 @@
 {
-  "name": "foresry-starter-blog-gatsby",
+  "name": "tbd-homemaker-oxford",
   "private": true,
-  "description": "A simple starter blog to get up and developing quickly with Forestry & Gatsby",
-  "license": "MIT",
+  "description": "A website showcasing the Homemaker Oxford project",
   "version": "0.1.0",
-  "author": "kendall strautman",
+  "author": "Nick Stokoe <git.nospam.wu-lee@noodlefactory.co.uk>",
+  "keywords": [
+    "gatsby homelessness oxford transition-by-design"
+  ],
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
@@ -42,14 +45,14 @@
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "2.1.0",
+    "react-aspect-ratio": "^1.0.42"
   },
-  "keywords": [
-    "gatsby",
-    "forestry"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kendallstrautman/brevifolia-gatsby-forestry"
+    "url": "https://github.com/TransitionbyDesign/homemaker"
+  },
+  "bugs": {
+    "url": "https://github.com/TransitionbyDesign/homemaker/issues"
   }
 }
