@@ -5,8 +5,10 @@ import AspectRatio from 'react-aspect-ratio';
 import SEO from "../components/seo";
 import Map from '../components/Map';
 import { Marker, Popup } from "react-leaflet";
-import 'react-aspect-ratio/aspect-ratio.css';
+import rar from 'react-aspect-ratio/aspect-ratio.css';
 import data from "../data.json";
+
+console.log(rar+''); // work around overzealous dependency pruning
 
 const mapSettings = {
   center: [51.7522, -1.2560],
