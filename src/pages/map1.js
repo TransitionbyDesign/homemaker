@@ -12,17 +12,18 @@ import footpaths from "../mutated1.json";
 console.log(rar+''); // work around overzealous dependency pruning
 
 const mapSettings = {
-    center: [51.7522, -1.2560],
-    zoom: 12,
+  center: [51.7522, -1.2560],
+  zoom: 12,
+  scrollWheelZoom: false,
 };
 
-const IndexPage = () => {
+const Page = () => {
     const [activePark, setActivePark] = React.useState(null);
 
     return (
     <Layout>
         <SEO title="Homemaker Oxford project" />
-        <h1>Homemaker Oxford demo</h1>
+        <h1>Map Demo 1</h1>
         <p>
 	      This is just a fairly trivial proof-of-concept of a map with some pins on it, and
         public data of Oxfordshire footpaths, added using a GeoJSON layer.
@@ -65,4 +66,4 @@ const IndexPage = () => {
     )
 }
 
-export default IndexPage
+export default Page
