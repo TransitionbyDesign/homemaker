@@ -4,9 +4,10 @@ import Layout from "../components/layout";
 import AspectRatio from 'react-aspect-ratio';
 import SEO from "../components/seo";
 import Map from '../components/Map';
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, GeoJSON } from "react-leaflet";
 import rar from 'react-aspect-ratio/aspect-ratio.css';
 import data from "../data.json";
+import footpaths from "../mutated1.json";
 
 console.log(rar+''); // work around overzealous dependency pruning
 
@@ -23,8 +24,9 @@ const IndexPage = () => {
         <SEO title="Homemaker Oxford project" />
         <h1>Homemaker Oxford demo</h1>
         <p>
-	This is just a fairly trivial proof-of-concept of a map with some pins on it.
-        A descriptions could go here. There could be links, and more pages.
+	      This is just a fairly trivial proof-of-concept of a map with some pins on it, and
+        public data of Oxfordshire footpaths, added using a GeoJSON layer.
+        Other descriptions could go here. There could be links, and more pages.
 	</p>
         <AspectRatio ratio="560/315" style={{ width: '100%' }}>
             <Map settings={mapSettings}>
@@ -56,6 +58,7 @@ const IndexPage = () => {
                         </div>
                     </Popup>
                 )}
+                <GeoJSON key='footpaths-key' data={footpaths}/>
             </Map>
         </AspectRatio>
     </Layout>
