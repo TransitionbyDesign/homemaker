@@ -58,31 +58,31 @@ class HomeIndex extends React.Component {
                 className="link primary"
               >
                 <header className="major">
-                  <h3>Magna</h3>
+                  <h3>Landing</h3>
                   <p>Lorem etiam nullam</p>
                 </header>
               </Link>
             </article>
             <article style={{ backgroundImage: `url(${pic04})` }}>
               <Link
-                aria-label="Link to Landing Page"
-                to="/landing"
+                aria-label="Link to Elements Page"
+                to="/elements"
                 className="link primary"
               >
                 <header className="major">
-                  <h3>Ipsum</h3>
+                  <h3>Elements</h3>
                   <p>Nisl sed aliquam</p>
                 </header>
               </Link>
             </article>
             <article style={{ backgroundImage: `url(${pic05})` }}>
               <Link
-                aria-label="Link to Landing Page"
-                to="/landing"
+                aria-label="Link to Generic Page"
+                to="/generic"
                 className="link primary"
               >
                 <header className="major">
-                  <h3>Consequat</h3>
+                  <h3>Generic</h3>
                   <p>Ipsum dolor sit amet</p>
                 </header>
               </Link>
