@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 import pic01 from 'gatsby-theme-forty/src/assets/images/pic01.jpg'
@@ -8,8 +7,8 @@ import pic04 from 'gatsby-theme-forty/src/assets/images/pic04.jpg'
 import pic05 from 'gatsby-theme-forty/src/assets/images/pic05.jpg'
 import pic06 from 'gatsby-theme-forty/src/assets/images/pic06.jpg'
 import Banner from '../components/Banner'
-import Layout from 'gatsby-theme-forty/src/components/layout'
-import { graphql } from "gatsby"
+import Layout from '../components/layout'
+import { Link, graphql } from 'gatsby'
 
 class HomeIndex extends React.Component {
   render() {
