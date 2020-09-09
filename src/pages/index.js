@@ -41,13 +41,13 @@ class HomeIndex extends React.Component {
             </article>
             <article style={{ backgroundImage: `url(${pic02})` }}>
               <Link
-                aria-label="Link to Landing Page"
-                to="/landing"
+                aria-label="Link to Video Demo 1"
+                to="/video1"
                 className="link primary"
               >
                 <header className="major">
-                  <h3>Tempus</h3>
-                  <p>feugiat amet tempus</p>
+                  <h3>Video Demo 1</h3>
+                  <p>Community Land Trusts</p>
                 </header>
               </Link>
             </article>
