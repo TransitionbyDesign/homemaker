@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+@import 'partials/klima-font';
 
 body {
-  font-family: "Work Sans","Helvetica Neue", Helvetica, sans-serif;
+  font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
   color: #000;
   font-size: 16px;
@@ -26,7 +26,7 @@ ul {
 //TYPOGRAPHY-------------------------------------
 
 h1, h2, h3, h4, h5, h6, p {
-  font-family: "Work Sans","Helvetica Neue", Helvetica, sans-serif;
+  font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
 }
 
 h1, h2 {
