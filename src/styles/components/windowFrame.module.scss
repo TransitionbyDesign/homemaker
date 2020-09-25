@@ -1,0 +1,130 @@
+@import '../partials/palette';
+
+.window_frame {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  
+  margin: 1rem 2.5rem 2.5rem 2.5rem;
+  background: col-bgnd-lt;
+  box-shadow: 0px 1px 5px 1px col-shadow;
+
+  & > * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  header {
+    background: col-head-bgnd-splash;
+    color: col-head-text-splash;
+    font-family: Klima-Bold,"Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.5em;
+    padding: 1rem 1rem;
+    margin: 0 0 1rem 0;
+
+    &:after {
+      content: '\2A2F';
+      float: right;
+    }
+  }
+    
+  footer {
+    padding: 1rem 0;
+    margin: 2rem 1rem 0 1rem;
+    border-top: solid col-footer-border-splash 0.1rem;
+  }
+    
+  h1 {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem;
+ 
+    &:after {
+      content: '';
+      width: 30%;
+      height: 0.1rem;
+      background: col-head-text-splash;
+      position: absolute;
+      bottom: 0;
+      left: 35%;
+    }
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: Klima-Bold,"Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  .button {
+    margin: 1rem auto;
+    background: col-btn-bgnd-splash;
+    color: col-btn-text-splash;
+    border: 0;
+    padding: 1rem;
+    border-radius: 0.3em;
+    font-weight: bold;
+  }
+}
+  
+
+.problem {
+  max-width: 70rem;
+  margin: 0 auto 5rem auto;  
+
+  header {
+    background: col-head-bgnd-prob;
+    color: col-head-text-prob;
+  }
+
+  .button {
+    background: col-btn-bgnd-prob;
+    color: col-btn-text-prob;
+    line-height: 5em;
+  }
+}
+
+.solution {
+  max-width: 70rem;
+  margin: 0 auto 5rem auto;  
+  color: col-text-dk;
+  
+  header {
+    background: col-head-bgnd-soln;
+    color: col-head-text-soln;
+  }
+
+  .button {
+    background: col-btn-bgnd-soln;
+    color: col-btn-text-soln;
+    line-height: 5em;
+  }
+}
+
+.splash {
+  position: static;
+  max-width: 70rem;
+  margin: 10rem auto 5rem auto;
+
+  & > * {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }  
+}
+
+.info {
+  position: static;
+  max-width: 70rem;
+  margin: 10rem auto 5rem auto;
+
+  & > * {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }  
+  header {
+    background: col-head-bgnd-prob;
+    color: col-head-text-prob;
+  }
+}
+

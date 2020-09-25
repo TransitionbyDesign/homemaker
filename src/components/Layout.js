@@ -8,9 +8,7 @@ export default function Layout(props) {
   const { title, description } = useSiteMetadata()
   return (
     <section
-      className={`${layoutStyles.layout} ${
-        props.page === "info" && 
-        layoutStyles.info_page}`}
+      className={`${layoutStyles.layout} ${props.gradient && layoutStyles.gradient}`}
       style={{
         backgroundColor: props.bgColor,
       }}
@@ -21,7 +19,7 @@ export default function Layout(props) {
         <meta name="description" content={description} />
       </Helmet>
       <Header page={props.page} title={title} />
-      <div className={layoutStyles.content}>{props.children}</div>
+      <div className={[layoutStyles.content, props.gradient? layoutStyles.gradient:undefined].join(" ")}>{props.children}</div>
     </section>
   )
 }
