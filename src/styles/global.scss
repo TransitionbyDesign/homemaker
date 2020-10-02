@@ -1,15 +1,16 @@
+@use 'partials/palette';
 @import 'partials/klima-font';
 
 body {
   font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
-  color: #000;
+  color: palette.$text-dk;
   font-size: 16px;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: palette.$text-link;
   transition: opacity .2s ease;
 }
 
@@ -49,7 +50,6 @@ h3 {
   font-size: 1.2rem;
   letter-spacing: -.5px;
   line-height: 1.1875;
-  color: #A0A0A0;
   font-weight: normal;
 }
 
@@ -57,7 +57,6 @@ p {
   font-size: 1.2rem;
   letter-spacing: -.5px;
   line-height: 1.5;
-  color: #464646;
 }
 
 // gatsby-image plugin container-----------------
@@ -85,7 +84,6 @@ p {
   h3 {
     letter-spacing: -.5px;
     line-height: 1.1875;
-    color: #A0A0A0;
     font-weight: normal;
   }
 
