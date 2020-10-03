@@ -41,6 +41,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-leaflet": "^2.7.0",
+    "sass": "^1.26.11",
     "typescript": "^3.9.5",
     "webpack": "^4.43.0"
   },
