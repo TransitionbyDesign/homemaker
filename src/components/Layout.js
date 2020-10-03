@@ -6,14 +6,16 @@ import layoutStyles from "../styles/components/layout.module.scss"
 
 export default function Layout(props) {
   const { title, description } = useSiteMetadata()
+  const classes = [layoutStyles.layout];
+  if (props.page === "splash") {
+    classes.push(layoutStyles.splash_page);
+  }
   return (
     <section
-      className={`${layoutStyles.layout} ${
-        props.page === "info" && 
-        layoutStyles.info_page}`}
-      style={{
-        backgroundColor: props.bgColor,
-      }}
+    className={classes.join(' ')}
+    style={{
+      backgroundColor: props.bgColor,
+    }}
     >
       <Helmet>
         <html lang="en" />

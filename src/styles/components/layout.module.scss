@@ -1,23 +1,24 @@
+@use './header.module.scss' as header;
+@use '../partials/palette';
+
+
 .layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  &.info_page {
-    color: #EBEBEB;
+  &.splash_page {
+    background: linear-gradient(90deg, palette.$col1 0%, palette.$col3 57%, palette.$col4 100%);
   }
 }
 
 .content {
   flex-grow: 1;
+  margin: header.$nav_height 1rem 1rem 1rem;
 }
 
 @media (min-width: 768px) {
   .layout {
-    display: block;
   }
   .content {
-    flex-grow: none;
-    width: 70%;
-    margin-left: 30%;
   }
 }
