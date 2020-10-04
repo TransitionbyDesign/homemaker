@@ -1,6 +1,10 @@
 @use 'partials/palette';
 @import 'partials/klima-font';
 
+html {
+  overflow-y: inherit;
+}
+
 body {
   font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
