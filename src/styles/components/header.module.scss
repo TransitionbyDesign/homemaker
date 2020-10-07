@@ -20,6 +20,8 @@ $nav_height: 10rem;
   height: nav_height;
   flex-direction: column;
   align-items: flex-start;
+  pointer-events: all;
+
   img.logo {
     display: inline-block;
     height: $nav_height * 0.8;
