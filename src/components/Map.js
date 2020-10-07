@@ -41,7 +41,7 @@ const Map = ({ children, settings }) => {
     <div className={mapStyles.map}>
       <BaseMap {...mapSettings}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
-        <ZoomControl position="bottomright" />
+        <ZoomControl position="topright" />
         { children }
       </BaseMap>
     </div>

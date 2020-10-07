@@ -1,0 +1,57 @@
+@use '../partials/palette';
+
+/**
+ * Levels:
+ * First understand z-index and stacking context. z-index only applies to 
+ * positioned elements, for instance.
+ * e.g. See: https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+ *
+ * The Header element (assumed to be in the parent) is position: fixed
+ * and floats on top of everything with z-index 100.
+ *
+ * The Layout element (assumed to be the parent) is not positioned
+ * 
+ * The .map_layout is not positioned, and sits on top of the Layout.
+ *
+ * The .overlay is position: fixed, sits in a stacking context above Layout.
+ *
+ * The .map element is position: fixed, and sits in a stacking context 
+ * behind the Layout element, at z-index -50.
+ */
+.map_layout {
+  display: flex;
+  flex-grow: 1;
+  pointer-events: none; // Allow clicks through
+  
+  a {
+    color: palette.$text-link;
+  }
+
+  /** This element contains pop-up windows */
+  .overlay {
+	  display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  /** This element contains the map */
+  .map {
+    display: flex;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    flex-grow: 1;
+    position: fixed;
+    z-index: -50;
+    pointer-events: all;
+  }
+
+}
+
+.map_disabled {
+  pointer-events: none;
+}
