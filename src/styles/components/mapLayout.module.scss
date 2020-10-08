@@ -1,5 +1,7 @@
 @use '../partials/palette';
 
+$overlay_max_width: 70rem;
+
 /**
  * Levels:
  * First understand z-index and stacking context. z-index only applies to 
@@ -35,6 +37,8 @@
     right: 0;
     top: 0;
     bottom: 0;
+    max-width: $overlay_max_width;
+    margin: 0 auto;
   }
 
   /** This element contains the map */
