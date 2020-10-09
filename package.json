@@ -10,9 +10,10 @@
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r $npm_package_repository_url",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "gh-pages": "gh-pages -d public -r $npm_package_repository_url",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -52,7 +53,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TransitionbyDesign/homemaker"
+    "url": "git@github.com:TransitionbyDesign/homemaker.git"
   },
   "bugs": {
     "url": "https://github.com/TransitionbyDesign/homemaker/issues"
