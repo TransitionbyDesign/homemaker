@@ -24,7 +24,7 @@
     "classnames": "^2.2.6",
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.9",
-    "gatsby-plugin-modal-routing": "^1.2.0",
+    "gatsby-plugin-modal-routing": "https://github.com/wu-lee/gatsby-plugin-modal-routing/",
     "gatsby-plugin-react-helmet": "^3.3.6",
     "gatsby-plugin-react-leaflet": "^2.0.13",
     "gatsby-plugin-sass": "^2.3.7",
