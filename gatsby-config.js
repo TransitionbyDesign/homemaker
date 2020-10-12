@@ -75,7 +75,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-leaflet`,
-    "gatsby-plugin-modal-routing",
+    {
+      resolve: "gatsby-plugin-modal-routing",
+      options: {
+        modalComponentPath: `${__dirname}/src/components/Modal`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
