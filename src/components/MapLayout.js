@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
@@ -70,27 +71,17 @@ class MapLayout extends React.Component {
                             ]}
                             onClick={() => {
                               this.setState({activePark: park});
+                              navigate(
+                                "/modal",
+                                {
+                                  state: { modal: true },
+                                }
+                              )
                             }}
                   />);
                   
                 }
               })}
-              {this.state.activePark && (
-                <Popup
-                  position={[
-                    this.state.activePark.geometry.coordinates[0]+0.005,
-                    this.state.activePark.geometry.coordinates[1]
-                  ]}
-                  onClose={() => {
-                    this.setState({activePark:null});
-                  }}
-                >
-                  <div>
-                    <h2>{this.state.activePark.properties.NAME}</h2>
-                    <p>{this.state.activePark.properties.DESCRIPTION}</p>
-                  </div>
-                </Popup>
-              )}
             </Map>
           </div>
         </div>
