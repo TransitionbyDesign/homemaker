@@ -1,6 +1,5 @@
 @use '../partials/palette';
-
-$overlay_max_width: 70rem;
+@use 'mapLayout' as *;
 
 /**
  * Levels:
