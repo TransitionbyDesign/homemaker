@@ -1,9 +1,7 @@
 @use '../partials/palette';
-@use 'header.module' as header;
+@use 'header' as header;
 @use '../partials/common';
-
-$header_underline_width: 30%;
-$max_width: 70rem;
+@use 'splash' as *;
 
 .wrapper {
   display: flex;
