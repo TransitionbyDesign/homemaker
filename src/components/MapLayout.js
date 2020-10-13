@@ -33,6 +33,15 @@ class MapLayout extends React.Component {
       }),
     };
   }
+
+  icon(park) {
+    if (park === this.state.activePark) {
+      return this.icons.Audio;
+    }
+    else {
+      return this.icons.Text;
+    }
+  }
   
   render() {
     const props = this.props;
@@ -54,7 +63,7 @@ class MapLayout extends React.Component {
                 if (this.icons && this.icons[park.type]) {
                   return (<Marker
                             key={park.properties.PARK_ID}
-                            icon={this.icons[park.type]||undefined}
+                            icon={this.icon(park)}
                             position={[
                               park.geometry.coordinates[0],
                               park.geometry.coordinates[1]
