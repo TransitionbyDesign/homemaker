@@ -26,9 +26,12 @@
     margin: 0;
     flex: 0 0 auto;
 
-    &:after {
-      content: '\2A2F';
-      float: right;
+    .close-link {
+	    float: right;
+	    color: inherit;
+    }
+    .close-link:hover {
+      text-decoration: none;      
     }
   }
     
