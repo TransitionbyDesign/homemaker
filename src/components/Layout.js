@@ -3,19 +3,13 @@ import Header from "./Header"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../static_queries/useSiteMetadata"
 import layoutStyles from "../styles/components/layout.module.scss"
+import cn from "classnames"
 
 export default function Layout(props) {
   const { title, description } = useSiteMetadata()
-  const classes = [layoutStyles.layout];
-  if (props.page === "splash") {
-    classes.push(layoutStyles.splash_page);
-  }
   return (
     <section
-    className={classes.join(' ')}
-    style={{
-      backgroundColor: props.bgColor,
-    }}
+      className={cn([layoutStyles.layout, props.className])}
     >
       <Helmet>
         <html lang="en" />
