@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby'
-import { navigate } from "@reach/router"
+import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
