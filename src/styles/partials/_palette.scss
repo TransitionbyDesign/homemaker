@@ -38,4 +38,6 @@ $head-text-soln: $col4;
 $btn-bgnd-soln: $col1;
 $btn-text-soln: $col4;
 
-$shadow: #AAAAAA
+$shadow: #AAAAAA;
+
+$gradient: linear-gradient(90deg, $col1 0%, $col3 57%, $col4 100%);

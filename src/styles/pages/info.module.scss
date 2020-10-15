@@ -1,7 +1,7 @@
 @use '../partials/palette';
 
 .layout {
-  background: linear-gradient(90deg, palette.$col1 0%, palette.$col3 57%, palette.$col4 100%);
+  background: palette.$gradient;
   pointer-events: all;
 }
 
