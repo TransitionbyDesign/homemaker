@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { Link } from 'gatsby'
-import ModalPage from '../components/ModalPage'
-import splash from '../styles/components/splash.module.scss';
+import ModalPage from '../../components/ModalPage'
+import splash from '../../styles/components/splash.module.scss';
 import cn from 'classnames';
 
 
@@ -16,7 +16,7 @@ const ModalExamplePage = () => (
     }>
     <h1>Welcome to Homemaker Oxford</h1>
 
-    <p>Link to <Link to="/modal" state={{modal: true}} >Modal</Link></p>
+    <p>Link to <Link to="/map/modal" state={{modal: true}} >Modal</Link></p>
     <p>Link to <Link to="/map">Map</Link></p>
     
     <div className={splash.columned}>

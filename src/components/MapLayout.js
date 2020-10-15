@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, navigate } from 'gatsby'
+import { Link } from 'gatsby'
+import { navigate } from "@reach/router"
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
@@ -72,7 +73,7 @@ class MapLayout extends React.Component {
                             onClick={() => {
                               this.setState({activePark: park});
                               navigate(
-                                "/modal",
+                                "/map/modal",
                                 {
                                   state: { modal: true },
                                 }
