@@ -16,7 +16,11 @@ export default ({header, footer, children}) => (
             <Link className={splash.closeLink} to={closeTo}>
             &#x2A2F;
             </Link>
-          ) : ''}
+          ) : (
+            <Link className={splash.closeLink} to="/map/">
+            &#x2A2F;
+            </Link>
+          )}
         </header>
         <div className={cn([splash.content])}>
           {children}
