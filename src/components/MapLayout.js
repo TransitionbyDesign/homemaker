@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
@@ -16,78 +16,70 @@ const mapSettings = {
   minZoom: 12,
 };
 
-class MapLayout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { activePark: null };
-  }
-  
-  buildIcons() {
-    this.icons = {
-      Text: new L.Icon({
-        iconUrl: textIcon,
-        iconSize: [32, 32]
-      }),
-      Audio: new L.Icon({
-        iconUrl: audioIcon,
-        iconSize: [64, 64]
-      }),
-    };
-  }
+let icons = null;
 
-  icon(park) {
-    if (park === this.state.activePark) {
-      return this.icons.Audio;
-    }
-    else {
-      return this.icons.Text;
-    }
+function icon(park, activePark) {
+  if (park === activePark) {
+    return icons.Audio;
   }
-  
-  render() {
-    const props = this.props;
-    // This window check is a work-around to some leaflet issues
-    if (!this.icons && typeof window !== 'undefined') {
-      this.buildIcons();
-    }
-    
-    return (
-      <Layout { ...props } >
-        <div className={mapLayout.map_layout}>
-          <div className={mapLayout.overlay}>
-            {props.children}
-          </div>
-          
-          <div className={cn(mapLayout.map, {[mapLayout.figure_disabled]: props.mapDisabled})}>
-            <Map settings={mapSettings}>
-              {data.features.map(park => {
-                if (this.icons && this.icons[park.type]) {
-                  return (<Marker
-                            key={park.properties.PARK_ID}
-                            icon={this.icon(park)}
-                            position={[
-                              park.geometry.coordinates[0],
-                              park.geometry.coordinates[1]
-                            ]}
-                            onClick={() => {
-                              this.setState({activePark: park});
-                              navigate(
-                                "/map/modal",
-                                {
-                                  state: { modal: true },
-                                }
-                              )
-                            }}
-                  />);
-                  
-                }
-              })}
-            </Map>
-          </div>
-        </div>
-      </Layout>
-    );
+  else {
+    return icons.Text;
+  }
+}
+
+function buildIcons() {
+  return {
+    Text: new L.Icon({
+      iconUrl: textIcon,
+      iconSize: [32, 32]
+    }),
+    Audio: new L.Icon({
+      iconUrl: audioIcon,
+      iconSize: [64, 64]
+    }),
   };
 }
 
-export default MapLayout;
+export default (props) => {
+  const [activePark, setActivePark] = useState(null)
+  // This window check is a work-around to some leaflet issues
+  if (!icons && typeof window !== 'undefined') {
+    icons = buildIcons();
+  }
+  return (
+    <Layout { ...props } >
+      <div className={mapLayout.map_layout}>
+        <div className={mapLayout.overlay}>
+          {props.children}
+        </div>
+        
+        <div className={cn(mapLayout.map, {[mapLayout.figure_disabled]: props.mapDisabled})}>
+          <Map settings={mapSettings}>
+            {data.features.map(park => {
+              if (icons && icons[park.type]) {
+                return (<Marker
+                          key={park.properties.PARK_ID}
+                          icon={icon(park, activePark)}
+                          position={[
+                            park.geometry.coordinates[0],
+                            park.geometry.coordinates[1]
+                          ]}
+                          onClick={() => {
+                            setActivePark(park);
+                            navigate(
+                              "/map/modal",
+                              {
+                                state: { modal: true },
+                              }
+                            )
+                          }}
+                />);
+                
+              }
+            })}
+          </Map>
+        </div>
+      </div>
+    </Layout>
+  );
+}
