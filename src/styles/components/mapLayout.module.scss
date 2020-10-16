@@ -56,7 +56,7 @@
 }
 .modal .overlay {
   pointer-events: all; // Prevent events getting through
-  background: palette.$gradient;
+  background: palette.$transparent_gradient;
 }
 
 .map_disabled {
