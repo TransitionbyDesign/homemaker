@@ -1,4 +1,5 @@
 import React from "react"
+import { useLocation } from "@reach/router"
 import { Link } from "gatsby"
 import headerStyles from "../styles/components/header.module.scss"
 import whiteLogo from "../icons/homemaker_logo_white.svg"
@@ -13,15 +14,14 @@ import blueLogo from "../icons/homemaker_logo_blue.svg"
  */
 
 export default function Header(props) {
-  let logo = blueLogo;
-  const classes = [headerStyles.header];
-  if (props.page === "splash") {
-    classes.push(headerStyles.splash_page);
-    logo = whiteLogo;
-  };
+  // Use the right logo, which depends on the background, which
+  // depends on the modal flag
+  const { state } = useLocation();
+  const logo = state?.modal ? whiteLogo : blueLogo;
+  
   return (
     <header
-      className={classes.join(' ')}
+      className={headerStyles.header}
     >
       <nav
         className={headerStyles.header__nav}

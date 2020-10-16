@@ -46,8 +46,9 @@ export default (props) => {
   if (!icons && typeof window !== 'undefined') {
     icons = buildIcons();
   }
+
   return (
-    <Layout { ...props } >
+    <Layout { ...props }>
       <div className={mapLayout.map_layout}>
         <div className={mapLayout.overlay}>
           {props.children}

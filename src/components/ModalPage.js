@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import MapLayout from '../components/MapLayout'
+import mapLayout from '../styles/components/mapLayout.module.scss';
 import splash from '../styles/components/splash.module.scss';
 import cn from 'classnames';
 
@@ -30,7 +31,7 @@ export default ({header, footer, children}) => (
         }
         else {
           return (  // As above, but we must insert the map behind
-            <MapLayout>
+            <MapLayout className={mapLayout.modal}>
               <div className={splash.wrapper}>
                 <header className={splash.header}>
                   {header}                  

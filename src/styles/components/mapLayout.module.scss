@@ -54,6 +54,10 @@
   }
 
 }
+.modal .overlay {
+  pointer-events: all; // Prevent events getting through
+  background: palette.$gradient;
+}
 
 .map_disabled {
   pointer-events: none;
