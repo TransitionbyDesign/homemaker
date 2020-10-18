@@ -7,20 +7,22 @@ import splash from '../styles/components/splash.module.scss';
 import cn from 'classnames';
 
 const Splash = ({ header, footer, children, closeTo }) => (
-  <div className={splash.wrapper}>
-    <header className={splash.header}>
-      {header}
-      
-      <Link className={splash.closeLink} to={closeTo}>
-        &#x2A2F;
-      </Link>
-    </header>
-    <div className={cn([splash.content])}>
-      {children}
+  <div className={splash.outerWrapper}>
+    <div className={splash.innerWrapper}>
+      <header className={splash.header}>
+        {header}
+        
+        <Link className={splash.closeLink} to={closeTo}>
+          &#x2A2F;
+        </Link>
+      </header>
+      <div className={cn([splash.content])}>
+        {children}
+      </div>
+      <footer>
+        {footer}
+      </footer>
     </div>
-    <footer>
-      {footer}
-    </footer>
   </div>
 );
 
