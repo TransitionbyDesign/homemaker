@@ -29,7 +29,7 @@ export default function Header(props) {
         aria-label="main navigation"
       >
 
-        <Link to="/"><img className={headerStyles.logo} alt="Logo" src={logo} /></Link>
+        <Link to="/"><img className={headerStyles.logo} alt="Logo: Homemaker Oxford" src={logo} /></Link>
         <h1>
           <Link to="/">{props.title}</Link>
         </h1>
