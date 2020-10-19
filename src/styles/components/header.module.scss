@@ -1,3 +1,4 @@
+@use "layout";
 @use "header" as *;
 
 .header {
@@ -11,29 +12,29 @@
 }
 
 .header__nav {
-  padding: $nav_pad_top $nav_pad_left;
   margin: 0;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  height: nav_height;
+  height: $nav_height;
   flex-direction: column;
   align-items: flex-start;
   pointer-events: all;
+  @include layout.all-media(nav-margin-top, modal-margin-side, modal-margin-top, nav-margin-bottom)
+  using($t, $s, $h, $b) {
+    padding: $t $s $b $s;
+
+    img.logo {
+      height: $h - $t - $b;
+    }
+  }
 
   img.logo {
     display: inline-block;
-    height: $nav_height * 0.8;
   }
   h1 {
     display: none;
   }
 }
 
-@media (min-width: 768px) {
-  .header {
-  }  
-  .header__nav {
-  }
-}
