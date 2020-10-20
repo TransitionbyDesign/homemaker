@@ -8,10 +8,12 @@ const Splash = ({ header, footer, children, closeTo }) => (
     <div className={splash.innerWrapper}>
       <header className={splash.header}>
         {header}
-        
-        <Link className={splash.closeLink} to={closeTo}>
-          &#x2A2F;
-        </Link>
+
+        { closeTo &&
+          <Link className={splash.closeLink} to={closeTo}>
+            &#x2A2F;
+          </Link>
+        }
       </header>
       <div className={cn([splash.content])}>
         {children}
