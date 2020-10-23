@@ -2,8 +2,6 @@
 @use 'layout';
 @use 'header';
 @use '../partials/common';
-@use 'splash' as *;
-
 
 // This goes around the inner-wrapper div
 // It provides a frame in which the inner-wrapper can expand to fit.
@@ -26,7 +24,11 @@
   flex-direction: column;
   background: palette.$bgnd-lt;
   @include common.drop-shadow;
-  max-width: $max_width;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
+
   width: 100%;
   height: 100%;
   margin: auto;
@@ -63,16 +65,22 @@
     position: relative;
     padding: 1rem;
     margin: 1rem;
-
+    
     // Inserts an underline below the header
     &:after {
       content: '';
-      width: $header_underline_width;
       height: 1px;
       background: palette.$head-text-splash;
       position: absolute;
       bottom: 0;
-      left: (100% - $header_underline_width)/2;
+    }
+    
+    @include layout.all-media(header-underline-width)
+    using($huw) {
+      &:after {
+        width: $huw;
+        left: (100% - $huw)/2;
+      }
     }
   }
   
@@ -109,7 +117,10 @@ a.button:hover {
 }
 
 .problem {
-  max-width: $max_width;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
   margin: 0 auto 5rem auto;  
 
   header {
@@ -125,7 +136,10 @@ a.button:hover {
 }
 
 .solution {
-  max-width: $max_width;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
   margin: 0 auto 5rem auto;  
   color: palette.$text-dk;
   
@@ -142,8 +156,11 @@ a.button:hover {
 }
 
 .info {
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
   position: static;
-  max-width: $max_width;
   margin: 10rem auto 5rem auto;
 
   & > * {
