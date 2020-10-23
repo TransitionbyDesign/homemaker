@@ -24,7 +24,7 @@ export default function Header(props) {
       className={headerStyles.header}
     >
       <nav
-        className={headerStyles.header__nav}
+        className={headerStyles.nav}
         role="navigation"
         aria-label="main navigation"
       >
