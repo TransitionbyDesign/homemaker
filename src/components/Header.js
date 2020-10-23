@@ -23,17 +23,19 @@ export default function Header(props) {
     <header
       className={headerStyles.header}
     >
-      <nav
-        className={headerStyles.nav}
-        role="navigation"
-        aria-label="main navigation"
-      >
+      <div className={headerStyles.wrapper}>
+        <nav
+          className={headerStyles.nav}
+          role="navigation"
+          aria-label="main navigation"
+        >
 
-        <Link to="/"><img className={headerStyles.logo} alt="Logo: Homemaker Oxford" src={logo} /></Link>
-        <h1>
-          <Link to="/">{props.title}</Link>
-        </h1>
-      </nav>
+          <Link to="/"><img className={headerStyles.logo} alt="Logo: Homemaker Oxford" src={logo} /></Link>
+          <h1>
+            <Link to="/">{props.title}</Link>
+          </h1>
+        </nav>
+      </div>
     </header>
   )
 }

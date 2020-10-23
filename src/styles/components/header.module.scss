@@ -1,36 +1,59 @@
 @use "layout";
 
 .header {
+  display: flex;
   z-index: 100;
   position: fixed;
   left: 0;
+  right: 0;
   top: 0;
   h1 {
     margin-bottom: 0; 
   }
 }
 
-.nav {
+.wrapper {
+  display: flex;
+  flex: 1 0 auto;
   margin: 0;
+
+  @include layout.all-media(modal-margin-top, nav-margin-top, modal-margin-side, nav-margin-bottom)
+  using($h, $t, $s, $b) {
+    height: $h;
+    padding: $t $s $b $s;
+  }
+}
+
+.nav {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
   flex-direction: column;
   align-items: flex-start;
-  pointer-events: all;
-  @include layout.all-media(nav-margin-top, modal-margin-side, modal-margin-top, nav-margin-bottom)
-  using($t, $s, $h, $b) {
-    padding: $t $s $b $s;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  
+  @include layout.all-media(nav-margin-top, modal-margin-side, modal-margin-top, nav-margin-bottom,
+                            modal-max-width)
+  using($t, $s, $h, $b, $mw) {
     height: $h;
-
+    max-width: $mw;
     img.logo {
       height: $h - $t - $b;
     }
   }
 
+  a {
+    display: flex;
+    margin: 0;
+  }
+  
   img.logo {
     display: inline-block;
+    margin: 0;
+    pointer-events: all;
   }
   h1 {
     display: none;
