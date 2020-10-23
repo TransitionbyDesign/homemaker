@@ -1,6 +1,5 @@
-@use './header' as header;
+@use 'layout';
 @use '../partials/palette';
-
 
 .layout {
   display: flex;
@@ -11,7 +10,10 @@
 .content {
   display: flex;
   flex-grow: 1;
-  margin: header.$nav_height 1rem 1rem 1rem;
+  @include layout.all-media(modal-margin-top)
+  using($h) {
+    margin: $h 1rem 1rem 1rem;
+  }
 }
 
 @media (min-width: 768px) {
