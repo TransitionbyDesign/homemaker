@@ -28,7 +28,6 @@ export default () => {
           header="Welcome"
           footer={
             <>
-              <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
               {/*<SocialLink to={`mailto:${infoData.contact.email}`}
                   logo={}
                   >
@@ -59,6 +58,9 @@ export default () => {
           <div
             className={splashStyles.columned}
             dangerouslySetInnerHTML={{__html: infoData.description}} />
+
+          
+          <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
           
         </Splash>
       </div>
