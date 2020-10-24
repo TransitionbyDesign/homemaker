@@ -10,6 +10,8 @@ import audioIcon from "../icons/audio_ptr_blue.svg";
 import cn from 'classnames';
 import L from 'leaflet';
 
+// The map content is defined here as it's the same wherever the map is used.
+
 const mapSettings = {
   center: [51.7522, -1.2560],
   zoom: 12,
@@ -49,12 +51,12 @@ export default (props) => {
 
   return (
     <Layout { ...props }>
-      <div className={mapLayout.map_layout}>
+      <div className={mapLayout.layout}>
         <div className={mapLayout.overlay}>
           {props.children}
         </div>
         
-        <div className={cn(mapLayout.map, {[mapLayout.figure_disabled]: props.mapDisabled})}>
+        <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
           <Map settings={mapSettings}>
             {data.features.map(park => {
               if (icons && icons[park.type]) {

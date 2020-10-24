@@ -22,7 +22,7 @@ export default () => {
   const location = useLocation();
   location.state = { ...location.state = {}, modal: true };
   return (
-    <Layout className={mapLayoutStyles.map_layout}>
+    <Layout className={mapLayoutStyles.layout}>
       <div className={mapLayoutStyles.overlay}>
         <Splash
           header="Welcome"

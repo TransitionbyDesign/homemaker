@@ -19,7 +19,7 @@
  * The .map element is position: fixed, and sits in a stacking context 
  * behind the Layout element, at z-index -50.
  */
-.map_layout {
+.layout {
   display: flex;
   flex-grow: 1;
   pointer-events: none; // Allow clicks through
@@ -58,6 +58,6 @@
   background: palette.$transparent_gradient;
 }
 
-.map_disabled {
+.disabled {
   pointer-events: none;
 }
