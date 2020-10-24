@@ -20,8 +20,8 @@ const mapSettings = {
 
 let icons = null;
 
-function icon(park, activePark) {
-  if (park === activePark) {
+function icon(pin, activePin) {
+  if (pin === activePin) {
     return icons.Audio;
   }
   else {
@@ -43,7 +43,7 @@ function buildIcons() {
 }
 
 export default (props) => {
-  const [activePark, setActivePark] = useState(null)
+  const [activePin, setActivePin] = useState(null)
   // This window check is a work-around to some leaflet issues
   if (!icons && typeof window !== 'undefined') {
     icons = buildIcons();
@@ -58,17 +58,17 @@ export default (props) => {
         
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
           <Map settings={mapSettings}>
-            {data.features.map(park => {
-              if (icons && icons[park.type]) {
+            {data.features.map(pin => {
+              if (icons && icons[pin.type]) {
                 return (<Marker
-                          key={park.properties.PARK_ID}
-                          icon={icon(park, activePark)}
+                          key={pin.properties.PIN_ID}
+                          icon={icon(pin, activePin)}
                           position={[
-                            park.geometry.coordinates[0],
-                            park.geometry.coordinates[1]
+                            pin.geometry.coordinates[0],
+                            pin.geometry.coordinates[1]
                           ]}
                           onClick={() => {
-                            setActivePark(park);
+                            setActivePin(pin);
                             navigate(
                               "/map/modal",
                               {
