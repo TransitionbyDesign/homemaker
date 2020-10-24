@@ -1,7 +1,8 @@
 {
   "features": [
     {
-      "type": "Audio",
+      "media": "audio",
+      "type": "problem",
       "properties": {
         "PARK_ID": 960,
         "NAME": "Nonesuch Park",
@@ -13,7 +14,8 @@
       }
     },
     {
-      "type": "Text",
+      "media": "video",
+      "type": "solution",
       "properties": {
         "PARK_ID": 1219,
         "NAME": "Alleged Park",
