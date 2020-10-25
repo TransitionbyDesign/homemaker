@@ -4,13 +4,13 @@ import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
 import { Marker, Popup } from "react-leaflet";
-import data from "../data.json";
-import textIconBlue from "../icons/text_ptr_blue.svg";
-import textIconPink from "../icons/text_ptr_pink.svg";
+import articleIconBlue from "../icons/text_ptr_blue.svg";
+import articleIconPink from "../icons/text_ptr_pink.svg";
 import audioIconBlue from "../icons/audio_ptr_blue.svg";
 import audioIconPink from "../icons/audio_ptr_pink.svg";
 import videoIconBlue from "../icons/video_ptr_blue.svg";
 import videoIconPink from "../icons/video_ptr_pink.svg";
+import useMapData from "../static_queries/useMapData"
 import cn from 'classnames';
 import L from 'leaflet';
 
@@ -26,7 +26,7 @@ const activePinSize = 64;
 
 let icons = null;
 
-function selectIcon(pin, activePin) {
+function selectIcon(pin, activePinId) {
   if (!icons) return;
 
   const mediaIcons = icons[pin.media];
@@ -34,31 +34,31 @@ function selectIcon(pin, activePin) {
 
   const typeIcons = mediaIcons[pin.type];
   if (!typeIcons) return;
-  
-  return pin === activePin?
+
+  return pin.id === activePinId?
          typeIcons.active : typeIcons.inactive;
 }
 
 function buildIcons() {
   return {
-    text: {
+    article: {
       problem: {
         inactive: new L.Icon({
-          iconUrl: textIconBlue,
+          iconUrl: articleIconBlue,
           iconSize: [pinSize, pinSize]
         }),
         active: new L.Icon({
-          iconUrl: textIconBlue,
+          iconUrl: articleIconBlue,
           iconSize: [activePinSize, activePinSize]
         }),
       },
       solution: {
         inactive: new L.Icon({
-          iconUrl: textIconPink,
+          iconUrl: articleIconPink,
           iconSize: [pinSize, pinSize]
         }),
         active: new L.Icon({
-          iconUrl: textIconPink,
+          iconUrl: articleIconPink,
           iconSize: [activePinSize, activePinSize]
         }),
       },
@@ -111,12 +111,13 @@ function buildIcons() {
 }
 
 export default (props) => {
-  const [activePin, setActivePin] = useState(null)
+  const [activePinId, setActivePinId] = useState(null)
   // This window check is a work-around to some leaflet issues
   if (!icons && typeof window !== 'undefined') {
     icons = buildIcons();
   }
-
+  const mapData = useMapData()
+  console.log("mapData",mapData);
   return (
     <Layout { ...props }>
       <div className={mapLayout.layout}>
@@ -126,20 +127,23 @@ export default (props) => {
         
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
           <Map settings={mapSettings}>
-            {data.features.map(pin => {
-              const icon = selectIcon(pin, activePin)
+            {mapData.map(item => {
+              const pin = item.node
+              pin.media = "article"
+              pin.type = "problem"
+              const icon = selectIcon(pin, activePinId)
               if (icon) {
                 return (<Marker
-                          key={pin.properties.PIN_ID}
+                          key={pin.id}
                           icon={icon}
                           position={[
-                            pin.geometry.coordinates[0],
-                            pin.geometry.coordinates[1]
+                            pin.frontmatter.latitude,
+                            pin.frontmatter.longitude,
                           ]}
                           onClick={() => {
-                            setActivePin(pin);
+                            setActivePinId(pin.id);
                             navigate(
-                              "/map/modal",
+                              "/map/article/"+pin.fields.slug,
                               {
                                 state: { modal: true },
                               }

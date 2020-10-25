@@ -3,10 +3,19 @@ import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import useArticleData from '../static_queries/useArticleData'
 import articleTemplateStyles from "../styles/templates/article.module.scss"
+import { useLocation } from '@reach/router'
+import ModalPage from '../components/ModalPage'
+import splash from '../styles/components/splash.module.scss';
+import cn from 'classnames';
 //this component handles the blur img & fade-ins
 import Img from 'gatsby-image'
 
 export default function Article(props) {
+  // Ensure that whatever happens, the modal state flag is set
+  // This ensures the pages and layouts are correct.
+  const location = useLocation();
+  location.state = { ...location.state = {}, modal: true };
+  
   const data = props.data.markdownRemark
   const allArticleData = useArticleData()
   const nextSlug = getNextSlug(data.fields.slug)
@@ -22,19 +31,24 @@ export default function Article(props) {
       return allSlugs[0]
     }
   }
-
   return (
-    <Layout>
-      <article className={articleTemplateStyles.article}>
-        <figure className={articleTemplateStyles.article__hero}>
+    <ModalPage
+      header="Welcome"
+      footer={
+        <Link to="/map" className={splash.button}>EXPLORE THE MAP</Link>    
+      }>
+      <article>
+        <div className={articleTemplateStyles.article__info}>
+          <h1>{data.frontmatter.title}</h1>
+          <h3>{data.frontmatter.date}</h3>
+        </div>
+        <div className={cn(articleTemplateStyles.article__body, articleTemplateStyles.heroImage)}>
+          <p>
           <Img
             fluid={data.frontmatter.hero_image.childImageSharp.fluid}
             alt={data.frontmatter.title}
           />
-        </figure>
-        <div className={articleTemplateStyles.article__info}>
-          <h1>{data.frontmatter.title}</h1>
-          <h3>{data.frontmatter.date}</h3>
+          </p>
         </div>
         <div
           className={articleTemplateStyles.article__body}
@@ -50,8 +64,8 @@ export default function Article(props) {
             </svg>
           </Link>
         </div>
-      </article>
-    </Layout>
+      </article>      
+    </ModalPage>
   )
 }
 
