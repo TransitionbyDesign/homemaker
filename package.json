@@ -9,8 +9,8 @@
   ],
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "build": "gatsby build --prefix-paths",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r $npm_package_repository_url",
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -r $npm_package_repository_url",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "gh-pages": "gh-pages -d public -r $npm_package_repository_url",
