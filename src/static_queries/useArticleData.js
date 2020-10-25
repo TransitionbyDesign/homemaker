@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-export default function useBlogData() {
+export default function useArticleData() {
   const data = useStaticQuery(graphql`
-    query getBlogData {
+    query getArticleData {
       allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
         edges {
           node {
