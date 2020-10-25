@@ -39,12 +39,12 @@ export default () => {
                 >
                   Twitter: @{infoData.contact.twitter_handle}
                 </SocialLink>
-                <SocialLink to={`https://facebook.com/infoData.contact.facebook_page`}
+                <SocialLink to={`https://facebook.com/${infoData.contact.facebook_id}`}
                   logo={facebookIcon} alt="Facebook"
                 >
                   Facebook: @{infoData.contact.twitter_handle}
                 </SocialLink>
-                <SocialLink to={`https://github.com/${infoData.contact.github_handle}`}
+                <SocialLink to={`https://github.com/infoData.contact.linkedin`}
                   logo={linkedInIcon} alt="Linked In"
                 >
                   Linked In: {infoData.contact.github_handle}
@@ -53,11 +53,11 @@ export default () => {
             </>
           }
         >
-          <h1>Welcome to Homemaker Oxford</h1>
+          <h1>{infoData.welcome_title}</h1>
           
           <div
             className={splashStyles.columned}
-            dangerouslySetInnerHTML={{__html: infoData.description}} />
+            dangerouslySetInnerHTML={{__html: infoData.welcome_text}} />
 
           
           <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
