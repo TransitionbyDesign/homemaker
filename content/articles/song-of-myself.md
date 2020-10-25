@@ -3,6 +3,8 @@ date: 2019-07-22T22:44:38Z
 title: Song of Myself
 author: Ralph Waldo Emerson
 hero_image: "/content/assets/ren-ran-bBiuSdck8tU-unsplash.jpg"
+latitude: 51.7459
+longitude: -1.2520
 
 ---
 I have heard what the talkers were talking, the talk of the  
