@@ -5,7 +5,11 @@ import useArticleData from '../static_queries/useArticleData'
 import articleTemplateStyles from "../styles/templates/article.module.scss"
 import { useLocation } from '@reach/router'
 import ModalPage from '../components/ModalPage'
-import splash from '../styles/components/splash.module.scss';
+import splashStyles from '../styles/components/splash.module.scss';
+import SocialLink from "../components/SocialLink"
+import twitterIcon from "../icons/social_icon_twitter.svg"
+import linkedInIcon from "../icons/social_icon_linkedin.svg"
+import facebookIcon from "../icons/social_icon_facebook.svg"
 import cn from 'classnames';
 //this component handles the blur img & fade-ins
 import Img from 'gatsby-image'
@@ -33,9 +37,33 @@ export default function Article(props) {
   }
   return (
     <ModalPage
-      header="Welcome"
+      header={data.frontmatter.title}
       footer={
-        <Link to="/map" className={splash.button}>EXPLORE THE MAP</Link>    
+        <>
+          <Link to="/map" className={splashStyles.button}>BACK TO MAP</Link>
+          {/*<SocialLink to={`mailto:${infoData.contact.email}`}
+              logo={}
+              >
+              Email: {infoData.contact.email}
+              </SocialLink>*/}
+          <div className={splashStyles.linkIcons}>
+            <SocialLink to={`https://twitter.com/`}
+              logo={twitterIcon} alt="Twitter"
+            >
+              Twitter: @infoData.contact.twitter_handle
+            </SocialLink>
+            <SocialLink to={`https://facebook.com/`}
+              logo={facebookIcon} alt="Facebook"
+            >
+              Facebook: @infoData.contact.twitter_handle
+            </SocialLink>
+            <SocialLink to={`https://linkedin.com/`}
+              logo={linkedInIcon} alt="Linked In"
+            >
+              Linked In: infoData.contact.github_handle
+            </SocialLink>
+          </div>
+        </>
       }>
       <article>
         <div className={articleTemplateStyles.article__info}>
@@ -44,10 +72,10 @@ export default function Article(props) {
         </div>
         <div className={cn(articleTemplateStyles.article__body, articleTemplateStyles.heroImage)}>
           <p>
-          <Img
-            fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-            alt={data.frontmatter.title}
-          />
+            <Img
+              fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+              alt={data.frontmatter.title}
+            />
           </p>
         </div>
         <div
