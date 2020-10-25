@@ -140,6 +140,7 @@ export default (props) => {
                             pin.frontmatter.latitude,
                             pin.frontmatter.longitude,
                           ]}
+                          riseOnHover={true}
                           onClick={() => {
                             setActivePinId(pin.id);
                             navigate(
