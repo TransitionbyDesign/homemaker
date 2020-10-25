@@ -1,6 +1,5 @@
 @use '../partials/palette';
-
-$overlay_max_width: 70rem;
+@use 'mapLayout' as *;
 
 /**
  * Levels:
@@ -20,7 +19,7 @@ $overlay_max_width: 70rem;
  * The .map element is position: fixed, and sits in a stacking context 
  * behind the Layout element, at z-index -50.
  */
-.map_layout {
+.layout {
   display: flex;
   flex-grow: 1;
   pointer-events: none; // Allow clicks through
@@ -37,8 +36,7 @@ $overlay_max_width: 70rem;
     right: 0;
     top: 0;
     bottom: 0;
-    max-width: $overlay_max_width;
-    margin: 0 auto;
+    margin: 0;
   }
 
   /** This element contains the map */
@@ -55,7 +53,11 @@ $overlay_max_width: 70rem;
   }
 
 }
+.modal .overlay {
+  pointer-events: all; // Prevent events getting through
+  background: palette.$transparent_gradient;
+}
 
-.map_disabled {
+.disabled {
   pointer-events: none;
 }

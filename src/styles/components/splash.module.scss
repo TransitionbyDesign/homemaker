@@ -1,22 +1,36 @@
 @use '../partials/palette';
-@use 'header.module' as header;
+@use 'layout';
 @use '../partials/common';
 
-$header_underline_width: 30%;
-$max_width: 70rem;
+// This goes around the inner-wrapper div
+// It provides a frame in which the inner-wrapper can expand to fit.
+.outer-wrapper {
+  position: static;
+  pointer-events: auto;
+  width: 100%;
+  height: 100%;
+  @include layout.all-media(modal-margin-side, modal-margin-top, modal-margin-bottom)
+  using($s, $t, $b) {
+    padding: $t $s $b $s;
+  }
+}
 
-.wrapper {
+// The inner-wrapper div is the modal box, containing the header, footer, and content.
+// It should not expand off-screen.
+.inner-wrapper {
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
-  pointer-events: auto;
   background: palette.$bgnd-lt;
   @include common.drop-shadow;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
 
-  position: static;
-  max-width: $max_width;
-  margin: header.$nav_height header.$nav_pad_left header.$nav_pad_top header.$nav_pad_left;
-  
+  width: 100%;
+  height: 100%;
+  margin: auto;
   
   header {
     background: palette.$head-bgnd-splash;
@@ -28,34 +42,44 @@ $max_width: 70rem;
     margin: 0;
     flex: 0 0 auto;
 
-    &:after {
-      content: '\2A2F';
-      float: right;
+    .close-link {
+	    float: right;
+	    color: inherit;
+    }
+    .close-link:hover {
+      text-decoration: none;      
     }
   }
     
   footer {
     display: flex;
-    padding: 1rem 0;
+    padding: 0.5rem 0 0.7rem 0;
     margin: 0.5rem 1rem 0 1rem;
     border-top: solid palette.$footer-border-splash 0.1rem;
     flex: 0 0 auto;
+    justify-content: flex-end;
   }
     
   h1 {
     position: relative;
     padding: 1rem;
     margin: 1rem;
-
+    
     // Inserts an underline below the header
     &:after {
       content: '';
-      width: $header_underline_width;
       height: 1px;
       background: palette.$head-text-splash;
       position: absolute;
       bottom: 0;
-      left: (100% - $header_underline_width)/2;
+    }
+    
+    @include layout.all-media(header-underline-width)
+    using($huw) {
+      &:after {
+        width: $huw;
+        left: (100% - $huw)/2;
+      }
     }
   }
   
@@ -92,7 +116,10 @@ a.button:hover {
 }
 
 .problem {
-  max-width: $max_width;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
   margin: 0 auto 5rem auto;  
 
   header {
@@ -108,7 +135,10 @@ a.button:hover {
 }
 
 .solution {
-  max-width: $max_width;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
   margin: 0 auto 5rem auto;  
   color: palette.$text-dk;
   
@@ -125,8 +155,11 @@ a.button:hover {
 }
 
 .info {
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
   position: static;
-  max-width: $max_width;
   margin: 10rem auto 5rem auto;
 
   & > * {
@@ -151,4 +184,8 @@ a.button:hover {
   @media (min-width: 1280px) {
     column-count: 3;
   }
+}
+
+.link-icons {
+  display: flex;
 }

@@ -1,44 +1,69 @@
-import React from 'react';
-import { Link } from "gatsby";
-import MapLayout from "../components/MapLayout";
-import splash from '../styles/components/splash.module.scss';
-import cn from 'classnames';
+import React from "react"
+import { Link } from 'gatsby'
+import { useLocation } from '@reach/router'
+import Layout from "../components/Layout"
+import Splash from "../components/Splash"
+import SocialLink from "../components/SocialLink"
+import splashStyles from "../styles/components/splash.module.scss"
+import mapLayoutStyles from "../styles/components/mapLayout.module.scss"
+import landingStyles from "../styles/pages/landing.module.scss"
+import useSiteMetaData from "../static_queries/useSiteMetadata"
+import cn from "classnames"
+import twitterIcon from "../icons/social_icon_twitter.svg"
+import linkedInIcon from "../icons/social_icon_linkedin.svg"
+import facebookIcon from "../icons/social_icon_facebook.svg"
 
-const MapPage = () => {
+
+export default () => {
+  const { infoData } = useSiteMetaData()
+  
+  // Ensure that whatever happens, the modal state flag is set
+  // This ensures the pages and layouts are correct.
+  const location = useLocation();
+  location.state = { ...location.state = {}, modal: true };
   return (
-    <MapLayout>
-      <div className={cn([splash.wrapper])}>
-        <header>Welcome</header>
-        <div className={cn([splash.content])}>
+    <Layout className={mapLayoutStyles.layout}>
+      <div className={mapLayoutStyles.overlay}>
+        <Splash
+          header="Welcome"
+          footer={
+            <>
+              {/*<SocialLink to={`mailto:${infoData.contact.email}`}
+                  logo={}
+                  >
+                  Email: {infoData.contact.email}
+                  </SocialLink>*/}
+              <div className={splashStyles.linkIcons}>
+                <SocialLink to={`https://twitter.com/${infoData.contact.twitter_handle}`}
+                  logo={twitterIcon} alt="Twitter"
+                >
+                  Twitter: @{infoData.contact.twitter_handle}
+                </SocialLink>
+                <SocialLink to={`https://facebook.com/infoData.contact.facebook_page`}
+                  logo={facebookIcon} alt="Facebook"
+                >
+                  Facebook: @{infoData.contact.twitter_handle}
+                </SocialLink>
+                <SocialLink to={`https://github.com/${infoData.contact.github_handle}`}
+                  logo={linkedInIcon} alt="Linked In"
+                >
+                  Linked In: {infoData.contact.github_handle}
+                </SocialLink>
+              </div>
+            </>
+          }
+        >
           <h1>Welcome to Homemaker Oxford</h1>
           
-          <p>Link to <Link to="/info">Info</Link></p>
-          <p>Link to <Link to="/map">Map</Link></p>
+          <div
+            className={splashStyles.columned}
+            dangerouslySetInnerHTML={{__html: infoData.description}} />
+
           
-          <div className={splash.columned}>
-            <p>
-              Humanity is moving ever deeper into crisis — a crisis without precedent.
-            </p>
-            <p>
-              First, it is a crisis brought about by cosmic evolution irrevocably intent 
-              upon completely transforming omnidisintegrated humanity from a complex 
-              of around-the-world, remotely-deployed-from-one-another, differently colored,
-              differently credoed, differently cultured, differently communicating, 
-              and differently competing entities into a completely integrated, comprehensively
-              interconsiderate, harmonious whole.
-            </p>
-            
-            
-          </div>
-
-
-        </div>
-        <footer>
-          <Link to="/map" className={splash.button}>EXPLORE THE MAP</Link>
-        </footer>
+          <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
+          
+        </Splash>
       </div>
-    </MapLayout>
-  );
+    </Layout>
+  )
 }
-
-export default MapPage;

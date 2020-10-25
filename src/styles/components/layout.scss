@@ -1,0 +1,92 @@
+// Defines layout dimensions and media-query mixins
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+// This defines the same set of named values for each media type
+$params: (
+  "desktop": (
+    "modal-margin-side": 2.5rem,
+    "modal-margin-top": 10rem,
+    "modal-margin-bottom": 1rem,
+    "nav-margin-top": 1rem,
+    "nav-margin-bottom": 1rem,
+    "header-underline-width": 30%,
+    "modal-max-width": 70rem,
+  ),
+  "tablet": (
+    "modal-margin-side": 1rem,
+    "modal-margin-top": 6rem,
+    "modal-margin-bottom": 1rem,
+    "nav-margin-top": 0.5rem,
+    "nav-margin-bottom": 0.5rem,
+    "header-underline-width": 30%,
+    "modal-max-width": 70rem,
+  ),
+  "mobile": (
+    "modal-margin-side": 0.5rem,
+    "modal-margin-top": 6rem,
+    "modal-margin-bottom": 0.5rem,
+    "nav-margin-top": 0.5rem,
+    "nav-margin-bottom": 0.5rem,
+    "header-underline-width": 30%,
+    "modal-max-width": 70rem,
+  ),
+);
+
+// This selects the values named by $list from the map $map
+@function select($map, $list) {
+  $result: ();
+  @each $item in $list {
+    $val: map-get($map, $item);
+    @if $val == null {
+      @error "Undefined parameter: '#{$item}'";
+    }
+    $result: append($result, map-get($map, $item));
+  }
+  @return $result;
+}
+
+// Wraps the content, using the media parameter values named, in a media query for mobiles
+@mixin mobile($names...) {
+  @media (max-width: #{$tablet-width - 1px}) {
+    $media-params: map-get($params, "mobile");
+    $vars: select($media-params, $names);
+    @content($vars...);
+  }
+}
+
+// Wraps the content, using the media parameter values named, in a media query for tablets
+@mixin tablet($names...) {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    $media-params: map-get($params, "tablet");
+    $vars: select($media-params, $names);
+    @content($vars...);
+  }
+}
+
+// Wraps the content, using the media parameter values named, in a media query for desktops
+@mixin desktop($names...) {
+  $media-params: map-get($params, "desktop");
+  $vars: select($media-params, $names);
+  @media (min-width: #{$desktop-width}) {
+    @content($vars...);
+  }
+}
+
+@mixin all-media($names...) {
+  @include mobile($names...) using ($vals...) {
+    @content($vals...);
+  }
+  @include tablet($names...) using ($vals...) {
+    @content($vals...);
+  }
+  @include desktop($names...) using ($vals...) {
+    @content($vals...);
+  }
+}
+
+
+
+
+

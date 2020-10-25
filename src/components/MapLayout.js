@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
@@ -9,85 +10,79 @@ import audioIcon from "../icons/audio_ptr_blue.svg";
 import cn from 'classnames';
 import L from 'leaflet';
 
+// The map content is defined here as it's the same wherever the map is used.
+
 const mapSettings = {
   center: [51.7522, -1.2560],
   zoom: 12,
   minZoom: 12,
 };
 
-class MapLayout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { activePark: null };
+let icons = null;
+
+function icon(park, activePark) {
+  if (park === activePark) {
+    return icons.Audio;
   }
-  
-  buildIcons() {
-    this.icons = {
-      Text: new L.Icon({
-        iconUrl: textIcon,
-        iconSize: [32, 32]
-      }),
-      Audio: new L.Icon({
-        iconUrl: audioIcon,
-        iconSize: [64, 64]
-      }),
-    };
+  else {
+    return icons.Text;
   }
-  
-  render() {
-    const props = this.props;
-    // This window check is a work-around to some leaflet issues
-    if (!this.icons && typeof window !== 'undefined') {
-      this.buildIcons();
-    }
-    
-    return (
-      <Layout { ...props } >
-        <div className={mapLayout.map_layout}>
-          <div className={mapLayout.overlay}>
-            {props.children}
-          </div>
-          
-          <div className={cn(mapLayout.map, {[mapLayout.figure_disabled]: props.mapDisabled})}>
-            <Map settings={mapSettings}>
-              {data.features.map(park => {
-                if (this.icons && this.icons[park.type]) {
-                  return (<Marker
-                            key={park.properties.PARK_ID}
-                            icon={this.icons[park.type]||undefined}
-                            position={[
-                              park.geometry.coordinates[0],
-                              park.geometry.coordinates[1]
-                            ]}
-                            onClick={() => {
-                              this.setState({activePark: park});
-                            }}
-                  />);
-                  
-                }
-              })}
-              {this.state.activePark && (
-                <Popup
-                  position={[
-                    this.state.activePark.geometry.coordinates[0]+0.005,
-                    this.state.activePark.geometry.coordinates[1]
-                  ]}
-                  onClose={() => {
-                    this.setState({activePark:null});
-                  }}
-                >
-                  <div>
-                    <h2>{this.state.activePark.properties.NAME}</h2>
-                    <p>{this.state.activePark.properties.DESCRIPTION}</p>
-                  </div>
-                </Popup>
-              )}
-            </Map>
-          </div>
-        </div>
-      </Layout>
-    );
+}
+
+function buildIcons() {
+  return {
+    Text: new L.Icon({
+      iconUrl: textIcon,
+      iconSize: [32, 32]
+    }),
+    Audio: new L.Icon({
+      iconUrl: audioIcon,
+      iconSize: [64, 64]
+    }),
   };
 }
 
-export default MapLayout;
+export default (props) => {
+  const [activePark, setActivePark] = useState(null)
+  // This window check is a work-around to some leaflet issues
+  if (!icons && typeof window !== 'undefined') {
+    icons = buildIcons();
+  }
+
+  return (
+    <Layout { ...props }>
+      <div className={mapLayout.layout}>
+        <div className={mapLayout.overlay}>
+          {props.children}
+        </div>
+        
+        <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
+          <Map settings={mapSettings}>
+            {data.features.map(park => {
+              if (icons && icons[park.type]) {
+                return (<Marker
+                          key={park.properties.PARK_ID}
+                          icon={icon(park, activePark)}
+                          position={[
+                            park.geometry.coordinates[0],
+                            park.geometry.coordinates[1]
+                          ]}
+                          onClick={() => {
+                            setActivePark(park);
+                            navigate(
+                              "/map/modal",
+                              {
+                                state: { modal: true },
+                              }
+                            )
+                          }}
+                />);
+                
+              }
+            })}
+          </Map>
+        </div>
+      </div>
+    </Layout>
+  );
+}
