@@ -6,20 +6,20 @@ webhook_url:
 sections:
 - type: heading
   label: Content
+- type: document
+  path: content/data/info.json
+  label: Info Page
+- type: document
+  path: content/data/authors.yaml
+  label: Author List
 - type: directory
-  path: content/posts
-  label: Blog Posts
+  path: content/articles
+  label: Articles
   create: documents
   match: "**/*"
   new_doc_ext: md
   templates:
   - blog-post
-- type: document
-  path: content/data/authors.yaml
-  label: Author List
-- type: document
-  path: content/data/info.json
-  label: Info Page
 - type: heading
   label: General Config
 - type: document

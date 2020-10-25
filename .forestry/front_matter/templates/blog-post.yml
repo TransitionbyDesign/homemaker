@@ -1,10 +1,12 @@
 ---
-label: Blog Post
+label: Article
 hide_body: false
 fields:
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - name: author
   type: select
   default: ''
@@ -35,9 +37,25 @@ fields:
   label: hero image
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
-pages:
-- content/posts/an-essay-on-walking.md
-- content/posts/ne-te-quaesiveris-extra.md
-- content/posts/on-the-geneology-of-morals.md
-- content/posts/song-of-myself.md
-- content/posts/sunflower-sutra.md
+- name: latitude
+  type: number
+  label: latitude
+  description: The latitude of the associated location
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+- name: longitude
+  type: number
+  label: longitude
+  description: The longitude of the associated location
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true

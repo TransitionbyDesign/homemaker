@@ -2,7 +2,13 @@
 label: Info Page
 hide_body: true
 fields:
-- name: description
+- name: welcome_title
+  type: text
+  config:
+    required: true
+  label: Welcome title
+  default: Welcome
+- name: welcome_text
   type: textarea
   default: ''
   config:
@@ -10,38 +16,34 @@ fields:
     wysiwyg: true
     schema:
       format: html-blocks
-  label: description
+  label: Welcome text
   description: Enter description here
-- name: cta
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: html-blocks
-  label: cta
-  description: Enter call to action here
 - type: field_group
   name: contact
-  label: contact
+  label: Contact info
   fields:
   - type: text
     name: email
-    label: email
+    label: Email address
   - type: text
     name: twitter_handle
-    label: twitter_handle
+    label: Twitter handle
   - type: text
-    name: github_handle
-    label: github_handle
-- name: background_color
-  type: color
-  label: background_color
-  config:
-    required: false
-    color_format: Hex
-  description: Enter info page background color
-  default: "#B1BCBC"
+    name: facebook_id
+    label: Facebook ID
+  - name: phone_number
+    type: text
+    config:
+      required: false
+    label: Phone number
+  - name: address
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Address
 pages:
 - content/data/info.json
