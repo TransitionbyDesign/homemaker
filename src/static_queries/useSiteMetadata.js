@@ -9,12 +9,16 @@ export default function useSiteMetadata() {
           description
           repoUrl
           infoData {
+            welcome_title
+            welcome_text
             contact {
               email
               github_handle
               twitter_handle
+              facebook_id
+              phone_number
+              address
             }
-            cta
             description
           }
         }
