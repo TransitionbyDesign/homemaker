@@ -76,3 +76,9 @@ fields:
   label: apposition
   description: Indicates which one of several ways the article is apposite to the
     issue of homelessness
+- name: is_published
+  type: boolean
+  label: is published
+  description: If true, the article will be included on the website; if false the
+    article will be omitted.
+  default: false
