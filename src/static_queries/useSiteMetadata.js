@@ -8,18 +8,17 @@ export default function useSiteMetadata() {
           title
           description
           repoUrl
-          infoData {
+          welcomeData {
             welcome_title
             welcome_text
             contact {
-              email
-              github_handle
-              twitter_handle
-              facebook_id
-              phone_number
               address
+              email
+              phone_number
+              twitter_handle
+              linkedin_profile
+              facebook_id
             }
-            description
           }
         }
       }
