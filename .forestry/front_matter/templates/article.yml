@@ -1,6 +1,7 @@
 ---
 label: Article
 hide_body: false
+display_field: title
 fields:
 - type: text
   name: title
@@ -59,3 +60,19 @@ fields:
     max: 
     step: 
     required: true
+- name: apposition
+  type: select
+  default: situation
+  config:
+    required: true
+    options:
+    - situation
+    - solution
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: apposition
+  description: Indicates which one of several ways the article is apposite to the
+    issue of homelessness
