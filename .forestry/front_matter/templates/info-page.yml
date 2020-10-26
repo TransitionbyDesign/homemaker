@@ -18,12 +18,6 @@ fields:
       format: html-blocks
   label: Welcome text
   description: Enter description here
-- name: appositions
-  type: tag_list
-  default: []
-  label: Appositions
-  description: Defines the ways in which articles etc. can be apposite to the problem
-    of homelessness
 - type: field_group
   name: contact
   label: Contact info
