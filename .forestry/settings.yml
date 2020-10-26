@@ -7,8 +7,8 @@ sections:
 - type: heading
   label: Content
 - type: document
-  path: content/data/info.json
-  label: Info Page
+  path: content/data/welcome.json
+  label: Welcome Page
 - type: document
   path: content/data/authors.yaml
   label: Author List
