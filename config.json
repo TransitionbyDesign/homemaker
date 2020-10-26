@@ -3,6 +3,7 @@
   "description": "A report on homelessness in Oxford, by Transition By Design",
   "repository_url": "https://github.com/TransitionbyDesign/homemaker",
   "appositions": [
-
+    "situation",
+    "solution"
   ]
 }
