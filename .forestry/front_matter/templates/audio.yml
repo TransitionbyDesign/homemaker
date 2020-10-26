@@ -37,7 +37,7 @@ fields:
     maxSize: '10'
   label: hero image
   description: Enter hero image for audio here
-  default: ""
+  default: ''
 - name: latitude
   type: number
   label: latitude
@@ -74,11 +74,11 @@ fields:
       file: 
       path: 
   label: apposition
-  description: Indicates which one of several ways the audio is apposite to the
-    issue of homelessness
+  description: Indicates which one of several ways the audio is apposite to the issue
+    of homelessness
 - name: is_published
   type: boolean
   label: is published
-  description: If true, the audio will be included on the website; if false the
-    audio will be omitted.
+  description: If true, the audio will be included on the website; if false the audio
+    will be omitted.
   default: false

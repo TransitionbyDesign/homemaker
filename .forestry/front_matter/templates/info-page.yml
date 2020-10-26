@@ -18,24 +18,16 @@ fields:
       format: html-blocks
   label: Welcome text
   description: Enter description here
+- name: appositions
+  type: tag_list
+  default: []
+  label: Appositions
+  description: Defines the ways in which articles etc. can be apposite to the problem
+    of homelessness
 - type: field_group
   name: contact
   label: Contact info
   fields:
-  - type: text
-    name: email
-    label: Email address
-  - type: text
-    name: twitter_handle
-    label: Twitter handle
-  - type: text
-    name: facebook_id
-    label: Facebook ID
-  - name: phone_number
-    type: text
-    config:
-      required: false
-    label: Phone number
   - name: address
     type: textarea
     default: ''
@@ -45,5 +37,25 @@ fields:
       schema:
         format: markdown
     label: Address
+  - name: phone_number
+    type: text
+    config:
+      required: false
+    label: Phone number
+  - type: text
+    name: email
+    label: Email address
+  - type: text
+    name: twitter_handle
+    label: Twitter handle
+  - type: text
+    name: facebook_id
+    label: Facebook ID
+  - name: linkedin_profile
+    type: text
+    config:
+      required: false
+    label: LinkedIn Profile
+    description: The LinkedIn profile URL associated with the website
 pages:
 - content/data/info.json
