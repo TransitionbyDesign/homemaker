@@ -52,5 +52,3 @@ fields:
       required: false
     label: LinkedIn Profile
     description: The LinkedIn profile URL associated with the website
-pages:
-- content/data/info.json
