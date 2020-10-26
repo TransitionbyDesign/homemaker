@@ -1,6 +1,7 @@
 ---
-label: Info Page
+label: Welcome Page
 hide_body: true
+display_field: welcome_title
 fields:
 - name: welcome_title
   type: text
