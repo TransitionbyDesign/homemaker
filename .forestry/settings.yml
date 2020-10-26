@@ -20,6 +20,22 @@ sections:
   new_doc_ext: md
   templates:
   - article
+- type: directory
+  path: content/audio
+  label: Audio
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - audio
+- type: directory
+  path: content/video
+  label: Video
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - video
 - type: heading
   label: General Config
 - type: document

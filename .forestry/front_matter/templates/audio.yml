@@ -1,4 +1,84 @@
 ---
 label: Audio
-hide_body: true
-fields: []
+hide_body: false
+display_field: title
+fields:
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+- name: author
+  type: select
+  default: ''
+  config:
+    required: true
+    options: []
+    source:
+      type: documents
+      section: author-list
+      file: content/data/authors.yaml
+      path: authors
+  label: author
+  description: Enter author of post
+- name: date
+  type: datetime
+  label: date
+  description: Date post was created
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: hero_image
+  type: file
+  config:
+    maxSize: '10'
+  label: hero image
+  description: Enter hero image for audio here
+  default: ""
+- name: latitude
+  type: number
+  label: latitude
+  description: The latitude of the associated location
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+- name: longitude
+  type: number
+  label: longitude
+  description: The longitude of the associated location
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+- name: apposition
+  type: select
+  default: situation
+  config:
+    required: true
+    options:
+    - situation
+    - solution
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: apposition
+  description: Indicates which one of several ways the audio is apposite to the
+    issue of homelessness
+- name: is_published
+  type: boolean
+  label: is published
+  description: If true, the audio will be included on the website; if false the
+    audio will be omitted.
+  default: false

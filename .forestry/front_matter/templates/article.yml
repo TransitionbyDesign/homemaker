@@ -37,7 +37,7 @@ fields:
     maxSize: '10'
   label: hero image
   description: Enter hero image for article here
-  default: "/content/assets/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+  default: ""
 - name: latitude
   type: number
   label: latitude
