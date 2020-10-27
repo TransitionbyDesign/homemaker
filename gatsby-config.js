@@ -40,6 +40,20 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "audio",
+        path: `${__dirname}/content/audio`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "video",
+        path: `${__dirname}/content/video`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "data",
         path: `${__dirname}/content/data`,
       },
