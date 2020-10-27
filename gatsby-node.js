@@ -7,13 +7,11 @@ module.exports.onCreateNode = ({ node, actions }) => {
   if (node.internal.type === "MarkdownRemark") {
     const components = path.parse(node.fileAbsolutePath)
     createNodeField({
-      //same as node: node
       node,
       name: "slug",
       value: components.name,
     })
     createNodeField({
-      //same as node: node
       node,
       name: "media",
       value: path.parse(components.dir).name,
@@ -23,10 +21,9 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  //dynamically create pages here
-  //get path to template
-  const articleTemplate = path.resolve("./src/templates/article.js")
-  //get slugs
+  // Dynamically create pages here
+  
+  // Get node data
   const response = await graphql(`
     query {
       allMarkdownRemark {
@@ -40,13 +37,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  //create new pages with unique slug
+
+  // Get path to template
+  const template = path.resolve("./src/templates/article.js");
+  
+  // Create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach(edge => {
+    const fields = edge.node.fields;
     createPage({
-      component: articleTemplate,
-      path: `/map/${edge.node.fields.slug}`,
+      component: template,
+      path: `/map/${fields.slug}`,
       context: {
-        slug: edge.node.fields.slug,
+        slug: fields.slug,
       },
     })
   })

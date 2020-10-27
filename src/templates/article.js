@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
-import useArticleData from '../static_queries/useArticleData'
 import articleTemplateStyles from "../styles/templates/article.module.scss"
 import { useLocation } from '@reach/router'
 import ModalPage from '../components/ModalPage'
@@ -14,27 +13,15 @@ import cn from 'classnames';
 //this component handles the blur img & fade-ins
 import Img from 'gatsby-image'
 
-export default function Article(props) {
+export default (props) => {
   // Ensure that whatever happens, the modal state flag is set
   // This ensures the pages and layouts are correct.
   const location = useLocation();
   location.state = { ...location.state = {}, modal: true };
-  
-  const data = props.data.markdownRemark
-  const allArticleData = useArticleData()
-  const nextSlug = getNextSlug(data.fields.slug)
 
-  function getNextSlug(slug) {
-    const allSlugs = allArticleData.map(article => {
-      return article.node.fields.slug
-    })
-    const nextSlug = allSlugs[allSlugs.indexOf(slug) + 1]
-    if(nextSlug !== undefined && nextSlug !== '') {
-      return nextSlug
-    } else {
-      return allSlugs[0]
-    }
-  }
+  // This gets the data passed to the template
+  const data = props.data.markdownRemark
+  
   return (
     <ModalPage
       header={data.frontmatter.title}
@@ -92,13 +79,15 @@ export default function Article(props) {
   )
 }
 
-//dynamic page query, must occur within each post context
-//$slug is made available by context from createPages call in gatsby-node.js
+// Dynamic page query, must occur within each post context/
+//
+// $slug is made available by context from createPages call in gatsby-node.js
 export const getPostData = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         slug
+        media
       }
       frontmatter {
         title
