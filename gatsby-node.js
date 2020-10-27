@@ -5,12 +5,18 @@ module.exports.onCreateNode = ({ node, actions }) => {
   // create a new node field.
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
-    const slug = path.basename(node.fileAbsolutePath, ".md")
+    const components = path.parse(node.fileAbsolutePath)
     createNodeField({
       //same as node: node
       node,
       name: "slug",
-      value: slug,
+      value: components.name,
+    })
+    createNodeField({
+      //same as node: node
+      node,
+      name: "media",
+      value: path.parse(components.dir).name,
     })
   }
 }
