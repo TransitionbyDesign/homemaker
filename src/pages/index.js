@@ -15,7 +15,7 @@ import facebookIcon from "../icons/social_icon_facebook.svg"
 
 
 export default () => {
-  const { infoData } = useSiteMetaData()
+  const { welcomeData } = useSiteMetaData()
   
   // Ensure that whatever happens, the modal state flag is set
   // This ensures the pages and layouts are correct.
@@ -28,36 +28,36 @@ export default () => {
           header="Welcome"
           footer={
             <>
-              {/*<SocialLink to={`mailto:${infoData.contact.email}`}
+              {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
                   logo={}
                   >
-                  Email: {infoData.contact.email}
+                  Email: {welcomeData.contact.email}
                   </SocialLink>*/}
               <div className={splashStyles.linkIcons}>
-                <SocialLink to={`https://twitter.com/${infoData.contact.twitter_handle}`}
+                <SocialLink to={`https://twitter.com/${welcomeData.contact.twitter_handle}`}
                   logo={twitterIcon} alt="Twitter"
                 >
-                  Twitter: @{infoData.contact.twitter_handle}
+                  Twitter: @{welcomeData.contact.twitter_handle}
                 </SocialLink>
-                <SocialLink to={`https://facebook.com/${infoData.contact.facebook_id}`}
+                <SocialLink to={`https://facebook.com/${welcomeData.contact.facebook_id}`}
                   logo={facebookIcon} alt="Facebook"
                 >
-                  Facebook: @{infoData.contact.twitter_handle}
+                  Facebook: @{welcomeData.contact.facebook_id}
                 </SocialLink>
-                <SocialLink to={`https://github.com/infoData.contact.linkedin`}
-                  logo={linkedInIcon} alt="Linked In"
+                <SocialLink to={`https://www.linkedin.com/company/${welcomeData.contact.linkedin_profile}`}
+                  logo={linkedInIcon} alt="LinkedIn"
                 >
-                  Linked In: {infoData.contact.github_handle}
+                  LinkedIn: {welcomeData.contact.linkedin_profile}
                 </SocialLink>
               </div>
             </>
           }
         >
-          <h1>{infoData.welcome_title}</h1>
+          <h1>{welcomeData.welcome_title}</h1>
           
           <div
             className={splashStyles.columned}
-            dangerouslySetInnerHTML={{__html: infoData.welcome_text}} />
+            dangerouslySetInnerHTML={{__html: welcomeData.welcome_text}} />
 
           
           <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
