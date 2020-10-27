@@ -29,10 +29,13 @@ let icons = null;
 function selectIcon(pin, activePinId) {
   if (!icons) return;
 
-  const mediaIcons = icons[pin.media];
+  const media = pin?.fields?.media
+  const apposition = pin?.frontmatter?.apposition
+
+  const mediaIcons = icons[media];
   if (!mediaIcons) return;
 
-  const typeIcons = mediaIcons[pin.type];
+  const typeIcons = mediaIcons[apposition];
   if (!typeIcons) return;
 
   return pin.id === activePinId?
@@ -41,8 +44,8 @@ function selectIcon(pin, activePinId) {
 
 function buildIcons() {
   return {
-    article: {
-      problem: {
+    articles: {
+      situation: {
         inactive: new L.Icon({
           iconUrl: articleIconBlue,
           iconSize: [pinSize, pinSize]
@@ -64,7 +67,7 @@ function buildIcons() {
       },
     },
     audio: {
-      problem: {
+      situation: {
         inactive: new L.Icon({
           iconUrl: audioIconBlue,
           iconSize: [pinSize, pinSize]
@@ -86,7 +89,7 @@ function buildIcons() {
       },
     },    
     video: {
-      problem: {
+      situation: {
         inactive: new L.Icon({
           iconUrl: videoIconBlue,
           iconSize: [pinSize, pinSize]
@@ -129,8 +132,6 @@ export default (props) => {
           <Map settings={mapSettings}>
             {mapData.map(item => {
               const pin = item.node
-              pin.media = "article"
-              pin.type = "problem"
               const icon = selectIcon(pin, activePinId)
               if (icon) {
                 return (<Marker
