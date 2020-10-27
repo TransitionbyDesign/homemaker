@@ -65,6 +65,29 @@ export default (props) => {
             />
           </p>
         </div>
+        {
+          !data.frontmatter.video_url? '' :
+          <div
+            className={articleTemplateStyles.article__body}>
+            <video controls width="100%">
+
+              <source src={data.frontmatter.video_url}/>
+                  Sorry, your browser doesn't support embedded videos.
+            </video>
+          </div>
+        }
+        {
+          !data.frontmatter.audio_url? '' :
+          <div
+            className={articleTemplateStyles.article__body}>
+            <audio
+              controls
+              src={data.frontmatter.audio_url}>
+              Your browser does not support the
+              <code>audio</code> element.
+            </audio>
+          </div>
+        }
         <div
           className={articleTemplateStyles.article__body}
           dangerouslySetInnerHTML={{ __html: data.html }}
@@ -93,6 +116,8 @@ export const getPostData = graphql`
         title
         author
         date(formatString: "MMMM Do, YYYY")
+        audio_url
+        video_url
         hero_image {
           childImageSharp {
             fluid(maxWidth: 1500) {
