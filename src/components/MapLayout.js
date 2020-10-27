@@ -144,7 +144,7 @@ export default (props) => {
                           onClick={() => {
                             setActivePinId(pin.id);
                             navigate(
-                              "/map/article/"+pin.fields.slug,
+                              "/map/"+pin.fields.slug,
                               {
                                 state: { modal: true },
                               }
