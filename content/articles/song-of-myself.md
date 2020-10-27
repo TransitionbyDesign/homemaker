@@ -5,6 +5,8 @@ author: Ralph Waldo Emerson
 hero_image: "/content/assets/ren-ran-bBiuSdck8tU-unsplash.jpg"
 latitude: 51.7459
 longitude: -1.2520
+apposition: solution
+is_published: false
 
 ---
 I have heard what the talkers were talking, the talk of the  

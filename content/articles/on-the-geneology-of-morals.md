@@ -5,6 +5,8 @@ hero_image: "/content/assets/jj-ying-7JX0-bfiuxQ-unsplash.jpg"
 author: Friedrich Nietzsche
 latitude: 51.7347
 longitude: -1.2519
+apposition: situation
+is_published: true
 
 ---
 
