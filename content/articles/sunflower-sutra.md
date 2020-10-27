@@ -5,7 +5,7 @@ author: Allen Ginsberg
 hero_image: "/content/assets/adrien-olichon--aOsCcTJXWY-unsplash.jpg"
 latitude: 51.729
 longitude: -1.2301
-apposition: solution
+apposition: situation
 is_published: true
 
 ---
