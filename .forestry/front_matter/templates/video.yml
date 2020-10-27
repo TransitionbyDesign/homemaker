@@ -38,6 +38,12 @@ fields:
   label: hero image
   description: Enter hero image for video here
   default: ''
+- name: video_url
+  type: text
+  config:
+    required: true
+  label: video url
+  description: An URL to the YouTube video content to embed on this page
 - name: latitude
   type: number
   label: latitude

@@ -38,6 +38,12 @@ fields:
   label: hero image
   description: Enter hero image for audio here
   default: ''
+- name: audio_url
+  type: text
+  config:
+    required: true
+  label: audio url
+  description: An URL to the audio to embed on this page
 - name: latitude
   type: number
   label: latitude
