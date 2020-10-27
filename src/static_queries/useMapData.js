@@ -13,6 +13,8 @@ export default function useMapData() {
               title
               latitude
               longitude
+              apposition
+              is_published
               hero_image {
                 childImageSharp {
                   fluid( maxWidth: 100 ) {
