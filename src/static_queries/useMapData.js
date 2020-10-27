@@ -24,6 +24,7 @@ export default function useMapData() {
             excerpt(pruneLength: 200)
             fields {
               slug
+              media
             }
           }
         }
