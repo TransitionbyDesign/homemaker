@@ -10,6 +10,7 @@ import audioIconBlue from "../icons/audio_ptr_blue.svg";
 import audioIconPink from "../icons/audio_ptr_pink.svg";
 import videoIconBlue from "../icons/video_ptr_blue.svg";
 import videoIconPink from "../icons/video_ptr_pink.svg";
+import shadowIcon from "../icons/shadow_ptr.svg";
 import useMapData from "../static_queries/useMapData"
 import cn from 'classnames';
 import L from 'leaflet';
@@ -42,74 +43,47 @@ function selectIcon(pin, activePinId) {
          typeIcons.active : typeIcons.inactive;
 }
 
+const newIcon = (url, size) => new L.Icon({
+  iconUrl: url,
+  iconSize: [size, size],
+  iconAnchor: [size/2, size],
+  shadowUrl: shadowIcon,
+  shadowSize: [size*1.5, size*0.9],
+  shadowAnchor: [size*.75, size*0.9],
+})
+
 function buildIcons() {
   return {
     articles: {
       situation: {
-        inactive: new L.Icon({
-          iconUrl: articleIconBlue,
-          iconSize: [pinSize, pinSize]
-        }),
-        active: new L.Icon({
-          iconUrl: articleIconBlue,
-          iconSize: [activePinSize, activePinSize]
-        }),
+        inactive: newIcon(articleIconBlue, pinSize),
+        active: newIcon(articleIconBlue, activePinSize),
       },
       solution: {
-        inactive: new L.Icon({
-          iconUrl: articleIconPink,
-          iconSize: [pinSize, pinSize]
-        }),
-        active: new L.Icon({
-          iconUrl: articleIconPink,
-          iconSize: [activePinSize, activePinSize]
-        }),
+        inactive: newIcon(articleIconPink, pinSize),
+        active: newIcon(articleIconPink, activePinSize),
       },
     },
     audio: {
       situation: {
-        inactive: new L.Icon({
-          iconUrl: audioIconBlue,
-          iconSize: [pinSize, pinSize]
-        }),
-        active: new L.Icon({
-          iconUrl: audioIconBlue,
-          iconSize: [activePinSize, activePinSize]
-        }),
+        inactive: newIcon(audioIconBlue, pinSize),
+        active: newIcon(audioIconBlue, activePinSize),
       },
       solution: {
-        inactive: new L.Icon({
-          iconUrl: audioIconPink,
-          iconSize: [pinSize, pinSize]
-        }),
-        active: new L.Icon({
-          iconUrl: audioIconPink,
-          iconSize: [activePinSize, activePinSize]
-        }),
+        inactive: newIcon(audioIconPink, pinSize),
+        active: newIcon(audioIconPink, activePinSize),
       },
     },    
     video: {
       situation: {
-        inactive: new L.Icon({
-          iconUrl: videoIconBlue,
-          iconSize: [pinSize, pinSize]
-        }),
-        active: new L.Icon({
-          iconUrl: videoIconBlue,
-          iconSize: [activePinSize, activePinSize]
-        }),
+        inactive: newIcon(videoIconBlue, pinSize),
+        active: newIcon(videoIconBlue, activePinSize),
       },
       solution: {
-        inactive: new L.Icon({
-          iconUrl: videoIconPink,
-          iconSize: [pinSize, pinSize]
-        }),
-        active: new L.Icon({
-          iconUrl: videoIconPink,
-          iconSize: [activePinSize, activePinSize]
-        }),
+        inactive: newIcon(videoIconPink, pinSize),
+        active: newIcon(videoIconPink, activePinSize),
       },
-    },    
+    },
   };
 }
 
