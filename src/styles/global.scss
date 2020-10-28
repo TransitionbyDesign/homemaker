@@ -5,12 +5,22 @@ html {
   overflow-y: inherit;
 }
 
+// This used to allow events to pass through to the map
+html.event-passthru {
+  pointer-events: none;
+
+  // But don't propagate this into iframes
+  // (such as the Gatsby error display)
+  iframe {
+    pointer-events: all;
+  }
+}
+
 body {
   font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden;
   color: palette.$text-dk;
   font-size: 16px;
-  pointer-events: none;
 }
 
 a {

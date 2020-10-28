@@ -122,7 +122,7 @@ export default (props) => {
   const mapData = useMapData()
   console.log("mapData",mapData);
   return (
-    <Layout { ...props }>
+    <Layout { ...props } eventPassThru>
       <div className={mapLayout.layout}>
         <div className={mapLayout.overlay}>
           {props.children}
