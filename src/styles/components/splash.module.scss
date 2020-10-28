@@ -13,6 +13,10 @@
   using($s, $t, $b) {
     padding: $t $s $b $s;
   }
+
+  svg {
+    fill: currentColor;
+  }
 }
 
 // The inner-wrapper div is the modal box, containing the header, footer, and content.
@@ -46,6 +50,9 @@
     .close-link {
 	    float: right;
 	    color: inherit;
+      svg {
+        width: 1rem;
+      }
     }
     .close-link:hover {
       text-decoration: none;      
@@ -111,6 +118,7 @@
     font-weight: bold;
   }
 }
+
 
 a.button:hover {
   text-decoration: none;
