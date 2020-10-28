@@ -24,6 +24,7 @@ export default (props) => {
   
   return (
     <ModalPage
+      className={splashStyles[data.frontmatter.apposition]}
       header={data.frontmatter.title}
       footer={
         <>
@@ -118,6 +119,7 @@ export const getPostData = graphql`
         date(formatString: "MMMM Do, YYYY")
         audio_url
         video_url
+        apposition
         hero_image {
           childImageSharp {
             fluid(maxWidth: 1500) {

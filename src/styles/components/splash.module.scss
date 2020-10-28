@@ -21,7 +21,8 @@
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
-  background: palette.$bgnd-lt;
+  background: palette.$bgnd-splash;
+  color: palette.$text-splash;
   @include common.drop-shadow;
   @include layout.all-media(modal-max-width)
   using($mw) {
@@ -73,7 +74,7 @@
     &:after {
       content: '';
       height: 1px;
-      background: palette.$head-text-splash;
+      background: palette.$text-splash;
       position: absolute;
       bottom: 0;
     }
@@ -92,6 +93,11 @@
     text-align: center;
     font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
     font-weight: bold;
+  }
+
+  hr {
+    border-color: palette.$text-splash;
+    background: palette.$text-splash;
   }
 
   .button {
@@ -119,62 +125,56 @@ a.button:hover {
   overflow-y: auto;
 }
 
-.problem {
-  @include layout.all-media(modal-max-width)
-  using($mw) {
-    max-width: $mw;
-  }
-  margin: 0 auto 5rem auto;  
+.situation {
+  .inner-wrapper {
+    color: palette.$text-prob;
+    background: palette.$bgnd-prob;
 
-  header {
-    background: palette.$head-bgnd-prob;
-    color: palette.$head-text-prob;
-  }
-
-  .button {
-    background: palette.$btn-bgnd-prob;
-    color: palette.$btn-text-prob;
-    line-height: 5em;
+    .button {
+      background: palette.$btn-bgnd-prob;
+      color: palette.$btn-text-prob;
+    }
+    header {
+      color: palette.$head-text-prob;
+      background: palette.$head-bgnd-prob;
+    }
+    h1 {
+      // Inserts an underline below the header
+      &:after {
+        background: palette.$head-bgnd-prob;
+      }
+    }
+    footer {
+      border-top-color: palette.$head-bgnd-prob;
+    }
   }
 }
 
 .solution {
-  @include layout.all-media(modal-max-width)
-  using($mw) {
-    max-width: $mw;
-  }
-  margin: 0 auto 5rem auto;  
-  color: palette.$text-dk;
-  
-  header {
-    background: palette.$head-bgnd-soln;
-    color: palette.$head-text-soln;
-  }
+  .inner-wrapper {
+    color: palette.$text-soln;
+    background: palette.$bgnd-soln;
 
-  .button {
-    background: palette.$btn-bgnd-soln;
-    color: palette.$btn-text-soln;
-    line-height: 5em;
+    .button {
+      background: palette.$btn-bgnd-soln;
+      color: palette.$btn-text-soln;
+    }
+    header {
+      color: palette.$head-text-soln;
+      background: palette.$head-bgnd-soln;
+    }
+    h1 {
+      // Inserts an underline below the header
+      &:after {
+        background: palette.$head-bgnd-soln;
+      }
+    }
+    footer {
+      border-top-color: palette.$head-bgnd-soln;
+    }
   }
 }
 
-.info {
-  @include layout.all-media(modal-max-width)
-  using($mw) {
-    max-width: $mw;
-  }
-  position: static;
-  margin: 10rem auto 5rem auto;
-
-  & > * {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }  
-  header {
-    background: palette.$head-bgnd-prob;
-    color: palette.$head-text-prob;
-  }
-}
 
 // Columned text wrapper - adjusts nuber depending on media width
 .columned {

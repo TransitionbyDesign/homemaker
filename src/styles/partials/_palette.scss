@@ -9,9 +9,8 @@ $col7: #303030;
 
 // Specific element colours
 $bgnd-dk: $col1;
-$text-dk: $col1;
-$poly-dk: $col2;
 $text-dk: $col7;
+$poly-dk: $col2;
 
 $bgnd-lt: $col5;
 $text-lt: $col4;
@@ -27,16 +26,21 @@ $footer-border-splash: $col3;
 $share-icons: $col6;
 $text-link: $col3;
 
+$bgnd-prob: $col5;
+$text-prob: $col7;
 $head-bgnd-prob: $col1;
 $head-text-prob: $col4;
 $btn-bgnd-prob: $col3;
 $btn-text-prob: $col4;
-$ptr-prob: $col1;
 
+$bgnd-soln: $col5;
+$text-soln: $col1;
 $head-bgnd-soln: $col3;
 $head-text-soln: $col4;
 $btn-bgnd-soln: $col1;
 $btn-text-soln: $col4;
+
+$ptr-prob: $col1;
 
 $shadow: #AAAAAA;
 

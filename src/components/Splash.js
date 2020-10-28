@@ -3,8 +3,8 @@ import { Link } from 'gatsby'
 import splash from '../styles/components/splash.module.scss';
 import cn from 'classnames';
 
-const Splash = ({ header, footer, children, closeTo }) => (
-  <div className={splash.outerWrapper}>
+const Splash = ({ header, footer, children, closeTo, className }) => (
+  <div className={cn(className, splash.outerWrapper)}>
     <div className={splash.innerWrapper}>
       <header className={splash.header}>
         {header}
