@@ -82,14 +82,17 @@ export default (props) => {
         <h1>{data.frontmatter.title}</h1>
         <h3>{data.frontmatter.date}</h3>
       </div>
-      <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
-        <p>
-          <Img
-            fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-            alt={data.frontmatter.title}
-          />
-        </p>
-      </div>
+      {
+        !data.frontmatter.hero_image? '' :
+        <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
+          <p>
+            <Img
+              fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+              alt={data.frontmatter.title}
+            />
+          </p>
+        </div>
+      }
       {
         !data.frontmatter.video_url? '' :
         <div
