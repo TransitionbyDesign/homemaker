@@ -21,6 +21,14 @@ sections:
   templates:
   - article
 - type: directory
+  path: content/regions
+  label: Regions
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - region
+- type: directory
   path: content/audio
   label: Audio
   create: documents
