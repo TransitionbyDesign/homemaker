@@ -9,8 +9,10 @@ export default function useSiteMetadata() {
           description
           repoUrl
           welcomeData {
-            welcome_title
-            welcome_text
+            header
+            intro
+            text
+            is_published
             contact {
               address
               email
