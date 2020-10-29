@@ -50,8 +50,9 @@ const newIcon = (url, size) => new L.Icon({
   shadowUrl: shadowIcon,
   shadowSize: [size*1.5, size*0.9],
   shadowAnchor: [size*.75, size*0.9],
-  popupAnchor: [0, 0],//-size/2],
-  tooltipAnchor: [size/2, -size/2],
+  popupAnchor: [0, 0],
+  tooltipAnchor: [size*0.5, -size*0.6],
+  className: mapLayout.customIcon,
 })
 
 function buildIcons() {
@@ -131,7 +132,11 @@ export default (props) => {
                         )
                       }}
                     >
-                      <Tooltip>{pin.frontmatter.title}</Tooltip>
+                      <Tooltip
+                        className={cn(mapLayout.customTooltip, mapLayout[pin.frontmatter.apposition])}
+                      >
+                        {pin.frontmatter.title}
+                      </Tooltip>
                     </Marker>
                   );
                 }
