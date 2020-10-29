@@ -3,7 +3,7 @@ import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, Tooltip } from "react-leaflet";
 import articleIconBlue from "../icons/text_ptr_blue.svg";
 import articleIconPink from "../icons/text_ptr_pink.svg";
 import audioIconBlue from "../icons/audio_ptr_blue.svg";
@@ -50,6 +50,8 @@ const newIcon = (url, size) => new L.Icon({
   shadowUrl: shadowIcon,
   shadowSize: [size*1.5, size*0.9],
   shadowAnchor: [size*.75, size*0.9],
+  popupAnchor: [0, 0],//-size/2],
+  tooltipAnchor: [size/2, -size/2],
 })
 
 function buildIcons() {
@@ -110,25 +112,28 @@ export default (props) => {
                 const pin = item.node
                 const icon = selectIcon(pin, activePinId)
                 if (icon) {
-                  return (<Marker
-                            key={pin.id}
-                            icon={icon}
-                            position={[
-                              pin.frontmatter.latitude,
-                              pin.frontmatter.longitude,
-                            ]}
-                            riseOnHover={true}
-                            onClick={() => {
-                              setActivePinId(pin.id);
-                              navigate(
-                                "/map/"+pin.fields.slug,
-                                {
-                                  state: { modal: true },
-                                }
-                              )
-                            }}
-                  />);
-                
+                  return (
+                    <Marker
+                      key={pin.id}
+                      icon={icon}
+                      position={[
+                        pin.frontmatter.latitude,
+                        pin.frontmatter.longitude,
+                      ]}
+                      riseOnHover={true}
+                      onClick={() => {
+                        setActivePinId(pin.id);
+                        navigate(
+                          "/map/"+pin.fields.slug,
+                          {
+                            state: { modal: true },
+                          }
+                        )
+                      }}
+                    >
+                      <Tooltip>{pin.frontmatter.title}</Tooltip>
+                    </Marker>
+                  );
                 }
             })}
           </Map>
