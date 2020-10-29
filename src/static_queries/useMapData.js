@@ -13,6 +13,7 @@ export default function useMapData() {
               title
               latitude
               longitude
+              geojson
               apposition
               is_published
               hero_image {
