@@ -93,7 +93,7 @@ export default (props) => {
       {
         !data.frontmatter.video_url? '' :
         <div
-          className={articleTemplateStyles.body}>
+          className={articleTemplateStyles.video}>
           <video controls width="100%">
 
             <source src={data.frontmatter.video_url}/>
@@ -104,7 +104,7 @@ export default (props) => {
       {
         !data.frontmatter.audio_url? '' :
         <div
-          className={articleTemplateStyles.body}>
+          className={articleTemplateStyles.audio}>
           <audio
             controls
             src={data.frontmatter.audio_url}>
