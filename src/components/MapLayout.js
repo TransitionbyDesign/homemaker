@@ -3,7 +3,7 @@ import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
-import { Marker, Popup, Tooltip } from "react-leaflet";
+import { Marker, Popup, Tooltip, GeoJSON } from "react-leaflet";
 import articleIconBlue from "../icons/text_ptr_blue.svg";
 import articleIconPink from "../icons/text_ptr_pink.svg";
 import audioIconBlue from "../icons/audio_ptr_blue.svg";
@@ -110,22 +110,22 @@ export default (props) => {
             {mapData
               .filter((item) => item?.node?.frontmatter?.is_published)
               .map(item => {
-                const pin = item.node
-                const icon = selectIcon(pin, activePinId)
+                const node = item.node
+                const icon = selectIcon(node, activePinId)
                 if (icon) {
                   return (
                     <Marker
-                      key={pin.id}
+                      key={node.id}
                       icon={icon}
                       position={[
-                        pin.frontmatter.latitude,
-                        pin.frontmatter.longitude,
+                        node.frontmatter.latitude,
+                        node.frontmatter.longitude,
                       ]}
                       riseOnHover={true}
                       onClick={() => {
-                        setActivePinId(pin.id);
+                        setActivePinId(node.id);
                         navigate(
-                          "/map/"+pin.fields.slug,
+                          "/map/"+node.fields.slug,
                           {
                             state: { modal: true },
                           }
@@ -133,17 +133,27 @@ export default (props) => {
                       }}
                     >
                       <Tooltip
-                        className={cn(mapLayout.customTooltip, mapLayout[pin.frontmatter.apposition])}
+                        className={cn(mapLayout.customTooltip, mapLayout[node.frontmatter.apposition])}
                       >
-                        {pin.frontmatter.title}
+                        {node.frontmatter.title}
                       </Tooltip>
                     </Marker>
                   );
+                }
+                const geojson = node.frontmatter.geojson
+                if (geojson) {
+                  const data = JSON.parse(geojson)
+                    return (
+                      <GeoJSON
+                        key={node.id}
+                        data={data}
+                      />
+                    )
                 }
             })}
           </Map>
         </div>
       </div>
     </Layout>
-  );
+                  );
 }
