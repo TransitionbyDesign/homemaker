@@ -38,6 +38,9 @@
   margin: auto;
   
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: palette.$head-bgnd-splash;
     color: palette.$head-text-splash;
     font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
@@ -48,7 +51,6 @@
     flex: 0 0 auto;
 
     .close-link {
-	    float: right;
 	    color: inherit;
       svg {
         width: 1rem;
