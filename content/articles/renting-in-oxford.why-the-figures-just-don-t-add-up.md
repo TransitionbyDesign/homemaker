@@ -6,7 +6,7 @@ apposition: situation
 title: Renting in Oxford. Why the figures just don't add up.
 author: Lucy Warin
 hero_image: ''
-is_published: false
+is_published: true
 
 ---
 \*This article was originally posted on \[**Medium by Lucy Warin**\]([https://medium.com/@lucywarin](https://medium.com/@lucywarin "https://medium.com/@lucywarin"))*
