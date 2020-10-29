@@ -78,11 +78,11 @@ export default (props) => {
         </>
       }>
     <article>
-      <div className={articleTemplateStyles.article__info}>
+      <div className={articleTemplateStyles.info}>
         <h1>{data.frontmatter.title}</h1>
         <h3>{data.frontmatter.date}</h3>
       </div>
-      <div className={cn(articleTemplateStyles.article__body, articleTemplateStyles.heroImage)}>
+      <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
         <p>
           <Img
             fluid={data.frontmatter.hero_image.childImageSharp.fluid}
@@ -93,7 +93,7 @@ export default (props) => {
       {
         !data.frontmatter.video_url? '' :
         <div
-          className={articleTemplateStyles.article__body}>
+          className={articleTemplateStyles.body}>
           <video controls width="100%">
 
             <source src={data.frontmatter.video_url}/>
@@ -104,7 +104,7 @@ export default (props) => {
       {
         !data.frontmatter.audio_url? '' :
         <div
-          className={articleTemplateStyles.article__body}>
+          className={articleTemplateStyles.body}>
           <audio
             controls
             src={data.frontmatter.audio_url}>
@@ -114,10 +114,10 @@ export default (props) => {
         </div>
       }
       <div
-        className={articleTemplateStyles.article__body}
+        className={articleTemplateStyles.body}
         dangerouslySetInnerHTML={{ __html: data.html }}
       ></div>
-      <div className={articleTemplateStyles.article__footer}>
+      <div className={articleTemplateStyles.footer}>
         <h2>
           Written By: {data.frontmatter.author}
         </h2>
