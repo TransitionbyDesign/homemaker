@@ -104,30 +104,32 @@ export default (props) => {
         
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
           <Map settings={mapSettings}>
-            {mapData.map(item => {
-              const pin = item.node
-              const icon = selectIcon(pin, activePinId)
-              if (icon) {
-                return (<Marker
-                          key={pin.id}
-                          icon={icon}
-                          position={[
-                            pin.frontmatter.latitude,
-                            pin.frontmatter.longitude,
-                          ]}
-                          riseOnHover={true}
-                          onClick={() => {
-                            setActivePinId(pin.id);
-                            navigate(
-                              "/map/"+pin.fields.slug,
-                              {
-                                state: { modal: true },
-                              }
-                            )
-                          }}
-                />);
+            {mapData
+              .filter((item) => item?.node?.frontmatter?.is_published)
+              .map(item => {
+                const pin = item.node
+                const icon = selectIcon(pin, activePinId)
+                if (icon) {
+                  return (<Marker
+                            key={pin.id}
+                            icon={icon}
+                            position={[
+                              pin.frontmatter.latitude,
+                              pin.frontmatter.longitude,
+                            ]}
+                            riseOnHover={true}
+                            onClick={() => {
+                              setActivePinId(pin.id);
+                              navigate(
+                                "/map/"+pin.fields.slug,
+                                {
+                                  state: { modal: true },
+                                }
+                              )
+                            }}
+                  />);
                 
-              }
+                }
             })}
           </Map>
         </div>
