@@ -2,12 +2,12 @@ import React from 'react'
 import socialLinkStyles from '../styles/components/socialLink.module.scss';
 import cn from 'classnames';
 
-const SocialLink = ({ logo, alt, to, children }) => (
+const SocialLink = ({ logo, alt, title, to, children }) => (
   <a
     className={socialLinkStyles.link}
-    href={to}>
+    href={to} target="_blank">
     <span className={socialLinkStyles.altText}>{children}</span>
-    <img className={socialLinkStyles.img} src={logo} alt={alt} />
+    <img title={title} className={socialLinkStyles.img} src={logo} alt={alt} />
   </a>
 );
 
