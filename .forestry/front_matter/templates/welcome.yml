@@ -1,16 +1,26 @@
 ---
 label: Welcome Page
 hide_body: true
-display_field: welcome_title
+display_field: header
 fields:
-- name: welcome_title
+- name: header
   type: text
   config:
     required: true
-  label: Welcome title
+  label: Header
   default: Welcome
-  description: This is the title shown on the welcome page
-- name: welcome_text
+  description: This is the text shown on the header bar
+- name: intro
+  type: textarea
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Intro
+  default: Welcome
+  description: This is the (uncolumned) text shown at the top of the welcome page
+- name: text
   type: textarea
   default: ''
   config:
@@ -18,8 +28,13 @@ fields:
     wysiwyg: true
     schema:
       format: html-blocks
-  label: Welcome text
-  description: This text is a site description displayed on the welcome page.
+  label: Text
+  description: This text is in columns below the intro on the welcome page.
+- name: is_published
+  type: boolean
+  label: is published
+  description: If false, no link to the rest of the site will be added.
+  default: false
 - type: field_group
   name: contact
   label: Contact info

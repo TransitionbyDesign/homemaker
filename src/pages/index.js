@@ -25,10 +25,12 @@ export default () => {
     <Layout className={mapLayoutStyles.layout} eventPassThru>
       <div className={mapLayoutStyles.overlay}>
         <Splash
-          header="Welcome"
+          header={welcomeData.header}
           footer={
             <>
-              <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
+              { !welcomeData.is_published? <div/> :
+                <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
+              }
               
               {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
                   logo={}
@@ -55,11 +57,10 @@ export default () => {
             </>
           }
         >
-          <h1>{welcomeData.welcome_title}</h1>
-          
+          <div dangerouslySetInnerHTML={{__html: welcomeData.intro}} />
           <div
             className={splashStyles.columned}
-            dangerouslySetInnerHTML={{__html: welcomeData.welcome_text}} />         
+            dangerouslySetInnerHTML={{__html: welcomeData.text}} />         
         </Splash>
       </div>
     </Layout>
