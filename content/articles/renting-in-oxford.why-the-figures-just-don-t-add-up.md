@@ -27,7 +27,7 @@ Courtesy of Citizens Advice Oxford
 
 The research by Citizens Advice Oxford also looked at the affordability of properties listed for rent on Rightmove and Zoopla. Of the 726 properties within OX1–4 post codes they looked at over two days, only one was affordable to a household using Local Housing Allowance to pay their rent.
 
-![Renting%20in%20Oxford%20Why%20the%20figures%20just%20don't%20add%20u%20fbe6b2cbe7854404ba7724ebf1e6aee1/1_Be1ptWFU339Grvk7eDhFpA.png](Renting%20in%20Oxford%20Why%20the%20figures%20just%20don't%20add%20u%20fbe6b2cbe7854404ba7724ebf1e6aee1/1_Be1ptWFU339Grvk7eDhFpA.png)
+![https://miro.medium.com/max/424/1*Be1ptWFU339Grvk7eDhFpA.png](https://miro.medium.com/max/424/1*Be1ptWFU339Grvk7eDhFpA.png)
 
 _Graphic by Monchu._
 
