@@ -61,3 +61,64 @@
 .disabled {
   pointer-events: none;
 }
+
+.custom-tooltip {
+  border-radius: 0;
+  font-weight: bold;
+}
+
+.situation {
+  color: palette.$head-text-prob !important;
+  background: palette.$head-bgnd-prob !important;
+  border-color: palette.$head-bgnd-prob !important;
+}
+
+.solution {
+  color: palette.$head-text-soln !important;
+  background: palette.$head-bgnd-soln !important;
+  border-color: palette.$head-bgnd-soln !important;
+}
+
+// Style the tooltip tips
+// This is a hacky workaround for not being able to abut an ampersand
+// to `:global`.
+// See https://github.com/css-modules/css-modules/issues/295#issuecomment-404873976
+:global {
+  :local(.custom-tooltip.solution) {
+    &.leaflet-tooltip-left::before {
+      border-left-color: palette.$head-bgnd-soln !important;
+    }
+    &.leaflet-tooltip-right::before {
+      border-right-color: palette.$head-bgnd-soln !important;
+    }
+  }
+  :local(.custom-tooltip.situation) {
+    &.leaflet-tooltip-left::before {
+      border-left-color: palette.$head-bgnd-prob !important;
+    }
+    &.leaflet-tooltip-right::before {
+      border-right-color: palette.$head-bgnd-prob !important;
+    }
+  }
+}
+
+/*
+   leaflet-tooltip-left::before {
+
+    right: 0;
+    margin-right: -12px;
+    border-left-color: red;
+
+} position: absolute;
+    padding: 6px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #222;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgb*/
