@@ -38,12 +38,16 @@ fields:
   label: hero image
   description: Enter hero image for article here
   default: ''
-- name: geojson url
-  type: text
-  label: geojson_url
-  description: Defines the region
+- name: geojson
+  type: textarea
+  default: ''
   config:
-    required: true
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: geojson
+  description: Raw geojson data to associate with this post
 - name: apposition
   type: select
   default: situation
