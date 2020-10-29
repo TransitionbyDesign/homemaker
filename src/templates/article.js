@@ -95,13 +95,12 @@ export default (props) => {
         <div
           className={articleTemplateStyles.video}>
           <video controls width="100%">
-
-            <source src={data.frontmatter.video_url}/>
-            Sorry, your browser doesn't support embedded videos.
+            <source src={data.frontmatter.video_url+'#t=0.0001'}/>
+              Sorry, your browser doesn't support embedded videos.
           </video>
         </div>
       }
-      {
+    {
         !data.frontmatter.audio_url? '' :
         <div
           className={articleTemplateStyles.audio}>
