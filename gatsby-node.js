@@ -32,6 +32,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              is_published
+            }
           }
         }
       }
@@ -43,6 +46,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
   
   // Create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach(edge => {
+    if (!edge.node.frontmatter.is_published)
+      return;
     const fields = edge.node.fields;
     createPage({
       component: template,
