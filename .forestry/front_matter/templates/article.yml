@@ -82,3 +82,5 @@ fields:
   description: If true, the article will be included on the website; if false the
     article will be omitted.
   default: false
+pages:
+- content/articles/renting-in-oxford.why-the-figures-just-don-t-add-up.md
