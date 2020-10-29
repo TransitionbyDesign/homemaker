@@ -144,6 +144,9 @@ a.button:hover {
       background: palette.$btn-bgnd-prob;
       color: palette.$btn-text-prob;
     }
+    a.button:hover {
+      background: palette.$head-bgnd-prob;
+    }
     header {
       color: palette.$head-text-prob;
       background: palette.$head-bgnd-prob;
@@ -168,6 +171,9 @@ a.button:hover {
     .button {
       background: palette.$btn-bgnd-soln;
       color: palette.$btn-text-soln;
+    }
+    a.button:hover {
+      background: palette.$head-bgnd-soln;
     }
     header {
       color: palette.$head-text-soln;
