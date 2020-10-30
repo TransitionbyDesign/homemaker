@@ -19,7 +19,7 @@ import L from 'leaflet';
 
 const mapSettings = {
   center: [51.7522, -1.2560],
-  zoom: 12,
+  zoom: 13,
   minZoom: 12,
 };
 const pinSize = 32;
