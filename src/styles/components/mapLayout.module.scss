@@ -62,6 +62,22 @@
   pointer-events: none;
 }
 
+.custom-region {
+  fill-opacity: 50%;
+  stroke-width: 0;
+  &.situation {
+    fill: palette.$region-fill-prob;
+    stroke: palette.$region-stroke-prob;
+  }
+  &.solution {
+    fill: palette.$region-fill-soln;
+    stroke: palette.$region-stroke-soln;
+  }
+}
+.custom-region:hover {
+  stroke-width: 0.05rem;
+}
+
 .custom-tooltip {
   border-radius: 0;
   font-weight: bold;

@@ -143,17 +143,36 @@ export default (props) => {
                 const geojson = node.frontmatter.geojson
                 if (geojson) {
                   const data = JSON.parse(geojson)
-                    return (
-                      <GeoJSON
-                        key={node.id}
-                        data={data}
-                      />
-                    )
+                  return (
+                    <GeoJSON
+                      key={node.id}
+                      data={data}
+                      style={() => ({
+                        className: cn(mapLayout.customRegion,
+                                      mapLayout[node.frontmatter.apposition])
+                      })}
+                      onClick={() => {
+                        setActivePinId(null);
+                        navigate(
+                          "/map/"+node.fields.slug,
+                          {
+                            state: { modal: true },
+                          }
+                        )
+                      }}
+                    >
+                      <Tooltip
+                        className={cn(mapLayout.customTooltip, mapLayout[node.frontmatter.apposition])}
+                      >
+                        {node.frontmatter.title}
+                      </Tooltip>
+                    </GeoJSON>
+                  )
                 }
             })}
           </Map>
         </div>
       </div>
     </Layout>
-                  );
+  );
 }
