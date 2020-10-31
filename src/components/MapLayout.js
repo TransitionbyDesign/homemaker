@@ -115,78 +115,78 @@ export default (props) => {
 	            minZoom='0'
 	            maxZoom='20'
 	            ext='png'
-            />
-            {mapData
-              .filter((item) => item?.node?.frontmatter?.is_published)
-              .map(item => {
-                const node = item.node
-                const icon = selectIcon(node, activePinId)
-                if (icon) {
-                  return (
-                    <Marker
-                      key={node.id}
-                      icon={icon}
-                      position={[
-                        node.frontmatter.latitude,
-                        node.frontmatter.longitude,
-                      ]}
-                      riseOnHover={true}
-                      onClick={(e) => {
-                        setActivePinId(node.id);
-                        const classList = e.target.getElement().classList
-                        classList.add(mapLayout.active);
-                        console.log("classList", classList)
-                        
-                        /*navigate(
-                          "/map/"+node.fields.slug,
-                          {
-                            state: { modal: true },
-                          }
-                        )*/
-                      }}
-                    >
-                      <Popup
-                        className={cn(mapLayout.customPopup, mapLayout[node.frontmatter.apposition])}
+              />
+              {mapData
+                .filter((item) => item?.node?.frontmatter?.is_published)
+                .map(item => {
+                  const node = item.node
+                  const icon = selectIcon(node, activePinId)
+                  if (icon) {
+                    return (
+                      <Marker
+                        key={node.id}
+                        icon={icon}
+                        position={[
+                          node.frontmatter.latitude,
+                          node.frontmatter.longitude,
+                        ]}
+                        riseOnHover={true}
+                        onClick={(e) => {
+                          setActivePinId(node.id);
+                          const classList = e.target.getElement().classList
+                          classList.add(mapLayout.active);
+                          console.log("classList", classList)
+                          
+                          /*navigate(
+                             "/map/"+node.fields.slug,
+                             {
+                             state: { modal: true },
+                             }
+                             )*/
+                        }}
                       >
-                        <header>{node.frontmatter.title}</header>
-                        <div>{node.excerpt}</div>
-                        <footer>
-                          footer
-                        </footer>
-                      </Popup>
-                    </Marker>
-                  );
-                }
-                const geojson = node.frontmatter.geojson
-                if (geojson) {
-                  const data = JSON.parse(geojson)
-                  return (
-                    <GeoJSON
-                      key={node.id}
-                      data={data}
-                      style={() => ({
-                        className: cn(mapLayout.customRegion,
-                                      mapLayout[node.frontmatter.apposition])
-                      })}
-                      onClick={() => {
-                        setActivePinId(null);
-                        navigate(
-                          "/map/"+node.fields.slug,
-                          {
-                            state: { modal: true },
-                          }
-                        )
-                      }}
-                    >
-                      <Tooltip
-                        className={cn(mapLayout.customTooltip, mapLayout[node.frontmatter.apposition])}
+                        <Popup
+                          className={cn(mapLayout.customPopup, mapLayout[node.frontmatter.apposition])}
+                        >
+                          <header>{node.frontmatter.title}</header>
+                          <div>{node.excerpt}</div>
+                          <footer>
+                            footer
+                          </footer>
+                        </Popup>
+                      </Marker>
+                    );
+                  }
+                  const geojson = node.frontmatter.geojson
+                  if (geojson) {
+                    const data = JSON.parse(geojson)
+                    return (
+                      <GeoJSON
+                        key={node.id}
+                        data={data}
+                        style={() => ({
+                          className: cn(mapLayout.customRegion,
+                                        mapLayout[node.frontmatter.apposition])
+                        })}
+                        onClick={() => {
+                          setActivePinId(null);
+                          navigate(
+                            "/map/"+node.fields.slug,
+                            {
+                              state: { modal: true },
+                            }
+                          )
+                        }}
                       >
-                        {node.frontmatter.title}
-                      </Tooltip>
-                    </GeoJSON>
-                  )
-                }
-            })}
+                        <Tooltip
+                          className={cn(mapLayout.customTooltip, mapLayout[node.frontmatter.apposition])}
+                        >
+                          {node.frontmatter.title}
+                        </Tooltip>
+                      </GeoJSON>
+                    )
+                  }
+              })}
           </Map>
         </div>
       </div>
