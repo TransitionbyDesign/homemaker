@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import articleTemplateStyles from "../styles/templates/article.module.scss"
 import { useLocation } from '@reach/router'
 import ModalPage from '../components/ModalPage'
-import splashStyles from '../styles/components/splash.module.scss';
+import windowStyles from '../styles/components/window.module.scss';
 import SocialLink from "../components/SocialLink"
 import twitterIcon from "../icons/social_icon_twitter.svg"
 import linkedInIcon from "../icons/social_icon_linkedin.svg"
@@ -45,21 +45,21 @@ export default (props) => {
 
   return (
     <ModalPage
-      className={splashStyles[data.frontmatter.apposition]}
+      className={windowStyles[data.frontmatter.apposition]}
       header={data.frontmatter.title}
       footer={
         <>
-          <Link to="/map" className={splashStyles.button}>BACK TO MAP</Link>
+          <Link to="/map" className={windowStyles.button}>BACK TO MAP</Link>
           {/*<SocialLink to={`mailto:${infoData.contact.email}`}
               logo={}
               >
               Email: {infoData.contact.email}
               </SocialLink>*/}
-        <div className={splashStyles.linkIcons}>
-          <SocialLink to={tweetLink(data.frontmatter.title, location)}
-            logo={twitterIcon} alt="Twitter"
-            title="Click to tweet"
-          >
+          <div className={windowStyles.linkIcons}>
+            <SocialLink to={tweetLink(data.frontmatter.title, location)}
+              logo={twitterIcon} alt="Twitter"
+              title="Click to tweet"
+            >
             Click to Share
           </SocialLink>
           <SocialLink to={facebookLink(location)}

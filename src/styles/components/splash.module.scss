@@ -2,9 +2,20 @@
 @use 'layout';
 @use '../partials/common';
 
+.close-link {
+	color: inherit;
+  svg {
+    width: 1rem;
+  }
+  color: inherit;
+}
+.close-link:hover {
+  text-decoration: none;      
+}
+
 // This goes around the inner-wrapper div
 // It provides a frame in which the inner-wrapper can expand to fit.
-.outer-wrapper {
+.wrapper {
   position: static;
   pointer-events: auto;
   width: 100%;
@@ -17,196 +28,4 @@
   svg {
     fill: currentColor;
   }
-}
-
-// The inner-wrapper div is the modal box, containing the header, footer, and content.
-// It should not expand off-screen.
-.inner-wrapper {
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  background: palette.$bgnd-splash;
-  color: palette.$text-splash;
-  @include common.drop-shadow;
-  @include layout.all-media(modal-max-width)
-  using($mw) {
-    max-width: $mw;
-  }
-
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: palette.$head-bgnd-splash;
-    color: palette.$head-text-splash;
-    font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.5em;
-    padding: 1rem 1rem;
-    margin: 0;
-    flex: 0 0 auto;
-
-    .close-link {
-	    color: inherit;
-      svg {
-        width: 1rem;
-      }
-    }
-    .close-link:hover {
-      text-decoration: none;      
-    }
-  }
-    
-  footer {
-    display: flex;
-    padding: 0.5rem 0 0.7rem 0;
-    margin: 0.5rem 1rem 0 1rem;
-    border-top: solid palette.$footer-border-splash 0.1rem;
-    flex: 0 0 auto;
-    justify-content: space-between;
-    
-    .button {
-      padding: 0.2rem 1rem;
-      margin: 0;
-    }
-  }
-    
-  h1 {
-    position: relative;
-    padding: 1rem;
-    
-    // Inserts an underline below the header
-    &:after {
-      content: '';
-      height: 1px;
-      background: palette.$text-splash;
-      position: absolute;
-      bottom: 0;
-    }
-    
-    @include layout.all-media(header-underline-width)
-    using($huw) {
-      &:after {
-        width: $huw;
-        left: (100% - $huw)/2;
-      }
-    }
-  }
-  
-  h1,h2,h3,h4,h5,h6 {
-    margin-top: 2rem;
-    text-align: center;
-    font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
-    font-weight: bold;
-  }
-
-  hr {
-    border-color: palette.$text-splash;
-    background: palette.$text-splash;
-  }
-
-  .button {
-    margin: 0 auto;
-    line-height: 2rem;
-    background: palette.$btn-bgnd-splash;
-    color: palette.$btn-text-splash;
-    border: 0;
-    padding: 1rem;
-    border-radius: 0.3em;
-    font-weight: bold;
-  }
-}
-
-
-a.button:hover {
-  text-decoration: none;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  margin: 0;
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-.situation {
-  .inner-wrapper {
-    color: palette.$text-prob;
-    background: palette.$bgnd-prob;
-
-    .button {
-      background: palette.$btn-bgnd-prob;
-      color: palette.$btn-text-prob;
-    }
-    a.button:hover {
-      background: palette.$head-bgnd-prob;
-    }
-    header {
-      color: palette.$head-text-prob;
-      background: palette.$head-bgnd-prob;
-    }
-    h1 {
-      // Inserts an underline below the header
-      &:after {
-        background: palette.$head-bgnd-prob;
-      }
-    }
-    footer {
-      border-top-color: palette.$head-bgnd-prob;
-    }
-  }
-}
-
-.solution {
-  .inner-wrapper {
-    color: palette.$text-soln;
-    background: palette.$bgnd-soln;
-
-    .button {
-      background: palette.$btn-bgnd-soln;
-      color: palette.$btn-text-soln;
-    }
-    a.button:hover {
-      background: palette.$head-bgnd-soln;
-    }
-    header {
-      color: palette.$head-text-soln;
-      background: palette.$head-bgnd-soln;
-    }
-    h1 {
-      // Inserts an underline below the header
-      &:after {
-        background: palette.$head-bgnd-soln;
-      }
-    }
-    footer {
-      border-top-color: palette.$head-bgnd-soln;
-    }
-  }
-}
-
-
-// Columned text wrapper - adjusts nuber depending on media width
-.columned {
-  column-gap: 2rem;
-  margin-bottom: 2rem;
-  column-count: 1;
-
-  @media (min-width: 768px) {
-    column-count: 2;
-  }
-  @media (min-width: 1280px) {
-    column-count: 3;
-  }
-}
-
-.link-icons {
-  display: flex;
-  align-items: center;
 }
