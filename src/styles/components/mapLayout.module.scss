@@ -78,7 +78,7 @@
   stroke-width: 0.05rem;
 }
 
-.custom-tooltip {
+.custom-popup {
   border-radius: 0;
   font-weight: bold;
 }
@@ -100,22 +100,40 @@
 // to `:global`.
 // See https://github.com/css-modules/css-modules/issues/295#issuecomment-404873976
 :global {
-  :local(.custom-tooltip.solution) {
-    &.leaflet-tooltip-left::before {
-      border-left-color: palette.$head-bgnd-soln !important;
+  :local(.situation) {
+    .leaflet-popup-content-wrapper {
+      :local(header) {
+        border-radius: unset;
+        font-weight: bold;
+        font-size: 1rem;
+        font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+      }
     }
-    &.leaflet-tooltip-right::before {
-      border-right-color: palette.$head-bgnd-soln !important;
+    .leaflet-popup-content-wrapper,.leaflet-popup-tip {
+      :local(header) {
+        color: palette.$head-text-prob;
+        background: palette.$head-bgnd-prob;
+        border-color: palette.$head-bgnd-prob;
+      }
     }
   }
-  :local(.custom-tooltip.situation) {
-    &.leaflet-tooltip-left::before {
-      border-left-color: palette.$head-bgnd-prob !important;
-    }
-    &.leaflet-tooltip-right::before {
-      border-right-color: palette.$head-bgnd-prob !important;
-    }
+  
+  //  :local(.custom-tooltip.solution) {
+  .leaflet-tooltip-left::before {
+    border-left-color: palette.$head-bgnd-soln !important;
   }
+  .leaflet-tooltip-right::before {
+    border-right-color: palette.$head-bgnd-soln !important;
+  }
+  //  }
+  //  :local(.custom-tooltip.situation) {
+  .leaflet-tooltip-left::before {
+    border-left-color: palette.$head-bgnd-prob !important;
+  }
+  .leaflet-tooltip-right::before {
+    border-right-color: palette.$head-bgnd-prob !important;
+  }
+  //  }
 }
 
 /*
@@ -137,4 +155,5 @@
     -ms-user-select: none;
     user-select: none;
     pointer-events: none;
-    box-shadow: 0 1px 3px rgb*/
+    box-shadow: 0 1px 3px rgb
+*/

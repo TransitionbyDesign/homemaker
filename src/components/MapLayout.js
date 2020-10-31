@@ -39,6 +39,7 @@ function selectIcon(pin, activePinId) {
   const typeIcons = mediaIcons[apposition];
   if (!typeIcons) return;
 
+  return typeIcons.inactive;
   return pin.id === activePinId?
          typeIcons.active : typeIcons.inactive;
 }
@@ -50,7 +51,7 @@ const newIcon = (url, size) => new L.Icon({
   shadowUrl: shadowIcon,
   shadowSize: [size*1.5, size*0.9],
   shadowAnchor: [size*.75, size*0.9],
-  popupAnchor: [0, 0],
+  popupAnchor: [0, -size],
   tooltipAnchor: [size*0.5, -size*0.6],
   className: mapLayout.customIcon,
 })
@@ -130,21 +131,29 @@ export default (props) => {
                         node.frontmatter.longitude,
                       ]}
                       riseOnHover={true}
-                      onClick={() => {
+                      onClick={(e) => {
                         setActivePinId(node.id);
-                        navigate(
+                        const classList = e.target.getElement().classList
+                        classList.add(mapLayout.active);
+                        console.log("classList", classList)
+                        
+                        /*navigate(
                           "/map/"+node.fields.slug,
                           {
                             state: { modal: true },
                           }
-                        )
+                        )*/
                       }}
                     >
-                      <Tooltip
-                        className={cn(mapLayout.customTooltip, mapLayout[node.frontmatter.apposition])}
+                      <Popup
+                        className={cn(mapLayout.customPopup, mapLayout[node.frontmatter.apposition])}
                       >
-                        {node.frontmatter.title}
-                      </Tooltip>
+                        <header>{node.frontmatter.title}</header>
+                        <div>{node.excerpt}</div>
+                        <footer>
+                          footer
+                        </footer>
+                      </Popup>
                     </Marker>
                   );
                 }
