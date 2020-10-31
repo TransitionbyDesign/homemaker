@@ -85,12 +85,12 @@ export default (props) => {
       {
         !data.frontmatter.hero_image? '' :
         <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
-          <p>
+          <div>
             <Img
               fluid={data.frontmatter.hero_image.childImageSharp.fluid}
               alt={data.frontmatter.title}
             />
-          </p>
+          </div>
         </div>
       }
       {
