@@ -33,7 +33,6 @@
     padding: 1rem 1rem;
     margin: 0;
     flex: 0 0 auto;
-
   }
     
   footer {
@@ -85,10 +84,10 @@
   }
 
   .button {
+    font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
     margin: 0 auto;
     line-height: 2rem;
-    background: palette.$btn-bgnd-splash;
-    color: palette.$btn-text-splash;
     border: 0;
     padding: 1rem;
     border-radius: 0.3em;
@@ -110,8 +109,8 @@ a.button:hover {
   overflow-y: auto;
 }
 
-.situation {
-  .wrapper {
+:global(.situation) {
+  &.wrapper, .wrapper {
     color: palette.$text-prob;
     background: palette.$bgnd-prob;
 
@@ -119,7 +118,7 @@ a.button:hover {
       background: palette.$btn-bgnd-prob;
       color: palette.$btn-text-prob;
     }
-    a.button:hover {
+    .button:hover {
       background: palette.$head-bgnd-prob;
     }
     header, header a {
@@ -138,8 +137,8 @@ a.button:hover {
   }
 }
 
-.solution {
-  .wrapper {
+:global(.solution) {
+  &.wrapper, .wrapper {
     color: palette.$text-soln;
     background: palette.$bgnd-soln;
 
@@ -147,7 +146,7 @@ a.button:hover {
       background: palette.$btn-bgnd-soln;
       color: palette.$btn-text-soln;
     }
-    a.button:hover {
+    .button:hover {
       background: palette.$head-bgnd-soln;
     }
     header, header a {

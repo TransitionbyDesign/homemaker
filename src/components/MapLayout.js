@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
+import CloseIcon from '../components/CloseIcon';
+import Window from '../components/Window';
+import windowStyles from '../styles/components/window.module.scss'
 import { TileLayer, Marker, Popup, Tooltip, GeoJSON } from "react-leaflet";
 import articleIconBlue from "../icons/text_ptr_blue.svg";
 import articleIconPink from "../icons/text_ptr_pink.svg";
@@ -91,6 +94,46 @@ function buildIcons() {
   };
 }
 
+const CustomPopup = ({ className, title, readMoreUrl, children }) => {
+  const popup = useRef(null);
+  const closePopup = () => {
+    // See https://stackoverflow.com/a/54874575/2960236
+    popup.current.leafletElement.options.leaflet.map.closePopup()
+  };
+  return (
+    <Popup
+      ref={popup}
+      className={cn(mapLayout.customPopup, className)}
+    >
+      <Window
+        header={
+          <>
+            <div>{title}</div>
+            <a href="#" onClick={closePopup}><CloseIcon/></a>
+          </>
+        }
+        footer={
+          <a className={windowStyles.button}
+            onClick={() => {
+              closePopup()
+              navigate(
+                readMoreUrl,
+                {
+                  state: { modal: true },
+                }
+              )
+            }}
+          >
+            READ MORE
+          </a>
+        }
+      >
+        {children}
+      </Window>
+    </Popup>
+  );
+}
+
 export default (props) => {
   const [activePinId, setActivePinId] = useState(null)
   // This window check is a work-around to some leaflet issues
@@ -131,29 +174,20 @@ export default (props) => {
                           node.frontmatter.longitude,
                         ]}
                         riseOnHover={true}
+                        closeButton={false}
                         onClick={(e) => {
                           setActivePinId(node.id);
                           const classList = e.target.getElement().classList
                           classList.add(mapLayout.active);
-                          console.log("classList", classList)
-                          
-                          /*navigate(
-                             "/map/"+node.fields.slug,
-                             {
-                             state: { modal: true },
-                             }
-                             )*/
                         }}
                       >
-                        <Popup
-                          className={cn(mapLayout.customPopup, mapLayout[node.frontmatter.apposition])}
+                        <CustomPopup
+                          className={node.frontmatter.apposition}
+                          title={node.frontmatter.title}
+                          readMoreUrl={"/map/"+node.fields.slug}
                         >
-                          <header>{node.frontmatter.title}</header>
-                          <div>{node.excerpt}</div>
-                          <footer>
-                            footer
-                          </footer>
-                        </Popup>
+                          {node.excerpt}
+                        </CustomPopup>
                       </Marker>
                     );
                   }
@@ -166,23 +200,16 @@ export default (props) => {
                         data={data}
                         style={() => ({
                           className: cn(mapLayout.customRegion,
-                                        mapLayout[node.frontmatter.apposition])
+                                        node.frontmatter.apposition)
                         })}
-                        onClick={() => {
-                          setActivePinId(null);
-                          navigate(
-                            "/map/"+node.fields.slug,
-                            {
-                              state: { modal: true },
-                            }
-                          )
+                        onClick={(e) => {
+                          const classList = e.target.getLayers()[0].getElement().classList
+                          classList.add(mapLayout.active);
                         }}
                       >
-                        <Tooltip
-                          className={cn(mapLayout.customTooltip, mapLayout[node.frontmatter.apposition])}
-                        >
-                          {node.frontmatter.title}
-                        </Tooltip>
+                        <CustomPopup
+                          node={node}
+                        />
                       </GeoJSON>
                     )
                   }

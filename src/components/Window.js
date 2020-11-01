@@ -4,7 +4,7 @@ import window from '../styles/components/window.module.scss';
 import cn from 'classnames';
 
 const Window = ({ header, footer, children, className }) => (
-  <div className={window.wrapper}>
+  <div className={cn(className, window.wrapper)}>
     <header className={window.header}>
       {header}
     </header>

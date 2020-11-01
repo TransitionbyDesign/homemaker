@@ -6,7 +6,7 @@ import CloseIcon from './CloseIcon'
 import cn from 'classnames';
 
 const Splash = ({ header, footer, children, closeTo, className }) => (
-  <div className={cn(className, splash.wrapper)}>
+  <div className={splash.wrapper}>
     <Window
       footer={footer}
       className={className}
