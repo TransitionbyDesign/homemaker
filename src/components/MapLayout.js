@@ -203,18 +203,13 @@ export default (props) => {
                                         node.frontmatter.apposition)
                         })}
                         onClick={(e) => {
-                          console.log("e",e);
                           const classList = e.target.getLayers()[0].getElement().classList
                           classList.add(mapLayout.active);
                         }}
                       >
                         <CustomPopup
-                          className={node.frontmatter.apposition}
-                          title={node.frontmatter.title}
-                          readMoreUrl={"/map/"+node.fields.slug}
-                        >
-                          {node.excerpt}
-                        </CustomPopup>
+                          node={node}
+                        />
                       </GeoJSON>
                     )
                   }
