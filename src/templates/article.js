@@ -45,7 +45,7 @@ export default (props) => {
 
   return (
     <ModalPage
-      className={windowStyles[data.frontmatter.apposition]}
+      className={data.frontmatter.apposition}
       header={data.frontmatter.title}
       footer={
         <>

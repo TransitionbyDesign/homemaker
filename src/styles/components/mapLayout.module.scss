@@ -55,7 +55,11 @@
 }
 .modal .overlay {
   pointer-events: all; // Prevent events getting through
-  background: palette.$transparent_gradient;
+  background: palette.$transparent_gradient !important;
+}
+
+.active {
+  --dummy: unset; // Only present to prevent this class being optimised away
 }
 
 .disabled {
@@ -89,52 +93,104 @@
   border-color: palette.$head-bgnd-prob !important;
 }
 
-.solution {
-  color: palette.$head-text-soln !important;
-  background: palette.$head-bgnd-soln !important;
-  border-color: palette.$head-bgnd-soln !important;
-}
-
-// Style the tooltip tips
-// This is a hacky workaround for not being able to abut an ampersand
-// to `:global`.
-// See https://github.com/css-modules/css-modules/issues/295#issuecomment-404873976
 :global {
-  :local(.situation) {
-    .leaflet-popup-content-wrapper {
-      :local(header) {
-        border-radius: unset;
-        font-weight: bold;
-        font-size: 1rem;
-        font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
-      }
+
+  // This is a hacky workaround for not being able to abut an ampersand
+  // to `:global`.
+  // See https://github.com/css-modules/css-modules/issues/295#issuecomment-404873976
+  :local(.custom-region) {
+    fill-opacity: 50%;
+    stroke-width: 0;
+    &.situation  {
+      fill: palette.$region-fill-prob;
+      stroke: palette.$region-stroke-prob;
     }
-    .leaflet-popup-content-wrapper,.leaflet-popup-tip {
+    &.solution {
+      fill: palette.$region-fill-soln;
+      stroke: palette.$region-stroke-soln;
+    }
+  }
+
+  .situation {
+    color: palette.$head-text-prob;
+    background: palette.$head-bgnd-prob;
+    border-color: palette.$head-bgnd-prob;
+    .leaflet-popup-content-wrapper {
       :local(header) {
         color: palette.$head-text-prob;
         background: palette.$head-bgnd-prob;
         border-color: palette.$head-bgnd-prob;
+        font-weight: bold;
+        font-size: 1rem;
+        font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+        a {
+          color: inherit;
+          margin: 0.5rem;
+        }
       }
+    }
+    .leaflet-popup-content-wrapper,.leaflet-popup-tip {
+      color: palette.$text-prob;
+      background: palette.$bgnd-prob;
+      border-color: palette.$bgnd-prob;
     }
   }
   
-  //  :local(.custom-tooltip.solution) {
-  .leaflet-tooltip-left::before {
-    border-left-color: palette.$head-bgnd-soln !important;
+  .solution {
+    color: palette.$head-text-soln;
+    background: palette.$head-bgnd-soln;
+    border-color: palette.$head-bgnd-soln;
+    .leaflet-popup-content-wrapper {
+      :local(header) {
+        color: palette.$head-text-soln;
+        background: palette.$head-bgnd-soln;
+        border-color: palette.$head-bgnd-soln;
+        font-weight: bold;
+        font-size: 1rem;
+        font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+        a {
+          color: inherit;
+          margin: 0.5rem;
+        }
+      }
+    }
+    .leaflet-popup-content-wrapper,.leaflet-popup-tip {
+      color: palette.$text-soln;
+      background: palette.$bgnd-soln;
+      border-color: palette.$bgnd-soln;
+    }
   }
-  .leaflet-tooltip-right::before {
-    border-right-color: palette.$head-bgnd-soln !important;
+  
+  .leaflet-popup-content-wrapper {
+    border-radius: unset !important;
+    padding: 0 !important;
+    font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
   }
-  //  }
-  //  :local(.custom-tooltip.situation) {
-  .leaflet-tooltip-left::before {
-    border-left-color: palette.$head-bgnd-prob !important;
+  
+  .leaflet-popup-close-button {
+    display: none;
   }
-  .leaflet-tooltip-right::before {
-    border-right-color: palette.$head-bgnd-prob !important;
+  
+  .leaflet-popup-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    :local(.outer-wrapper) {
+      width: 100%;
+      height: 100%;
+    }
   }
-  //  }
 }
+
+.custom-region:hover {
+  stroke-width: 0.05rem;
+}
+
+.custom-popup {
+  border-radius: 0;
+  font-weight: bold;
+}
+
+
 
 /*
    leaflet-tooltip-left::before {
