@@ -1,7 +1,5 @@
 ---
-date: 2019-08-13T22:40:32Z
 title: Ne Te Quaesiveris Extra
-author: Ralph Waldo Emerson
 hero_image: "/content/assets/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
 latitude: 51.7317
 longitude: -1.2425

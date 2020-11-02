@@ -1,10 +1,8 @@
 ---
-date: 2020-10-29T12:59:18Z
 latitude: 51.754027
 longitude: -1.261698
 apposition: situation
 title: Renting in Oxford. Why the figures just don't add up.
-author: Lucy Warin
 hero_image: ''
 is_published: true
 
