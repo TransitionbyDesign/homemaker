@@ -109,6 +109,18 @@ a.button:hover {
   overflow-y: auto;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
 :global(.situation) {
   &.wrapper, .wrapper {
     color: palette.$text-prob;

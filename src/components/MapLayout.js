@@ -17,6 +17,7 @@ import shadowIcon from "../icons/shadow_ptr.svg";
 import useMapData from "../static_queries/useMapData"
 import cn from 'classnames';
 import L from 'leaflet';
+import Img from 'gatsby-image'
 
 // The map content is defined here as it's the same wherever the map is used.
 
@@ -94,16 +95,21 @@ function buildIcons() {
   };
 }
 
-const CustomPopup = ({ className, title, readMoreUrl, children }) => {
+const CustomPopup = ({ node }) => {
   const popup = useRef(null);
   const closePopup = () => {
     // See https://stackoverflow.com/a/54874575/2960236
     popup.current.leafletElement.options.leaflet.map.closePopup()
   };
+  const image = node.frontmatter?.hero_image?.childImageSharp?.fluid
+  const audio = node.frontmatter.audio_url
+  const video = node.frontmatter.video_url
+  const title = node.frontmatter.title
+  const readMoreUrl = "/map/"+node.fields.slug;
   return (
     <Popup
       ref={popup}
-      className={cn(mapLayout.customPopup, className)}
+      className={cn(mapLayout.customPopup, node.frontmatter.apposition)}
     >
       <Window
         header={
@@ -128,7 +134,41 @@ const CustomPopup = ({ className, title, readMoreUrl, children }) => {
           </a>
         }
       >
-        {children}
+        <div className={windowStyles.col}>
+          <div className={windowStyles.row}>
+            { (video || audio || !image)? '' :
+              <div className={mapLayout.heroWrapper}>
+                <Img className={mapLayout.hero}
+                  fluid={image}
+                  alt={title}
+                />
+              </div>
+            }
+            {
+              !video? '' :
+              <div
+                className={windowStyles.video}>
+                <video controls width="100%">
+                  <source src={node.frontmatter.video_url+'#t=0.0001'}/>
+                  Sorry, your browser doesn't support embedded videos.
+                </video>
+              </div>
+            }
+            {
+              !audio? '' :
+              <div
+                className={windowStyles.audio}>
+                <audio
+                  controls
+                  src={node.frontmatter.audio_url}>
+                  Your browser does not support the
+                  <code>audio</code> element.
+                </audio>
+              </div>
+            }
+          </div>
+          <div>{node.excerpt}</div>
+        </div>
       </Window>
     </Popup>
   );
@@ -182,12 +222,8 @@ export default (props) => {
                         }}
                       >
                         <CustomPopup
-                          className={node.frontmatter.apposition}
-                          title={node.frontmatter.title}
-                          readMoreUrl={"/map/"+node.fields.slug}
-                        >
-                          {node.excerpt}
-                        </CustomPopup>
+                          node={node}
+                        />
                       </Marker>
                     );
                   }

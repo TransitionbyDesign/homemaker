@@ -13,6 +13,8 @@ export default function useMapData() {
               title
               latitude
               longitude
+              audio_url
+              video_url
               geojson
               apposition
               is_published
@@ -24,7 +26,7 @@ export default function useMapData() {
                 }
               }
             }
-            excerpt(pruneLength: 200)
+            excerpt(pruneLength: 150)
             fields {
               slug
               media

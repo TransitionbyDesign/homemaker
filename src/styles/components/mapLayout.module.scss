@@ -93,6 +93,31 @@
   border-color: palette.$head-bgnd-prob !important;
 }
 
+.hero-wrapper {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    min-height: 100%;
+  }
+  div {
+    picture {
+      opacity: 1;
+      -webkit-transition: opacity .3s ease;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
 :global {
 
   // This is a hacky workaround for not being able to abut an ampersand
@@ -162,9 +187,14 @@
   }
   
   .leaflet-popup-content-wrapper {
+    width: 20rem;
     border-radius: unset !important;
     padding: 0 !important;
     font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  .leaflet-popup-content {
+    width: 100% !important; // to fit wrapper despite leaflet's style attr
   }
   
   .leaflet-popup-close-button {
