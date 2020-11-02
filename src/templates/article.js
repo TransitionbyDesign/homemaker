@@ -82,9 +82,6 @@ export default (props) => {
         </>
       }>
       <article>
-        <div className={articleTemplateStyles.info}>
-          <h1>{data.frontmatter.title}</h1>
-        </div>
         {
           (youtube || !data.frontmatter.hero_image)? '' :
           <div className={cn(articleTemplateStyles.body, articleTemplateStyles.hero)}>
