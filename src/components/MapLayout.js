@@ -13,7 +13,6 @@ import audioIconBlue from "../icons/audio_ptr_blue.svg";
 import audioIconPink from "../icons/audio_ptr_pink.svg";
 import videoIconBlue from "../icons/video_ptr_blue.svg";
 import videoIconPink from "../icons/video_ptr_pink.svg";
-import shadowIcon from "../icons/shadow_ptr.svg";
 import useMapData from "../static_queries/useMapData"
 import cn from 'classnames';
 import L from 'leaflet';
@@ -52,9 +51,6 @@ const newIcon = (url, size) => new L.Icon({
   iconUrl: url,
   iconSize: [size, size],
   iconAnchor: [size/2, size],
-  shadowUrl: shadowIcon,
-  shadowSize: [size*1.5, size*0.9],
-  shadowAnchor: [size*.75, size*0.9],
   popupAnchor: [0, -size],
   tooltipAnchor: [size*0.5, -size*0.6],
   className: mapLayout.customMarker,
