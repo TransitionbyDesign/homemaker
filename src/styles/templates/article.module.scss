@@ -1,3 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+}
+.left {
+  width: 50%;
+  display: flex;
+  flex: 0 0 auto;
+  overflow-y: scroll;
+}
+.right {
+  width: 50%;
+  display: flex;  
+  flex: 0 0 auto;
+  padding: 0;
+  padding-left: 1rem;
+  overflow: hidden;
+}
+
+
 .article {
   h1 {
     margin-bottom: 0.7rem;
@@ -5,10 +28,8 @@
 }
 
 .hero {
-  min-height: 300px;
   width: 100%;
   margin: 0;
-  height: 75vh;
   
   img {
     min-width: 100%;
@@ -18,26 +39,13 @@
   }
 }
 
-.info {
-  padding: 1.5rem 1.25rem;
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  h1 {
-    margin-bottom: 0.66rem;
-  }
-  h3 {
-    margin-bottom: 0;
-  }
-}
-
 .body {
   width: 100%;
-  padding: 0 1.25rem;
+  padding: 0 1rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   a {
     padding-bottom: 1.5rem;
   }
@@ -75,32 +83,12 @@
   margin-bottom: 1rem;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 1.25rem;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  h2 {
-    margin-bottom: 0;
-  }
-  a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
 @media (min-width: 768px) {
   .article {
     display: flex;
     flex-direction: column;
   }
   .body {
-    max-width: 800px;
-    padding: 0 2rem;
     h1, h2, h3, h4, h5, h6 {
       padding: 1.5rem;
     }
@@ -114,33 +102,9 @@
     }
   }
   .hero {
-    min-height: 600px;
-    height: 75vh;
     img {
       min-width: 100%;
     }
   }
-  .info {
-    text-align: center;
-    padding: 2rem 0;
-    h1 {
-      max-width: 500px;
-      margin: 0 auto 0.66rem auto;
-    }
-  }
-  .footer {
-    padding: 2.25rem;
-  }
 }
 
-@media (min-width: 1440px) {
-  .hero {
-    height: 70vh;
-  }
-  .info {
-    padding: 3rem 0;
-  }
-  .footer {
-    padding: 2rem 2rem 3rem 2rem;
-  }
-}
