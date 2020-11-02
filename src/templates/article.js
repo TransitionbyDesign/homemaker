@@ -60,71 +60,71 @@ export default (props) => {
               logo={twitterIcon} alt="Twitter"
               title="Click to tweet"
             >
-            Click to Share
-          </SocialLink>
-          <SocialLink to={facebookLink(location)}
-            logo={facebookIcon} alt="Facebook"
-            title="Click to post on Facebook"
-          >
-            Click to Share
-          </SocialLink>
-          <SocialLink to={linkedInLink(data.frontmatter.title, location)}
-            logo={linkedInIcon} alt="Linked In"
-            title="Click to post on LinkedIn"
-          >
-            Click to Share
-          </SocialLink>
-        </div>
+              Click to Share
+            </SocialLink>
+            <SocialLink to={facebookLink(location)}
+              logo={facebookIcon} alt="Facebook"
+              title="Click to post on Facebook"
+            >
+              Click to Share
+            </SocialLink>
+            <SocialLink to={linkedInLink(data.frontmatter.title, location)}
+              logo={linkedInIcon} alt="Linked In"
+              title="Click to post on LinkedIn"
+            >
+              Click to Share
+            </SocialLink>
+          </div>
         </>
       }>
-    <article>
-      <div className={articleTemplateStyles.info}>
-        <h1>{data.frontmatter.title}</h1>
-        <h3>{data.frontmatter.date}</h3>
-      </div>
-      {
-        !data.frontmatter.hero_image? '' :
-        <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
-          <div>
-            <Img
-              fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-              alt={data.frontmatter.title}
-            />
+      <article>
+        <div className={articleTemplateStyles.info}>
+          <h1>{data.frontmatter.title}</h1>
+          <h3>{data.frontmatter.date}</h3>
+        </div>
+        {
+          !data.frontmatter.hero_image? '' :
+          <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
+            <div>
+              <Img
+                fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+                alt={data.frontmatter.title}
+              />
+            </div>
           </div>
-        </div>
-      }
-      {
-        !data.frontmatter.video_url? '' :
-        <div
-          className={articleTemplateStyles.video}>
-          <video controls width="100%">
-            <source src={data.frontmatter.video_url+'#t=0.0001'}/>
+        }
+        {
+          !data.frontmatter.video_url? '' :
+          <div
+            className={articleTemplateStyles.video}>
+            <video controls width="100%">
+              <source src={data.frontmatter.video_url+'#t=0.0001'}/>
               Sorry, your browser doesn't support embedded videos.
-          </video>
-        </div>
-      }
-      {
-        !data.frontmatter.audio_url? '' :
+            </video>
+          </div>
+        }
+        {
+          !data.frontmatter.audio_url? '' :
+          <div
+            className={articleTemplateStyles.audio}>
+            <audio
+              controls
+              src={data.frontmatter.audio_url}>
+              Your browser does not support the
+              <code>audio</code> element.
+            </audio>
+          </div>
+        }
         <div
-          className={articleTemplateStyles.audio}>
-          <audio
-            controls
-            src={data.frontmatter.audio_url}>
-            Your browser does not support the
-            <code>audio</code> element.
-          </audio>
+          className={articleTemplateStyles.body}
+          dangerouslySetInnerHTML={{ __html: data.html }}
+        ></div>
+        <div className={articleTemplateStyles.footer}>
+          <h2>
+            Written By: {data.frontmatter.author}
+          </h2>
         </div>
-      }
-      <div
-        className={articleTemplateStyles.body}
-        dangerouslySetInnerHTML={{ __html: data.html }}
-      ></div>
-      <div className={articleTemplateStyles.footer}>
-        <h2>
-          Written By: {data.frontmatter.author}
-        </h2>
-      </div>
-    </article>      
+      </article>      
     </ModalPage>
   )
 }
