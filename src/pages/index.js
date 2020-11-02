@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router'
 import Layout from "../components/Layout"
 import Splash from "../components/Splash"
 import SocialLink from "../components/SocialLink"
-import splashStyles from "../styles/components/splash.module.scss"
+import windowStyles from "../styles/components/window.module.scss"
 import mapLayoutStyles from "../styles/components/mapLayout.module.scss"
 import landingStyles from "../styles/pages/landing.module.scss"
 import useSiteMetaData from "../static_queries/useSiteMetadata"
@@ -29,7 +29,7 @@ export default () => {
           footer={
             <>
               { !welcomeData.is_published? <div/> :
-                <Link to="/map" className={splashStyles.button}>EXPLORE THE MAP</Link>
+                <Link to="/map" className={windowStyles.button}>EXPLORE THE MAP</Link>
               }
               
               {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
@@ -37,7 +37,7 @@ export default () => {
                   >
                   Email: {welcomeData.contact.email}
                   </SocialLink>*/}
-              <div className={splashStyles.linkIcons}>
+              <div className={windowStyles.linkIcons}>
                 <SocialLink to={`https://twitter.com/${welcomeData.contact.twitter_handle}`}
                   logo={twitterIcon} alt="Twitter"
                 >
@@ -59,7 +59,7 @@ export default () => {
         >
           <div dangerouslySetInnerHTML={{__html: welcomeData.intro}} />
           <div
-            className={splashStyles.columned}
+            className={windowStyles.columned}
             dangerouslySetInnerHTML={{__html: welcomeData.text}} />         
         </Splash>
       </div>

@@ -27,7 +27,7 @@
     align-items: center;
     background: palette.$head-bgnd-splash;
     color: palette.$head-text-splash;
-    font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
+    font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1.5em;
     padding: 1rem 1rem;
@@ -84,7 +84,7 @@
   }
 
   .button {
-    font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+    font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
     font-weight: bold;
     margin: 0 auto;
     line-height: 2rem;
@@ -92,6 +92,13 @@
     padding: 1rem;
     border-radius: 0.3em;
     font-weight: bold;
+
+    background: palette.$btn-bgnd-splash;
+    color: palette.$btn-text-splash;
+    
+    a.button:hover {
+      background: palette.$head-bgnd-prob;
+    }
   }
 }
 
