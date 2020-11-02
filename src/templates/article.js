@@ -49,16 +49,11 @@ export default (props) => {
 
   return (
     <ModalPage
-    className={data.frontmatter.apposition}
-    header={data.frontmatter.title}
+      className={data.frontmatter.apposition}
+      header={data.frontmatter.title}
       footer={
         <>
           <Link to="/map" className={windowStyles.button}>BACK TO MAP</Link>
-          {/*<SocialLink to={`mailto:${infoData.contact.email}`}
-              logo={}
-              >
-              Email: {infoData.contact.email}
-              </SocialLink>*/}
           <div className={windowStyles.linkIcons}>
             <SocialLink to={tweetLink(data.frontmatter.title, location)}
               logo={twitterIcon} alt="Twitter"
@@ -81,36 +76,34 @@ export default (props) => {
           </div>
         </>
       }>
-      <article>
-        {
-          (youtube || !data.frontmatter.hero_image)? '' :
-          <div className={cn(articleTemplateStyles.body, articleTemplateStyles.hero)}>
-
+      <div className={articleTemplateStyles.wrapper}>
+        <div className={articleTemplateStyles.left}>
+          <div
+            className={articleTemplateStyles.body}
+            dangerouslySetInnerHTML={{ __html: data.html }}
+          ></div>
+        </div>
+        <div className={articleTemplateStyles.right}>
+          {
+            (youtube || !data.frontmatter.hero_image)? '' :
+            <div className={cn(articleTemplateStyles.hero)}>
               <Img
                 fluid={data.frontmatter.hero_image.childImageSharp.fluid}
                 alt={data.frontmatter.title}
               />
-
-          </div>
-        }
-        {
-          !youtube? '' :
-          <div className={articleTemplateStyles.body}>
+            </div>
+          }
+          {
+            !youtube? '' :
             <div className={windowStyles.youtube}>
               <iframe className={windowStyles.aspectRatio} src={youtube}
                 frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
                 allowfullscreen>
               </iframe>
             </div>
-          </div>
-        }
-    <div
-      className={articleTemplateStyles.body}
-      dangerouslySetInnerHTML={{ __html: data.html }}
-    ></div>
-    <div className={articleTemplateStyles.footer}>
-    </div>
-      </article>      
+          }
+        </div>
+      </div>
     </ModalPage>
   )
 }
