@@ -2,7 +2,6 @@
 @use 'layout';
 @use '../partials/common';
 
-
 // The wrapper div is the modal box, containing the header, footer, and content.
 // It should not expand off-screen.
 .wrapper {
@@ -126,6 +125,16 @@ a.button:hover {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+}
+
+.youtube {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  @include common.aspect-ratio(16, 9);
 }
 
 :global(.situation) {

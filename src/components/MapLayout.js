@@ -105,6 +105,7 @@ const CustomPopup = ({ node }) => {
   const audio = node.frontmatter.audio_url
   const video = node.frontmatter.video_url
   const title = node.frontmatter.title
+  const youtube = audio || video || null
   const readMoreUrl = "/map/"+node.fields.slug;
   return (
     <Popup
@@ -145,25 +146,13 @@ const CustomPopup = ({ node }) => {
               </div>
             }
             {
-              !video? '' :
+              !youtube? '' :
               <div
-                className={windowStyles.video}>
-                <video controls width="100%">
-                  <source src={node.frontmatter.video_url+'#t=0.0001'}/>
-                  Sorry, your browser doesn't support embedded videos.
-                </video>
-              </div>
-            }
-            {
-              !audio? '' :
-              <div
-                className={windowStyles.audio}>
-                <audio
-                  controls
-                  src={node.frontmatter.audio_url}>
-                  Your browser does not support the
-                  <code>audio</code> element.
-                </audio>
+                className={windowStyles.youtube}>
+                <iframe className={windowStyles.aspectRatio} src={youtube}
+                  frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
+                  allowfullscreen>
+                </iframe> 
               </div>
             }
           </div>

@@ -42,11 +42,15 @@ export default (props) => {
 
   // This gets the data passed to the template
   const data = props.data.markdownRemark
+  const audio = data.frontmatter.audio_url
+  const video = data.frontmatter.video_url
+  const title = data.frontmatter.title
+  const youtube = audio || video || null
 
   return (
     <ModalPage
-      className={data.frontmatter.apposition}
-      header={data.frontmatter.title}
+    className={data.frontmatter.apposition}
+    header={data.frontmatter.title}
       footer={
         <>
           <Link to="/map" className={windowStyles.button}>BACK TO MAP</Link>
@@ -83,8 +87,8 @@ export default (props) => {
           <h3>{data.frontmatter.date}</h3>
         </div>
         {
-          !data.frontmatter.hero_image? '' :
-          <div className={cn(articleTemplateStyles.body, articleTemplateStyles.heroImage)}>
+          (youtube || !data.frontmatter.hero_image)? '' :
+          <div className={cn(articleTemplateStyles.body, articleTemplateStyles.hero)}>
             <div>
               <Img
                 fluid={data.frontmatter.hero_image.childImageSharp.fluid}
@@ -94,36 +98,26 @@ export default (props) => {
           </div>
         }
         {
-          !data.frontmatter.video_url? '' :
-          <div
-            className={articleTemplateStyles.video}>
-            <video controls width="100%">
-              <source src={data.frontmatter.video_url+'#t=0.0001'}/>
-              Sorry, your browser doesn't support embedded videos.
-            </video>
+          !youtube? '' :
+          <div className={articleTemplateStyles.body}>
+            <div
+              className={windowStyles.youtube}>
+              <iframe className={windowStyles.aspectRatio} src={youtube}
+                frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen>
+              </iframe>
+            </div>
           </div>
         }
-        {
-          !data.frontmatter.audio_url? '' :
-          <div
-            className={articleTemplateStyles.audio}>
-            <audio
-              controls
-              src={data.frontmatter.audio_url}>
-              Your browser does not support the
-              <code>audio</code> element.
-            </audio>
-          </div>
-        }
-        <div
-          className={articleTemplateStyles.body}
-          dangerouslySetInnerHTML={{ __html: data.html }}
-        ></div>
-        <div className={articleTemplateStyles.footer}>
-          <h2>
-            Written By: {data.frontmatter.author}
-          </h2>
-        </div>
+    <div
+      className={articleTemplateStyles.body}
+      dangerouslySetInnerHTML={{ __html: data.html }}
+    ></div>
+    <div className={articleTemplateStyles.footer}>
+      <h2>
+        Written By: {data.frontmatter.author}
+      </h2>
+    </div>
       </article>      
     </ModalPage>
   )
