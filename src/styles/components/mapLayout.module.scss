@@ -53,8 +53,13 @@
   }
 
 }
+
 .modal .overlay {
   pointer-events: all; // Prevent events getting through
+  background: palette.$bgnd-dk-transparent !important;
+}
+
+.modal .welcome {
   background: palette.$transparent_gradient !important;
 }
 
