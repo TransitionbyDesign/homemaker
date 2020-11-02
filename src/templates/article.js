@@ -103,7 +103,7 @@ export default (props) => {
           </video>
         </div>
       }
-    {
+      {
         !data.frontmatter.audio_url? '' :
         <div
           className={articleTemplateStyles.audio}>
