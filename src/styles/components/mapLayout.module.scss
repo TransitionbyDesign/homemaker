@@ -78,8 +78,13 @@
     stroke: palette.$region-stroke-soln;
   }
 }
-.custom-region:hover {
-  stroke-width: 0.05rem;
+
+.custom-marker {
+}
+
+.custom-region:hover, .custom-marker:hover {
+  opacity: 70%;
+  transition: filter 0.2s;
 }
 
 .custom-popup {
