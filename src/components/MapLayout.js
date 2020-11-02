@@ -57,7 +57,7 @@ const newIcon = (url, size) => new L.Icon({
   shadowAnchor: [size*.75, size*0.9],
   popupAnchor: [0, -size],
   tooltipAnchor: [size*0.5, -size*0.6],
-  className: mapLayout.customIcon,
+  className: mapLayout.customMarker,
 })
 
 function buildIcons() {
@@ -202,6 +202,7 @@ export default (props) => {
                           node.frontmatter.latitude,
                           node.frontmatter.longitude,
                         ]}
+                        className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
                         riseOnHover={true}
                         closeButton={false}
                         onClick={(e) => {
