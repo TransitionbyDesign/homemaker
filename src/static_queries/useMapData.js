@@ -20,7 +20,7 @@ export default function useMapData() {
               is_published
               hero_image {
                 childImageSharp {
-                  fluid( maxWidth: 100 ) {
+                  fluid( maxWidth: 288 ) {
                     ...GatsbyImageSharpFluid
                   }
                 }
