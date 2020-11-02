@@ -89,19 +89,18 @@ export default (props) => {
         {
           (youtube || !data.frontmatter.hero_image)? '' :
           <div className={cn(articleTemplateStyles.body, articleTemplateStyles.hero)}>
-            <div>
+
               <Img
                 fluid={data.frontmatter.hero_image.childImageSharp.fluid}
                 alt={data.frontmatter.title}
               />
-            </div>
+
           </div>
         }
         {
           !youtube? '' :
           <div className={articleTemplateStyles.body}>
-            <div
-              className={windowStyles.youtube}>
+            <div className={windowStyles.youtube}>
               <iframe className={windowStyles.aspectRatio} src={youtube}
                 frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
                 allowfullscreen>
