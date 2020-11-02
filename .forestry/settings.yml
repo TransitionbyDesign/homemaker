@@ -9,9 +9,6 @@ sections:
 - type: document
   path: content/data/welcome.json
   label: Welcome Page
-- type: document
-  path: content/data/authors.yaml
-  label: Author List
 - type: directory
   path: content/articles
   label: Articles

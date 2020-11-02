@@ -84,7 +84,6 @@ export default (props) => {
       <article>
         <div className={articleTemplateStyles.info}>
           <h1>{data.frontmatter.title}</h1>
-          <h3>{data.frontmatter.date}</h3>
         </div>
         {
           (youtube || !data.frontmatter.hero_image)? '' :
@@ -113,9 +112,6 @@ export default (props) => {
       dangerouslySetInnerHTML={{ __html: data.html }}
     ></div>
     <div className={articleTemplateStyles.footer}>
-      <h2>
-        Written By: {data.frontmatter.author}
-      </h2>
     </div>
       </article>      
     </ModalPage>
@@ -134,8 +130,6 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
-        author
-        date(formatString: "MMMM Do, YYYY")
         audio_url
         video_url
         apposition

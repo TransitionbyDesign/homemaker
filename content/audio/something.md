@@ -1,7 +1,5 @@
 ---
-date: 2020-10-27T22:42:09.000+00:00
 title: I don't know where they'll put me next
-author: Robert Thoreau
 hero_image: "/content/assets/adrien-olichon--aOsCcTJXWY-unsplash.jpg"
 audio_url: https://www.youtube.com/embed/U3-EOOStzto
 latitude: 51.74576

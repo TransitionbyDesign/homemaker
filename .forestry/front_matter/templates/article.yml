@@ -8,29 +8,6 @@ fields:
   label: title
   config:
     required: true
-- name: author
-  type: select
-  default: ''
-  config:
-    required: true
-    options: []
-    source:
-      type: documents
-      section: author-list
-      file: content/data/authors.yaml
-      path: authors
-  label: author
-  description: Enter author of post
-- name: date
-  type: datetime
-  label: date
-  description: Date post was created
-  config:
-    required: false
-    date_format: 
-    time_format: 
-    display_utc: false
-  default: now
 - name: hero_image
   type: file
   config:

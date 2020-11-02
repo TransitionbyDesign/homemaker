@@ -8,8 +8,6 @@ export default function useMapData() {
           node {
             id
             frontmatter {
-              date(formatString: "MMMM Do, YYYY")
-              author
               title
               latitude
               longitude
