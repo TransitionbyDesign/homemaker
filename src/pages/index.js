@@ -23,7 +23,7 @@ export default () => {
   location.state = { ...location.state = {}, modal: true };
   return (
     <Layout className={mapLayoutStyles.layout} eventPassThru>
-      <div className={mapLayoutStyles.overlay}>
+      <div className={cn(mapLayoutStyles.overlay, mapLayoutStyles.welcome)}>
         <Splash
           header={welcomeData.header}
           footer={

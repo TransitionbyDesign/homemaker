@@ -52,3 +52,5 @@ $transparent_gradient: linear-gradient(90deg,
                                        fade-out($col1, .2) 0%,
                                        fade-out($col3, .2) 57%,
                                        fade-out($col4, .2) 100%);
+$bgnd-dk-transparent: fade-out($bgnd-dk, 0.50);
+
