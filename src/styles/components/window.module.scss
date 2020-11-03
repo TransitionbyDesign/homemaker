@@ -2,6 +2,9 @@
 @use 'layout';
 @use '../partials/common';
 
+$content-pad-side: 2rem;
+$welcome-pad-side: 8%;
+
 // The wrapper div is the modal box, containing the header, footer, and content.
 // It should not expand off-screen.
 .wrapper {
@@ -36,7 +39,7 @@
   footer {
     display: flex;
     padding: 0.8rem 0 0.8rem 0;
-    margin: 0.5rem 2rem 0 2rem;
+    margin: 0.5rem $content-pad-side 0 $content-pad-side;
     border-top: solid palette.$footer-border-splash 0.1rem;
     flex: 0 0 auto;
     justify-content: space-between;
@@ -104,14 +107,21 @@
 a.button:hover {
   text-decoration: none;
 }
-
+             
 .content {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   margin: 0;
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem $content-pad-side 0 $content-pad-side;
   overflow-y: hidden;
+
+}
+
+// Special case on welcome page, increase padding
+.welcome .content > * {
+  padding-left: $welcome-pad-side;
+  padding-right: $welcome-pad-side;
 }
 
 .row {
