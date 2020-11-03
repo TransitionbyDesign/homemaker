@@ -35,8 +35,8 @@
     
   footer {
     display: flex;
-    padding: 0.5rem 0 0.7rem 0;
-    margin: 0.5rem 1rem 0 1rem;
+    padding: 0.8rem 0 0.8rem 0;
+    margin: 0.5rem 2rem 0 2rem;
     border-top: solid palette.$footer-border-splash 0.1rem;
     flex: 0 0 auto;
     justify-content: space-between;
@@ -210,4 +210,6 @@ a.button:hover {
 .link-icons {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-basis: 8.5rem;
 }
