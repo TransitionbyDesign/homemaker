@@ -29,10 +29,7 @@ export default () => {
           header={welcomeData.header}
           footer={
             <>
-              { !welcomeData.is_published? <div/> :
-                <Link to="/map" className={windowStyles.button}>EXPLORE THE MAP</Link>
-              }
-              
+              <div/>
               {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
                   logo={}
                   >
@@ -58,12 +55,17 @@ export default () => {
             </>
           }
         >
-          <div dangerouslySetInnerHTML={{__html: welcomeData.intro}} />
+          <div dangerouslySetInnerHTML={{__html: welcomeData.intro}}/>
+          { !welcomeData.is_published? '' :
+            <div className={windowStyles.introButtons}>
+              <Link to="/map" className={windowStyles.button}>EXPLORE THE MAP</Link>
+            </div>
+          }
           <div
             className={cn(windowStyles.columned)}
-            dangerouslySetInnerHTML={{__html: welcomeData.text}} />         
+            dangerouslySetInnerHTML={{__html: welcomeData.text}} />
         </Splash>
       </div>
     </Layout>
-            )
+  )
 }

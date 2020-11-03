@@ -107,7 +107,12 @@ $welcome-pad-side: 8%;
 a.button:hover {
   text-decoration: none;
 }
-             
+
+.introButtons {
+  display: flex;
+  margin-bottom: 1.45rem;
+}
+
 .content {
   display: flex;
   flex-direction: column;
