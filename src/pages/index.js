@@ -25,6 +25,7 @@ export default () => {
     <Layout className={mapLayoutStyles.layout} eventPassThru>
       <div className={cn(mapLayoutStyles.overlay, mapLayoutStyles.welcome)}>
         <Splash
+          className={windowStyles.welcome}
           header={welcomeData.header}
           footer={
             <>
@@ -59,10 +60,10 @@ export default () => {
         >
           <div dangerouslySetInnerHTML={{__html: welcomeData.intro}} />
           <div
-            className={windowStyles.columned}
+            className={cn(windowStyles.columned)}
             dangerouslySetInnerHTML={{__html: welcomeData.text}} />         
         </Splash>
       </div>
     </Layout>
-  )
+            )
 }
