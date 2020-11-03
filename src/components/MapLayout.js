@@ -13,6 +13,7 @@ import audioIconBlue from "../icons/audio_ptr_blue.svg";
 import audioIconPink from "../icons/audio_ptr_pink.svg";
 import videoIconBlue from "../icons/video_ptr_blue.svg";
 import videoIconPink from "../icons/video_ptr_pink.svg";
+import tbdLogo from "../icons/TbD-logo.svg";
 import useMapData from "../static_queries/useMapData"
 import cn from 'classnames';
 import L from 'leaflet';
@@ -237,6 +238,7 @@ export default (props) => {
                   }
               })}
           </Map>
+          <img className={mapLayout.tbdLogo} src={tbdLogo} />
         </div>
       </div>
     </Layout>
