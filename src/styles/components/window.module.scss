@@ -31,7 +31,7 @@ $welcome-pad-side: 8%;
     color: palette.$head-text-splash;
     font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.5em;
-    padding: 1rem 1rem;
+    padding: 1rem;
     margin: 0;
     flex: 0 0 auto;
 
@@ -210,6 +210,15 @@ a.button:hover {
     }
     footer {
       border-top-color: palette.$head-bgnd-soln;
+    }
+  }
+}
+
+:global(.leaflet-popup-content-wrapper) {
+  :local(.wrapper) {
+    header {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
     }
   }
 }
