@@ -3,6 +3,8 @@
 @use '../partials/common';
 
 $content-pad-side: 2rem;
+$content-pad-top: 2rem;
+$content-pad-bottom: 2rem;
 $welcome-pad-side: 8%;
 
 // The wrapper div is the modal box, containing the header, footer, and content.
@@ -43,7 +45,7 @@ $welcome-pad-side: 8%;
     
   footer {
     display: flex;
-    padding: 0.8rem 0 0.8rem 0;
+    padding: 0.8rem 0 $content-pad-bottom 0;
     margin: 0.5rem $content-pad-side 0 $content-pad-side;
     border-top: solid palette.$footer-border-splash 0.1rem;
     flex: 0 0 auto;
@@ -123,7 +125,7 @@ a.button:hover {
   flex-direction: column;
   flex: 1 1 auto;
   margin: 0;
-  padding: 1rem $content-pad-side 0 $content-pad-side;
+  padding: $content-pad-top $content-pad-side 0 $content-pad-side;
   overflow-y: hidden;
 }
 
