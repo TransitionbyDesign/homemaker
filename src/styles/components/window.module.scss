@@ -125,13 +125,15 @@ a.button:hover {
   margin: 0;
   padding: 1rem $content-pad-side 0 $content-pad-side;
   overflow-y: hidden;
-
 }
 
 // Special case on welcome page, increase padding
-.welcome .content > * {
-  padding-left: $welcome-pad-side;
-  padding-right: $welcome-pad-side;
+.welcome .content {
+  overflow-y: scroll;
+  & > * {
+    padding-left: $welcome-pad-side;
+    padding-right: $welcome-pad-side;
+  }
 }
 
 .row {
