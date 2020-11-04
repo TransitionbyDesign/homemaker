@@ -2,8 +2,11 @@ import React from 'react'
 
 
 export default () => (
-  <svg style={{width: "1em", fill: "currentColor"}} viewBox="0 0 386.667 386.667"
-    xmlns="http://www.w3.org/2000/svg">
-    <path d="m386.667 45.564-45.564-45.564-147.77 147.769-147.769-147.769-45.564 45.564 147.769 147.769-147.769 147.77 45.564 45.564 147.769-147.769 147.769 147.769 45.564-45.564-147.768-147.77z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" style={{
+    fill: "currentColor", stroke: "#fff", strokeLinecap: "round",
+    strokeLinejoin: "round", strokeWidth: "2px",  width: "1em",
+  }}
+    viewBox="0 0 16.4 16.4">
+    <g id="Layer_2" data-name="Layer 2"><g id="comments_feedback" data-name="comments feedback"><line class="cls-1" x1="15.4" y1="1" x2="1" y2="15.4"/><line class="cls-1" x1="1" y1="1" x2="15.4" y2="15.4"/></g></g>
   </svg>
 )
