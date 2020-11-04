@@ -190,7 +190,7 @@ export default (props) => {
                       position={[
                         node.frontmatter.latitude,
                         node.frontmatter.longitude,
-                        ]}
+                      ]}
                       className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
                       riseOnHover={true}
                       closeButton={false}
@@ -219,7 +219,7 @@ export default (props) => {
                       })}
                       onClick={(e) => {
                         const classList = e.target.getLayers()[0].getElement().classList
-                          classList.add(mapLayout.active);
+                        classList.add(mapLayout.active);
                       }}
                     >
                       <CustomPopup
@@ -230,7 +230,10 @@ export default (props) => {
                 }
             })}
           </Map>
-          <img className={mapLayout.tbdLogo} src={tbdLogo} />
+          <Link to="https://transitionbydesign.org/" 
+            target="_blank" className={mapLayout.tbdLogo}>
+            <img src={tbdLogo} alt="Transition by Design Logo"/>
+          </Link>
         </div>
       </div>
     </Layout>

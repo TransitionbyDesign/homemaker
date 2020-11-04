@@ -232,14 +232,15 @@
 }
 
 .tbd-logo {
-  background: transparent;
   position: absolute;
   z-index: 1000; // Above map attribution
   @include layout.all-media(modal-margin-top, nav-margin-top, modal-margin-side, nav-margin-bottom)
   using($h, $t, $s, $b) {
     right: $s;
     bottom: $b;
-    height: 0.6 * ($h - $t - $b);
+    img {
+      height: 0.6 * ($h - $t - $b);
+    }
   }
 }
 
