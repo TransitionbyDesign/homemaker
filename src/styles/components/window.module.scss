@@ -34,6 +34,11 @@ $welcome-pad-side: 8%;
     padding: 1rem 1rem;
     margin: 0;
     flex: 0 0 auto;
+
+    a {
+      // Prevent icon mis-centering vertically
+      display: flex;
+    }
   }
     
   footer {
