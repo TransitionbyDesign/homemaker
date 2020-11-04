@@ -6,7 +6,7 @@ import Map from '../components/Map';
 import CloseIcon from '../components/CloseIcon';
 import Window from '../components/Window';
 import windowStyles from '../styles/components/window.module.scss'
-import { TileLayer, Marker, Popup, Tooltip, GeoJSON } from "react-leaflet";
+import { Marker, Popup, Tooltip, GeoJSON } from "react-leaflet";
 import articleIconBlue from "../icons/text_ptr_blue.svg";
 import articleIconPink from "../icons/text_ptr_pink.svg";
 import audioIconBlue from "../icons/audio_ptr_blue.svg";
@@ -177,66 +177,58 @@ export default (props) => {
         
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
           <Map settings={mapSettings}>
-            <TileLayer
-              url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}'
-              attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	            subdomains='abcd'
-	            minZoom='0'
-	            maxZoom='20'
-	            ext='png'
-              />
-              {mapData
-                .filter((item) => item?.node?.frontmatter?.is_published)
-                .map(item => {
-                  const node = item.node
-                  const icon = selectIcon(node, activePinId)
-                  if (icon) {
-                    return (
-                      <Marker
-                        key={node.id}
-                        icon={icon}
-                        position={[
-                          node.frontmatter.latitude,
-                          node.frontmatter.longitude,
+            {mapData
+              .filter((item) => item?.node?.frontmatter?.is_published)
+              .map(item => {
+                const node = item.node
+                const icon = selectIcon(node, activePinId)
+                if (icon) {
+                  return (
+                    <Marker
+                      key={node.id}
+                      icon={icon}
+                      position={[
+                        node.frontmatter.latitude,
+                        node.frontmatter.longitude,
                         ]}
-                        className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
-                        riseOnHover={true}
-                        closeButton={false}
-                        onClick={(e) => {
-                          setActivePinId(node.id);
-                          const classList = e.target.getElement().classList
+                      className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
+                      riseOnHover={true}
+                      closeButton={false}
+                      onClick={(e) => {
+                        setActivePinId(node.id);
+                        const classList = e.target.getElement().classList
+                        classList.add(mapLayout.active);
+                      }}
+                    >
+                      <CustomPopup
+                        node={node}
+                      />
+                    </Marker>
+                  );
+                }
+                const geojson = node.frontmatter.geojson
+                if (geojson) {
+                  const data = JSON.parse(geojson)
+                  return (
+                    <GeoJSON
+                      key={node.id}
+                      data={data}
+                      style={() => ({
+                        className: cn(mapLayout.customRegion,
+                                      node.frontmatter.apposition)
+                      })}
+                      onClick={(e) => {
+                        const classList = e.target.getLayers()[0].getElement().classList
                           classList.add(mapLayout.active);
-                        }}
-                      >
-                        <CustomPopup
-                          node={node}
-                        />
-                      </Marker>
-                    );
-                  }
-                  const geojson = node.frontmatter.geojson
-                  if (geojson) {
-                    const data = JSON.parse(geojson)
-                    return (
-                      <GeoJSON
-                        key={node.id}
-                        data={data}
-                        style={() => ({
-                          className: cn(mapLayout.customRegion,
-                                        node.frontmatter.apposition)
-                        })}
-                        onClick={(e) => {
-                          const classList = e.target.getLayers()[0].getElement().classList
-                          classList.add(mapLayout.active);
-                        }}
-                      >
-                        <CustomPopup
-                          node={node}
-                        />
-                      </GeoJSON>
-                    )
-                  }
-              })}
+                      }}
+                    >
+                      <CustomPopup
+                        node={node}
+                      />
+                    </GeoJSON>
+                  )
+                }
+            })}
           </Map>
           <img className={mapLayout.tbdLogo} src={tbdLogo} />
         </div>
