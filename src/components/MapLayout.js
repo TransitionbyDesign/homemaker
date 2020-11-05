@@ -27,7 +27,6 @@ const mapSettings = {
   minZoom: 12,
 };
 const pinSize = 32;
-const activePinSize = 64;
 
 let icons = null;
 
