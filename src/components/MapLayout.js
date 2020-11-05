@@ -27,7 +27,6 @@ const mapSettings = {
   minZoom: 12,
 };
 const pinSize = 32;
-const activePinSize = 64;
 
 let icons = null;
 
@@ -43,9 +42,7 @@ function selectIcon(pin, activePinId) {
   const typeIcons = mediaIcons[apposition];
   if (!typeIcons) return;
 
-  return typeIcons.inactive;
-  return pin.id === activePinId?
-         typeIcons.active : typeIcons.inactive;
+  return typeIcons;
 }
 
 const newIcon = (url, size) => new L.Icon({
@@ -60,34 +57,16 @@ const newIcon = (url, size) => new L.Icon({
 function buildIcons() {
   return {
     articles: {
-      situation: {
-        inactive: newIcon(articleIconBlue, pinSize),
-        active: newIcon(articleIconBlue, activePinSize),
-      },
-      solution: {
-        inactive: newIcon(articleIconPink, pinSize),
-        active: newIcon(articleIconPink, activePinSize),
-      },
+      situation: newIcon(articleIconBlue, pinSize),
+      solution: newIcon(articleIconPink, pinSize),
     },
     audio: {
-      situation: {
-        inactive: newIcon(audioIconBlue, pinSize),
-        active: newIcon(audioIconBlue, activePinSize),
-      },
-      solution: {
-        inactive: newIcon(audioIconPink, pinSize),
-        active: newIcon(audioIconPink, activePinSize),
-      },
+      situation: newIcon(audioIconBlue, pinSize),
+      solution: newIcon(audioIconPink, pinSize),
     },    
     video: {
-      situation: {
-        inactive: newIcon(videoIconBlue, pinSize),
-        active: newIcon(videoIconBlue, activePinSize),
-      },
-      solution: {
-        inactive: newIcon(videoIconPink, pinSize),
-        active: newIcon(videoIconPink, activePinSize),
-      },
+      situation: newIcon(videoIconBlue, pinSize),
+      solution: newIcon(videoIconPink, pinSize),
     },
   };
 }
