@@ -96,8 +96,8 @@ export default (props) => {
             !youtube? '' :
             <div className={windowStyles.youtube}>
               <iframe className={windowStyles.aspectRatio} src={youtube}
-                frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
-                allowfullscreen title={title}>
+                frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
+                allowFullScreen title={title}>
               </iframe>
             </div>
           }
