@@ -92,11 +92,11 @@ const CustomPopup = ({ node }) => {
         header={
           <>
             <div>{title}</div>
-            <a href="#" onClick={closePopup}><CloseIcon/></a>
+            <button className={windowStyles.closer} onClick={closePopup}><CloseIcon/></button>
           </>
         }
         footer={
-          <a className={windowStyles.button}
+          <button className={windowStyles.button}
             onClick={() => {
               closePopup()
               navigate(
@@ -108,7 +108,7 @@ const CustomPopup = ({ node }) => {
             }}
           >
             READ MORE
-          </a>
+          </button>
         }
       >
         <div className={windowStyles.col}>

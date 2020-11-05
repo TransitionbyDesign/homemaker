@@ -2,17 +2,6 @@
 @use 'layout';
 @use '../partials/common';
 
-.close-link {
-	color: inherit;
-  svg {
-    width: 1rem;
-  }
-  color: inherit;
-}
-.close-link:hover {
-  text-decoration: none;      
-}
-
 // This goes around the inner-wrapper div
 // It provides a frame in which the inner-wrapper can expand to fit.
 .wrapper {

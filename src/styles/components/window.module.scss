@@ -37,7 +37,7 @@ $welcome-pad-side: 8%;
     margin: 0;
     flex: 0 0 auto;
 
-    a {
+    .closer {
       // Prevent icon mis-centering vertically
       display: flex;
     }
@@ -104,12 +104,26 @@ $welcome-pad-side: 8%;
     background: palette.$btn-bgnd-splash;
     color: palette.$btn-text-splash;
     
-    a.button:hover {
+    .button:hover {
       background: palette.$head-bgnd-prob;
     }
   }
 }
 
+.closer {
+  border: 0;
+	color: inherit;
+  &:hover {
+    transition: opacity .2s ease;
+    opacity: .5;
+  }
+  svg {
+    width: 1rem;
+  }
+}
+.closer:hover {
+  text-decoration: none;      
+}
 
 a.button:hover {
   text-decoration: none;
@@ -172,7 +186,7 @@ a.button:hover {
     .button:hover {
       background: palette.$head-bgnd-prob;
     }
-    header, header a {
+    header, header .closer {
       color: palette.$head-text-prob;
       background: palette.$head-bgnd-prob;
     }
@@ -200,7 +214,7 @@ a.button:hover {
     .button:hover {
       background: palette.$head-bgnd-soln;
     }
-    header, header a {
+    header, header .closer {
       color: palette.$head-text-soln;
       background: palette.$head-bgnd-soln;
     }
