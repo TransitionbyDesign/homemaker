@@ -40,13 +40,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "regions",
-        path: `${__dirname}/content/regions`
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "audio",
         path: `${__dirname}/content/audio`
       }
