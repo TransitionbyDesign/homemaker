@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import window from '../styles/components/window.module.scss';
 import cn from 'classnames';
 
