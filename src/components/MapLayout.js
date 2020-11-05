@@ -129,8 +129,8 @@ const CustomPopup = ({ node }) => {
               <div
                 className={windowStyles.youtube}>
                 <iframe className={windowStyles.aspectRatio} src={youtube} title={title}
-                  frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
-                  allowfullscreen>
+                  frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
+                  allowFullScreen>
                 </iframe> 
               </div>
             }
