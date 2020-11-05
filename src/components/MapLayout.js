@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
 import CloseIcon from '../components/CloseIcon';
 import Window from '../components/Window';
 import windowStyles from '../styles/components/window.module.scss'
-import { Marker, Popup, Tooltip, GeoJSON } from "react-leaflet";
+import { Marker, Popup, GeoJSON } from "react-leaflet";
 import articleIconBlue from "../icons/text_ptr_blue.svg";
 import articleIconPink from "../icons/text_ptr_pink.svg";
 import audioIconBlue from "../icons/audio_ptr_blue.svg";
