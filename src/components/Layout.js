@@ -13,7 +13,7 @@ export default function Layout(props) {
   const location = useLocation();
   
   const { title, description } = useSiteMetadata()
-  const htmlAttrs = { lang: 'en' }
+  const htmlAttrs = {}
 
   // Enable the event passthrough if set in props
   if (props.eventPassThru)
@@ -25,7 +25,7 @@ export default function Layout(props) {
                     {[mapLayout.modal]: location?.state?.modal})}
     >
       <Helmet>
-        <html {...htmlAttrs }/>
+        <html lang="en" {...htmlAttrs }/>
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
