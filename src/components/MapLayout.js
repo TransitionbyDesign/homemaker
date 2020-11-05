@@ -42,7 +42,7 @@ function selectIcon(pin, activePinId) {
   const typeIcons = mediaIcons[apposition];
   if (!typeIcons) return;
 
-  return typeIcons.inactive;
+  return typeIcons;
 }
 
 const newIcon = (url, size) => new L.Icon({
