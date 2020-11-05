@@ -230,10 +230,10 @@ export default (props) => {
                 }
             })}
           </Map>
-          <Link to="https://transitionbydesign.org/" 
+          <a href="https://transitionbydesign.org/" 
             target="_blank" className={mapLayout.tbdLogo}>
             <img src={tbdLogo} alt="Transition by Design Logo"/>
-          </Link>
+          </a>
         </div>
       </div>
     </Layout>
