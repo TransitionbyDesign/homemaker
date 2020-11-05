@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
 import MapLayout from "../../components/MapLayout";
 import mapLayout from "../../styles/components/mapLayout.module.scss"
