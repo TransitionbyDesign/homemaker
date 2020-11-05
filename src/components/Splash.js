@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import splash from '../styles/components/splash.module.scss';
 import Window from './Window.js'
 import CloseIcon from './CloseIcon'
-import cn from 'classnames';
 
 const Splash = ({ header, footer, children, closeTo, className }) => (
   <div className={splash.wrapper}>
