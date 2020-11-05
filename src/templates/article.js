@@ -82,7 +82,7 @@ export default (props) => {
             dangerouslySetInnerHTML={{ __html: data.html }}
           ></div>
         </div>
-        <div class={articleTemplateStyles.right}>
+        <div className={articleTemplateStyles.right}>
           {
             (youtube || !data.frontmatter.hero_image)? '' :
             <div className={cn(articleTemplateStyles.hero)}>
