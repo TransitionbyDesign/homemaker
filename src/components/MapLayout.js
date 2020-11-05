@@ -92,7 +92,10 @@ const CustomPopup = ({ node }) => {
         header={
           <>
             <div>{title}</div>
-            <button className={windowStyles.closer} onClick={closePopup}><CloseIcon/></button>
+            <button className={windowStyles.closer} onClick={closePopup}
+              aria-label="Close">
+              <CloseIcon/>
+            </button>
           </>
         }
         footer={
