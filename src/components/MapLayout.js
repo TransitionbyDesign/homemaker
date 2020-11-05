@@ -213,8 +213,10 @@ export default (props) => {
                 return '';
             })}
           </Map>
-          <a href="https://transitionbydesign.org/" 
-            target="_blank" className={mapLayout.tbdLogo}>
+          {/* eslint-disable-next-line react/jsx-no-target-blank */}
+          <a target="_blank" rel="noopener referrer"
+            href="https://transitionbydesign.org/"
+            className={mapLayout.tbdLogo}>
             <img src={tbdLogo} alt="Transition by Design Logo"/>
           </a>
         </div>
