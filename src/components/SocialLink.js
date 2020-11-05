@@ -1,6 +1,5 @@
 import React from 'react'
 import socialLinkStyles from '../styles/components/socialLink.module.scss';
-import cn from 'classnames';
 
 const SocialLink = ({ logo, alt, title, to, children }) => (
   <a
