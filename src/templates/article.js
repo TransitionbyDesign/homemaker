@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import articleTemplateStyles from "../styles/templates/article.module.scss"
 import { useLocation } from '@reach/router'
