@@ -49,12 +49,12 @@ export default (props) => {
   return (
     <ModalPage
       className={data.frontmatter.apposition}
-      header={data.frontmatter.title}
+      header={title}
       footer={
         <>
           <Link to="/map" className={windowStyles.button}>BACK TO MAP</Link>
           <div className={windowStyles.linkIcons}>
-            <SocialLink to={tweetLink(data.frontmatter.title, location)}
+            <SocialLink to={tweetLink(title, location)}
               logo={twitterIcon} alt="Twitter"
               title="Click to tweet"
             >
@@ -66,7 +66,7 @@ export default (props) => {
             >
               Click to Share
             </SocialLink>
-            <SocialLink to={linkedInLink(data.frontmatter.title, location)}
+            <SocialLink to={linkedInLink(title, location)}
               logo={linkedInIcon} alt="Linked In"
               title="Click to post on LinkedIn"
             >
@@ -88,7 +88,7 @@ export default (props) => {
             <div className={cn(articleTemplateStyles.hero)}>
               <Img
                 fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-                alt={data.frontmatter.title}
+                alt={title}
               />
             </div>
           }
