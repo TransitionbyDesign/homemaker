@@ -210,6 +210,7 @@ export default (props) => {
                     </GeoJSON>
                   )
                 }
+                return '';
             })}
           </Map>
           <a href="https://transitionbydesign.org/" 
