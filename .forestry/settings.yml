@@ -16,7 +16,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
   templates:
-  - article
+  - common
 - type: directory
   path: content/audio
   label: Audio
@@ -24,7 +24,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
   templates:
-  - audio
+  - common
 - type: directory
   path: content/video
   label: Video
@@ -32,7 +32,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
   templates:
-  - video
+  - common
 - type: heading
   label: General Config
 - type: document
