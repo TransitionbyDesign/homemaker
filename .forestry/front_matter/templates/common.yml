@@ -1,5 +1,5 @@
 ---
-label: Audio
+label: Common Article Fields
 hide_body: false
 display_field: title
 fields:
@@ -8,6 +8,22 @@ fields:
   label: title
   config:
     required: true
+- name: apposition
+  type: select
+  default: situation
+  config:
+    required: true
+    options:
+    - situation
+    - solution
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: apposition
+  description: Indicates which one of several ways the audio is apposite to the issue
+    of homelessness
 - name: hero_image
   type: file
   config:
@@ -15,12 +31,13 @@ fields:
   label: hero image
   description: Enter hero image for audio here
   default: ''
-- name: audio_url
+- name: youtube_url
   type: text
   config:
-    required: true
-  label: audio url
-  description: An URL to the audio to embed on this page
+    required: false
+  label: youtube url
+  description: An URL to a YouTube video to embed on this page, or blank, in which
+    case the hero image will be used instead.
 - name: latitude
   type: number
   label: latitude
@@ -43,22 +60,17 @@ fields:
     max: 
     step: 
     required: true
-- name: apposition
-  type: select
-  default: situation
+- name: region
+  type: textarea
+  default: ''
   config:
-    required: true
-    options:
-    - situation
-    - solution
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: apposition
-  description: Indicates which one of several ways the audio is apposite to the issue
-    of homelessness
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: region
+  description: Paste a GeoJSON document here if this content should be associated
+    with a geographic region. Overrides the latitude/longitude fields
 - name: is_published
   type: boolean
   label: is published
