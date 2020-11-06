@@ -104,8 +104,9 @@ $welcome-pad-side: 8%;
     background: palette.$btn-bgnd-splash;
     color: palette.$btn-text-splash;
     
-    .button:hover {
+    &:hover {
       background: palette.$head-bgnd-prob;
+      transition: background-color 0.2s ease;
     }
   }
 }
