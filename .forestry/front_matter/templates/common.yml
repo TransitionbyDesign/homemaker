@@ -43,23 +43,23 @@ fields:
   label: latitude
   description: The latitude of the associated location
   default: 0
-  required: true
+  required: false
   config:
     min: 
     max: 
     step: 
-    required: true
+    required: false
 - name: longitude
   type: number
   label: longitude
   description: The longitude of the associated location
   default: 0
-  required: true
+  required: false
   config:
     min: 
     max: 
     step: 
-    required: true
+    required: false
 - name: region
   type: textarea
   default: ''
