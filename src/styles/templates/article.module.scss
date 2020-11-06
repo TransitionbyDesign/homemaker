@@ -6,15 +6,13 @@
   overflow: none;
 }
 .left {
-  width: 50%;
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 0 50%;
   overflow-y: scroll;
 }
 .right {
-  width: 50%;
   display: flex;  
-  flex: 0 0 auto;
+  flex: 0 0 50%;
   flex-direction: column;
   padding: 0;
   padding-left: 1rem;
@@ -23,6 +21,8 @@
 
 
 .article {
+  display: flex;
+  flex-direction: column;
   h1 {
     margin-bottom: 0.7rem;
   }
@@ -46,7 +46,10 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
+  span {
+    width: 100%;
+    margin: 1rem auto;
+  }
   a {
     padding-bottom: 1.5rem;
   }
@@ -55,14 +58,14 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
   }
   ul {
     list-style: initial;
   }
   ul, ol {
-    margin-left: 1.25rem;
-    margin-bottom: 1.25rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
     padding-left: 1.45rem;
   }
   img {
@@ -84,22 +87,29 @@
   margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .wrapper {
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+  }
   .article {
-    display: flex;
-    flex-direction: column;
+  }
+  .left {
+    overflow-y: unset;
+  }
+  .right {
+    overflow: unset;
+    padding: 0 0 1.5rem 0;
   }
   .body {
+    padding: 0;
     h1, h2, h3, h4, h5, h6 {
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
     }
-    span {
-      width: 100%;
-      margin: 1rem auto;
-    }
+    
     ul, ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-left: 1.25rem;
+      margin-bottom: 1.25rem;
     }
   }
   .hero {
