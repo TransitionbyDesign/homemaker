@@ -3,13 +3,12 @@ latitude: 51.754027
 longitude: -1.261698
 apposition: situation
 title: Renting in Oxford. Why the figures just don't add up.
+summary: Oxford has just been voted the worst place to rent in the UK. How *bad* actually is it, and how does it relate to the city’s homelessness problem?
 hero_image: ''
 is_published: true
 
 ---
 _This article was originally posted on_ [**_Medium by Lucy Warin_**](https://medium.com/@lucywarin)
-
-_Oxford has just been voted the worst place to rent in the UK. How bad actually is it, and how does it relate to the city’s homelessness problem?_
 
 Around a third of people living in Oxford rent. These people on average both earn less, and pay more for housing than people living in other tenure types. Nationally, [renters spend 1/3 of their income on housing costs](https://www.gov.uk/government/news/government-confirms-500-million-hardship-fund-will-provide-council-tax-relief-for-vulnerable-households) on average compared to 17% for mortgage holders. In addition, renters have a [median household income of £583](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/817630/EHS_2017-18_PRS_Report.pdf) per week compared to £744 for owner occupiers. As a final blow to the resilience of renters, [63% report to have no savings](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/817630/EHS_2017-18_PRS_Report.pdf).
 
