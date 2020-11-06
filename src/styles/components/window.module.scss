@@ -261,3 +261,11 @@ a.button:hover {
   justify-content: space-between;
   flex-basis: 8.5rem;
 }
+
+@media (max-width: 380px) {
+  footer {
+    .link-icons {
+      flex-basis: 7rem;
+    }
+  }
+}
