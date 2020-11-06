@@ -1,7 +1,7 @@
 ---
 title: Some Region
 hero_image: "/content/assets/heather-shevlin-3B_NrzTjajc-unsplash.jpg"
-geojson: |-
+region: |-
   {
     "type": "FeatureCollection",
     "features": [

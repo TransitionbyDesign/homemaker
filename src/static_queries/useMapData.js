@@ -9,13 +9,7 @@ export default function useMapData() {
             id
             frontmatter {
               title
-              latitude
-              longitude
-              audio_url
-              video_url
-              geojson
               apposition
-              is_published
               hero_image {
                 childImageSharp {
                   fluid( maxWidth: 288 ) {
@@ -23,6 +17,11 @@ export default function useMapData() {
                   }
                 }
               }
+              youtube_url
+              latitude
+              longitude
+	            region
+              is_published
             }
             excerpt(pruneLength: 150)
             fields {
