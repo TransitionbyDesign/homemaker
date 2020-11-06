@@ -81,6 +81,7 @@ const CustomPopup = ({ node }) => {
   const title = node.frontmatter.title
   const youtube = node.frontmatter.youtube_url
   const readMoreUrl = "/map/"+node.fields.slug;
+  const summary = node.frontmatter.summary || node.excerpt
   return (
     <Popup
       ref={popup}
@@ -133,7 +134,7 @@ const CustomPopup = ({ node }) => {
               </div>
             }
           </div>
-          <div>{node.excerpt}</div>
+          <div>{summary}</div>
         </div>
       </Window>
     </Popup>

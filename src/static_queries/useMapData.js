@@ -9,6 +9,7 @@ export default function useMapData() {
             id
             frontmatter {
               title
+              summary
               apposition
               hero_image {
                 childImageSharp {
