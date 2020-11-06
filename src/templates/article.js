@@ -41,10 +41,8 @@ export default (props) => {
 
   // This gets the data passed to the template
   const data = props.data.markdownRemark
-  const audio = data.frontmatter.audio_url
-  const video = data.frontmatter.video_url
+  const youtube = data.frontmatter.youtube_url
   const title = data.frontmatter.title
-  const youtube = audio || video || null
 
   return (
     <ModalPage
@@ -119,16 +117,19 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
-        audio_url
-        video_url
         apposition
         hero_image {
           childImageSharp {
-            fluid(maxWidth: 1500) {
+            fluid( maxWidth: 1500 ) {
               ...GatsbyImageSharpFluid
             }
           }
         }
+        youtube_url
+        latitude
+        longitude
+	      region
+        is_published
       }
       html
     }

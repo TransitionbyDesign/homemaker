@@ -78,10 +78,8 @@ const CustomPopup = ({ node }) => {
     popup.current.leafletElement.options.leaflet.map.closePopup()
   };
   const image = node.frontmatter?.hero_image?.childImageSharp?.fluid
-  const audio = node.frontmatter.audio_url
-  const video = node.frontmatter.video_url
   const title = node.frontmatter.title
-  const youtube = audio || video || null
+  const youtube = node.frontmatter.youtube_url
   const readMoreUrl = "/map/"+node.fields.slug;
   return (
     <Popup
@@ -116,7 +114,7 @@ const CustomPopup = ({ node }) => {
       >
         <div className={windowStyles.col}>
           <div className={windowStyles.row}>
-            { (video || audio || !image)? '' :
+            { (youtube || !image)? '' :
               <div className={mapLayout.heroWrapper}>
                 <Img className={mapLayout.hero}
                   fluid={image}
@@ -164,31 +162,11 @@ export default (props) => {
               .map(item => {
                 const node = item.node
                 const icon = selectIcon(node, activePinId)
-                if (icon) {
-                  return (
-                    <Marker
-                      key={node.id}
-                      icon={icon}
-                      position={[
-                        node.frontmatter.latitude,
-                        node.frontmatter.longitude,
-                        ]}
-                      className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
-                      riseOnHover={true}
-                      closeButton={false}
-                      onClick={(e) => {
-                        setActivePinId(node.id);
-                        const classList = e.target.getElement().classList
-                        classList.add(mapLayout.active);
-                      }}
-                    >
-                      <CustomPopup
-                        node={node}
-                      />
-                    </Marker>
-                  );
-                }
-                const geojson = node.frontmatter.geojson
+                const latitude = node.frontmatter.latitude
+                const longitude = node.frontmatter.longitude
+
+                // If an article has a region field defined, use that preferentially
+                const geojson = node.frontmatter.region
                 if (geojson) {
                   const data = JSON.parse(geojson)
                   return (
@@ -210,6 +188,31 @@ export default (props) => {
                     </GeoJSON>
                   )
                 }
+                
+                // Add pins for articles with a valid icon, and a location
+                if (icon && latitude != null && longitude != null) {
+                  return (
+                    <Marker
+                      key={node.id}
+                      icon={icon}
+                      position={[latitude, longitude]}
+                      className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
+                      riseOnHover={true}
+                      closeButton={false}
+                      onClick={(e) => {
+                        setActivePinId(node.id);
+                        const classList = e.target.getElement().classList
+                        classList.add(mapLayout.active);
+                      }}
+                    >
+                      <CustomPopup
+                        node={node}
+                      />
+                    </Marker>
+                  );
+                }
+                console.warn(`article has no location, icon, or region: `+
+                             `id=${node.id} slug=${node.slug}`);
                 return '';
             })}
           </Map>

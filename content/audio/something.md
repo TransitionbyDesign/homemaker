@@ -1,7 +1,7 @@
 ---
 title: I don't know where they'll put me next
 hero_image: "/content/assets/adrien-olichon--aOsCcTJXWY-unsplash.jpg"
-audio_url: https://www.youtube.com/embed/U3-EOOStzto
+youtube_url: https://www.youtube.com/embed/U3-EOOStzto
 latitude: 51.74576
 longitude: -1.236874
 apposition: situation
