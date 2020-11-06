@@ -24,6 +24,18 @@ fields:
   label: apposition
   description: Indicates which one of several ways the audio is apposite to the issue
     of homelessness
+- name: summary
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+    min: 
+  label: summary
+  description: Summary text for pop-ups. If left unset, a short excerpt from the main
+    article text will be used.
 - name: hero_image
   type: file
   config:
