@@ -1,0 +1,242 @@
+@use '../partials/palette';
+@use 'layout';
+@use 'mapLayout' as *;
+
+/**
+ * Levels:
+ * First understand z-index and stacking context. z-index only applies to 
+ * positioned elements, for instance.
+ * e.g. See: https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+ *
+ * The Header element (assumed to be in the parent) is position: fixed
+ * and floats on top of everything with z-index 100.
+ *
+ * The Layout element (assumed to be the parent) is not positioned
+ * 
+ * The .map_layout is not positioned, and sits on top of the Layout.
+ *
+ * The .overlay is position: fixed, sits in a stacking context above Layout.
+ *
+ * The .map element is position: fixed, and sits in a stacking context 
+ * behind the Layout element, at z-index -50.
+ */
+.layout {
+  display: flex;
+  flex-grow: 1;
+  pointer-events: none; // Allow clicks through
+  
+  a {
+    color: palette.$text-link;
+  }
+
+  /** This element contains pop-up windows */
+  .overlay {
+	  display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+  }
+
+  /** This element contains the map */
+  .map {
+    display: flex;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    flex-grow: 1;
+    position: fixed;
+    z-index: -50;
+    pointer-events: all;
+  }
+
+}
+
+.modal .overlay {
+  pointer-events: all; // Prevent events getting through
+  background: palette.$bgnd-dk-transparent !important;
+}
+
+.modal .welcome {
+  background: palette.$transparent_gradient !important;
+}
+
+.active {
+  --dummy: unset; // Only present to prevent this class being optimised away
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.custom-region {
+  fill-opacity: 50%;
+  stroke-width: 0;
+  &.situation {
+    fill: palette.$region-fill-prob;
+    stroke: palette.$region-stroke-prob;
+  }
+  &.solution {
+    fill: palette.$region-fill-soln;
+    stroke: palette.$region-stroke-soln;
+  }
+}
+
+.custom-marker {
+}
+
+.custom-region:hover, .custom-marker:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.custom-popup {
+  border-radius: 0;
+}
+
+.situation {
+  color: palette.$head-text-prob !important;
+  background: palette.$head-bgnd-prob !important;
+  border-color: palette.$head-bgnd-prob !important;
+}
+
+.hero-wrapper {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    min-height: 100%;
+  }
+  div {
+    picture {
+      opacity: 1;
+      -webkit-transition: opacity .3s ease;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+:global {
+  // Turn OSM grey
+  .leaflet-tile-pane {
+    filter: grayscale(100%);
+  }
+
+  // This is a hacky workaround for not being able to abut an ampersand
+  // to `:global`.
+  // See https://github.com/css-modules/css-modules/issues/295#issuecomment-404873976
+  :local(.custom-region) {
+    fill-opacity: 50%;
+    stroke-width: 0;
+    &.situation  {
+      fill: palette.$region-fill-prob;
+      stroke: palette.$region-stroke-prob;
+    }
+    &.solution {
+      fill: palette.$region-fill-soln;
+      stroke: palette.$region-stroke-soln;
+    }
+  }
+
+  .situation {
+    color: palette.$head-text-prob;
+    background: palette.$head-bgnd-prob;
+    border-color: palette.$head-bgnd-prob;
+    .leaflet-popup-content-wrapper {
+      :local(header) {
+        color: palette.$head-text-prob;
+        background: palette.$head-bgnd-prob;
+        border-color: palette.$head-bgnd-prob;
+        font-size: 1rem;
+        font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+        a {
+          color: inherit;
+          margin: 0.5rem;
+        }
+      }
+    }
+    .leaflet-popup-content-wrapper,.leaflet-popup-tip {
+      color: palette.$text-prob;
+      background: palette.$bgnd-prob;
+      border-color: palette.$bgnd-prob;
+    }
+  }
+  
+  .solution {
+    color: palette.$head-text-soln;
+    background: palette.$head-bgnd-soln;
+    border-color: palette.$head-bgnd-soln;
+    .leaflet-popup-content-wrapper {
+      :local(header) {
+        color: palette.$head-text-soln;
+        background: palette.$head-bgnd-soln;
+        border-color: palette.$head-bgnd-soln;
+        font-size: 1rem;
+        font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+        a {
+          color: inherit;
+          margin: 0.5rem;
+        }
+      }
+    }
+    .leaflet-popup-content-wrapper,.leaflet-popup-tip {
+      color: palette.$text-soln;
+      background: palette.$bgnd-soln;
+      border-color: palette.$bgnd-soln;
+    }
+  }
+  
+  .leaflet-popup-content-wrapper {
+    width: 20rem;
+    border-radius: unset !important;
+    padding: 0 !important;
+    font-family: Klima-Light,"Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  .leaflet-popup-content {
+    width: 100% !important; // to fit wrapper despite leaflet's style attr
+  }
+  
+  .leaflet-popup-close-button {
+    display: none;
+  }
+  
+  .leaflet-popup-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    :local(.outer-wrapper) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.custom-region:hover {
+  stroke-width: 0.05rem;
+}
+
+.tbd-logo {
+  position: absolute;
+  z-index: 1000; // Above map attribution
+  @include layout.all-media(modal-margin-top, nav-margin-top, modal-margin-side, nav-margin-bottom)
+  using($h, $t, $s, $b) {
+    right: $s;
+    bottom: $b;
+    img {
+      height: 0.6 * ($h - $t - $b);
+    }
+  }
+}
+

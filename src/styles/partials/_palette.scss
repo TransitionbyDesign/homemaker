@@ -1,0 +1,56 @@
+// Palette
+$col1: #3c00ce;
+$col2: #9d7fe6;
+$col3: #f431f4;
+$col4: #ffffff;
+$col5: #f2f2f2;
+$col6: #9bf730;
+$col7: #303030;
+
+// Specific element colours
+$bgnd-dk: $col1;
+$text-dk: $col7;
+  
+$bgnd-lt: $col5;
+$text-lt: $col4;
+
+$bgnd-splash: $col5;
+$text-splash: $col1;
+$btn-bgnd-splash: $col1;
+$btn-text-splash: $col4;
+$head-bgnd-splash: $col4;
+$head-text-splash: $col1;
+$footer-border-splash: $col3;
+
+$share-icons: $col6;
+$text-link: $col3;
+
+$bgnd-prob: $col5;
+$text-prob: $col7;
+$head-bgnd-prob: $col1;
+$head-text-prob: $col4;
+$btn-bgnd-prob: $col3;
+$btn-text-prob: $col4;
+$region-fill-prob: $col1;
+$region-stroke-prob: $col1;
+
+$bgnd-soln: $col5;
+$text-soln: $col1;
+$head-bgnd-soln: $col3;
+$head-text-soln: $col4;
+$btn-bgnd-soln: $col1;
+$btn-text-soln: $col4;
+$region-fill-soln: $col3;
+$region-stroke-soln: $col3;
+
+$ptr-prob: $col1;
+
+$shadow: #AAAAAA;
+
+$gradient: linear-gradient(90deg, $col1 0%, $col3 57%, $col4 100%);
+$transparent_gradient: linear-gradient(90deg,
+                                       fade-out($col1, .2) 0%,
+                                       fade-out($col3, .2) 57%,
+                                       fade-out($col4, .2) 100%);
+$bgnd-dk-transparent: fade-out($bgnd-dk, 0.50);
+

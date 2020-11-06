@@ -1,0 +1,72 @@
+---
+label: Welcome Page
+hide_body: true
+display_field: header
+fields:
+- name: header
+  type: text
+  config:
+    required: true
+  label: Header
+  default: Welcome
+  description: This is the text shown on the header bar
+- name: intro
+  type: textarea
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Intro
+  default: Welcome
+  description: This is the (uncolumned) text shown at the top of the welcome page
+- name: text
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Text
+  description: This text is in columns below the intro on the welcome page.
+- name: is_published
+  type: boolean
+  label: is published
+  description: If false, no link to the rest of the site will be added.
+  default: false
+- type: field_group
+  name: contact
+  label: Contact info
+  fields:
+  - name: address
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Address
+  - name: phone_number
+    type: text
+    config:
+      required: false
+    label: Phone number
+  - type: text
+    name: email
+    label: Email address
+  - type: text
+    name: twitter_handle
+    label: Twitter handle
+  - type: text
+    name: facebook_id
+    label: Facebook ID
+  - name: linkedin_profile
+    type: text
+    config:
+      required: false
+    label: LinkedIn Profile
+    description: The LinkedIn profile URL associated with the website
+pages:
+- content/data/welcome.json

@@ -1,0 +1,79 @@
+/* Incorporates the Klima font */
+
+// Klima Light
+@font-face {
+  font-family: "Klima-Light";
+  src: url('../fonts/klima-light-web.woff2') format('woff2'),
+       url('../fonts/klima-light-web.woff') format('woff');
+}
+@font-face {
+  font-family: "Klima-Light";
+  src: url('../fonts/klima-regular-web.woff2') format('woff2'),
+       url('../fonts/klima-regular-web.woff') format('woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Klima-Light";
+  src: url('../fonts/klima-light-italic-web.woff2') format('woff2'),
+       url('../fonts/klima-light-italic-web.woff') format('woff');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Klima-Light";
+  src: url('../fonts/klima-regular-italic-web.woff2') format('woff2'),
+       url('../fonts/klima-regular-italic-web.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Klima Regular
+@font-face {
+  font-family: "Klima-Regular";
+  src: url('../fonts/klima-regular-web.woff2') format('woff2'),
+       url('../fonts/klima-regular-web.woff') format('woff');
+}
+@font-face {
+  font-family: "Klima-Regular";
+  src: url('../fonts/klima-bold-web.woff2') format('woff2'),
+       url('../fonts/klima-bold-web.woff') format('woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Klima-Regular";
+  src: url('../fonts/klima-regular-italic-web.woff2') format('woff2'),
+       url('../fonts/klima-regular-italic-web.woff') format('woff');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Klima-Regular";
+  src: url('../fonts/klima-bold-italic-web.woff2') format('woff2'),
+       url('../fonts/klima-bold-italic-web.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Klima Medium
+@font-face {
+  font-family: "Klima-Medium";
+  src: url('../fonts/klima-medium-web.woff2') format('woff2'),
+       url('../fonts/klima-medium-web.woff') format('woff');
+}
+@font-face {
+  font-family: "Klima-Medium";
+  src: url('../fonts/klima-heavy-web.woff2') format('woff2'),
+       url('../fonts/klima-heavy-web.woff') format('woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Klima-Medium";
+  src: url('../fonts/klima-medium-italic-web.woff2') format('woff2'),
+       url('../fonts/klima-medium-italic-web.woff') format('woff');
+  font-style: italic;
+}
+@font-face {
+  font-family: "Klima-Medium";
+  src: url('../fonts/klima-heavy-italic-web.woff2') format('woff2'),
+       url('../fonts/klima-heavy-italic-web.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}

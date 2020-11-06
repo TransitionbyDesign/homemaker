@@ -1,0 +1,271 @@
+@use '../partials/palette';
+@use 'layout';
+@use '../partials/common';
+
+$content-pad-side: 2rem;
+$content-pad-top: 2rem;
+$content-pad-bottom: 2rem;
+$welcome-pad-side: 8%;
+
+// The wrapper div is the modal box, containing the header, footer, and content.
+// It should not expand off-screen.
+.wrapper {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  background: palette.$bgnd-splash;
+  color: palette.$text-splash;
+  @include common.drop-shadow;
+  @include layout.all-media(modal-max-width)
+  using($mw) {
+    max-width: $mw;
+  }
+
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: palette.$head-bgnd-splash;
+    color: palette.$head-text-splash;
+    font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.5em;
+    padding: 1rem;
+    margin: 0;
+    flex: 0 0 auto;
+
+    .closer {
+      // Prevent icon mis-centering vertically
+      display: flex;
+    }
+  }
+    
+  footer {
+    display: flex;
+    padding: 0.8rem 0 $content-pad-bottom 0;
+    margin: 0.5rem $content-pad-side 0 $content-pad-side;
+    border-top: solid palette.$footer-border-splash 0.1rem;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    
+    .button {
+      padding: 0.2rem 1rem;
+      margin: 0;
+    }
+  }
+    
+  h1 {
+    position: relative;
+    padding: 1rem;
+    
+    // Inserts an underline below the header
+    &:after {
+      content: '';
+      height: 1px;
+      background: palette.$text-splash;
+      position: absolute;
+      bottom: -0.8rem;
+    }
+    
+    @include layout.all-media(header-underline-width)
+    using($huw) {
+      &:after {
+        width: $huw;
+        left: (100% - $huw)/2;
+      }
+    }
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  hr {
+    border-color: palette.$text-splash;
+    background: palette.$text-splash;
+  }
+
+  .button {
+    font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0 auto;
+    line-height: 2rem;
+    border: 0;
+    padding: 1rem;
+    border-radius: 0.3em;
+    font-weight: bold;
+
+    background: palette.$btn-bgnd-splash;
+    color: palette.$btn-text-splash;
+    
+    &:hover {
+      background: palette.$head-bgnd-prob;
+      transition: background-color 0.2s ease;
+    }
+  }
+}
+
+.closer {
+  border: 0;
+	color: inherit;
+  &:hover {
+    transition: opacity .2s ease;
+    opacity: .5;
+  }
+  svg {
+    width: 1rem;
+  }
+}
+.closer:hover {
+  text-decoration: none;      
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+.introButtons {
+  display: flex;
+  margin-bottom: 1.45rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: $content-pad-top $content-pad-side 0 $content-pad-side;
+  overflow-y: hidden;
+}
+
+// Special case on welcome page, increase padding
+.welcome .content {
+  overflow-y: scroll;
+  & > * {
+    padding-left: $welcome-pad-side;
+    padding-right: $welcome-pad-side;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.youtube {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  @include common.aspect-ratio(16, 9);
+}
+
+:global(.situation) {
+  &.wrapper, .wrapper {
+    color: palette.$text-prob;
+    background: palette.$bgnd-prob;
+
+    .button {
+      background: palette.$btn-bgnd-prob;
+      color: palette.$btn-text-prob;
+    }
+    .button:hover {
+      background: palette.$head-bgnd-prob;
+    }
+    header, header .closer {
+      color: palette.$head-text-prob;
+      background: palette.$head-bgnd-prob;
+    }
+    h1 {
+      // Inserts an underline below the header
+      &:after {
+        background: palette.$head-bgnd-prob;
+      }
+    }
+    footer {
+      border-top-color: palette.$head-bgnd-prob;
+    }
+  }
+}
+
+:global(.solution) {
+  &.wrapper, .wrapper {
+    color: palette.$text-soln;
+    background: palette.$bgnd-soln;
+
+    .button {
+      background: palette.$btn-bgnd-soln;
+      color: palette.$btn-text-soln;
+    }
+    .button:hover {
+      background: palette.$head-bgnd-soln;
+    }
+    header, header .closer {
+      color: palette.$head-text-soln;
+      background: palette.$head-bgnd-soln;
+    }
+    h1 {
+      // Inserts an underline below the header
+      &:after {
+        background: palette.$head-bgnd-soln;
+      }
+    }
+    footer {
+      border-top-color: palette.$head-bgnd-soln;
+    }
+  }
+}
+
+:global(.leaflet-popup-content-wrapper) {
+  :local(.wrapper) {
+    header {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+  }
+}
+
+
+// Columned text wrapper - adjusts nuber depending on media width
+.columned {
+  column-gap: 2rem;
+  margin-bottom: 2rem;
+  column-count: 1;
+
+  @media (min-width: 768px) {
+    column-count: 2;
+  }
+  @media (min-width: 1980px) {
+    column-count: 3;
+  }
+}
+
+.link-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 8.5rem;
+}
+
+@media (max-width: 380px) {
+  footer {
+    .link-icons {
+      flex-basis: 7rem;
+    }
+  }
+}

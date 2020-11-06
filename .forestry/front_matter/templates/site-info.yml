@@ -1,0 +1,21 @@
+---
+label: Site Config
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: description
+  label: description
+- type: text
+  name: repository_url
+  label: repository_url
+- name: appositions
+  type: tag_list
+  default: []
+  label: Appositions
+  description: Defines the ways in which articles etc. can be apposite to the problem
+    of homelessness
+pages:
+- config.json

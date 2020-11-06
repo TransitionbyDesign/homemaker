@@ -1,0 +1,91 @@
+---
+label: Common Article Fields
+hide_body: false
+display_field: title
+fields:
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+- name: apposition
+  type: select
+  default: situation
+  config:
+    required: true
+    options:
+    - situation
+    - solution
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: apposition
+  description: Indicates which one of several ways the audio is apposite to the issue
+    of homelessness
+- name: summary
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+    min: 
+  label: summary
+  description: Summary text for pop-ups. If left unset, a short excerpt from the main
+    article text will be used.
+- name: hero_image
+  type: file
+  config:
+    maxSize: '10'
+  label: hero image
+  description: Enter hero image for audio here
+  default: ''
+- name: youtube_url
+  type: text
+  config:
+    required: false
+  label: youtube url
+  description: An URL to a YouTube video to embed on this page, or blank, in which
+    case the hero image will be used instead.
+- name: latitude
+  type: number
+  label: latitude
+  description: The latitude of the associated location
+  default: 0
+  required: false
+  config:
+    min: 
+    max: 
+    step: 
+    required: false
+- name: longitude
+  type: number
+  label: longitude
+  description: The longitude of the associated location
+  default: 0
+  required: false
+  config:
+    min: 
+    max: 
+    step: 
+    required: false
+- name: region
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: region
+  description: Paste a GeoJSON document here if this content should be associated
+    with a geographic region. Overrides the latitude/longitude fields
+- name: is_published
+  type: boolean
+  label: is published
+  description: If true, the audio will be included on the website; if false the audio
+    will be omitted.
+  default: false

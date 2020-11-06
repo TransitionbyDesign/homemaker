@@ -1,0 +1,20 @@
+@use '../partials/palette';
+@use 'layout';
+@use '../partials/common';
+
+// This goes around the inner-wrapper div
+// It provides a frame in which the inner-wrapper can expand to fit.
+.wrapper {
+  position: static;
+  pointer-events: auto;
+  width: 100%;
+  height: 100%;
+  @include layout.all-media(modal-margin-side, modal-margin-top, modal-margin-bottom)
+  using($s, $t, $b) {
+    padding: $t $s $b $s;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+}
