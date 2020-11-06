@@ -180,7 +180,7 @@ export default (props) => {
                       })}
                       onClick={(e) => {
                         const classList = e.target.getLayers()[0].getElement().classList
-                          classList.add(mapLayout.active);
+                        classList.add(mapLayout.active)
                       }}
                     >
                       <CustomPopup
