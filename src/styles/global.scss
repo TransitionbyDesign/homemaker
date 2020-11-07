@@ -99,3 +99,9 @@ p {
     line-height: 1.4375;
   }
 }
+
+
+button:focus {
+  // chrome sets this outline
+  outline: none;
+}
