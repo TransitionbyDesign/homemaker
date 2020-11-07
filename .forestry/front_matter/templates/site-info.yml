@@ -17,5 +17,29 @@ fields:
   label: Appositions
   description: Defines the ways in which articles etc. can be apposite to the problem
     of homelessness
+- name: share_on_twitter_link_template
+  type: text
+  config:
+    required: true
+  label: share on twitter link template
+  description: Enter a link, with <strong>${title}</strong> and <strong>${url}</strong>
+    as placeholders for the shared web page title and URL
+  default: https://twitter.com/intent/tweet?text=${title}&url=${url}&via=transitionbydesign&hashtags=HomemakerOxford
+- name: share_on_facebook_link_template
+  type: text
+  config:
+    required: false
+  label: share on facebook link template
+  default: https://www.facebook.com/sharer/sharer.php?u=${url}
+  description: Enter a link, with <strong>${title}</strong> and <strong>${url}</strong>
+    as placeholders for the shared web page title and URL
+- name: share_on_linkedin_link_template
+  type: text
+  config:
+    required: true
+  label: share on linkedin link template
+  description: Enter a link, with <strong>${title}</strong> and <strong>${url}</strong>
+    as placeholders for the shared web page title and URL
+  default: https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&source=${title}
 pages:
 - config.json
