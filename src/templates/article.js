@@ -8,6 +8,7 @@ import SocialLink from "../components/SocialLink"
 import twitterIcon from "../icons/social_icon_twitter.svg"
 import linkedInIcon from "../icons/social_icon_linkedin.svg"
 import facebookIcon from "../icons/social_icon_facebook.svg"
+import siteConfig from "../../config.json"
 import cn from 'classnames';
 //this component handles the blur img & fade-ins
 import Img from 'gatsby-image'
@@ -22,16 +23,9 @@ function createLink(template, data) {
 }
 
 const linkTemplates = {
-  twitter: "https://twitter.com/intent/tweet"+
-           "?text=\${title}"+
-           "&url=\${url}"+
-           "&via=transitionbydesign&hashtags=HomemakerOxford",
-  facebook: "https://www.facebook.com/sharer/sharer.php"+
-            "?u=\${url}",
-  linkedin: "https://www.linkedin.com/shareArticle"+
-            "?mini=true&url=\${url}"+
-            "&title=\${title}"+
-            "&source=\${title}",
+  twitter: siteConfig.share_on_twitter_link_template,
+  facebook: siteConfig.share_on_facebook_link_template,
+  linkedin: siteConfig.share_on_linkedin_link_template,
 }
 
 export default (props) => {
