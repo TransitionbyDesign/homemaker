@@ -12,7 +12,7 @@
 
 ## About
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/314f6fb1-b4a6-484a-ad3d-c26663a63bca/deploy-status)](https://app.netlify.com/sites/brevifolia-gatsby-forestry/deploys)
+![Gatsby Publish](https://github.com/TransitionbyDesign/homemaker/workflows/Gatsby%20Publish/badge.svg?branch=master)
 
 Brevifolia is minimalist blog starter to get you going using [Forestry](https://forestry.io/) with [Gatsby](https://www.gatsbyjs.org/). Check out the demo [here](https://brevifolia-gatsby-forestry.netlify.com/)
 
