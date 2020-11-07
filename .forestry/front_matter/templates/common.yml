@@ -89,3 +89,5 @@ fields:
   description: If true, the audio will be included on the website; if false the audio
     will be omitted.
   default: false
+pages:
+- content/articles/the-diy-house.md
