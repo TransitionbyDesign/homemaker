@@ -1,7 +1,7 @@
 ---
 apposition: solution
-latitude: 58.752071
-longitude: -1.268746
+latitude: 
+longitude: -1.28961
 title: The DIY House
 summary: ''
 hero_image: "/content/assets/the-diy-house.png"
