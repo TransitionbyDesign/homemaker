@@ -1,0 +1,19 @@
+# Credit to https://medium.com/better-programming/deploy-your-gatsby-site-with-github-actions-e761ea93813f
+# https://gist.github.com/Deborah-Digges/6e4f6572b7e75925ed8aa3f5411cbcc8/raw/6817baac61bfa72f4a74e05489ccfc352d88e5a8/build_and_publish.yml
+
+name: Gatsby Publish
+
+on:
+  push:
+    branches:
+      master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
