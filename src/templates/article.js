@@ -12,37 +12,42 @@ import cn from 'classnames';
 //this component handles the blur img & fade-ins
 import Img from 'gatsby-image'
 
-const url = (location) => encodeURIComponent(location.href)
+// Replaces substrings matching `${ ... }` with the URI-encoded value
+// of the equivalent property of `data` (which should be an object)
+// or '' if there is none.
+function createLink(template, data) {
+  return template.replace(/\$\{(.*?)\}/g, (match, capture) => (
+    (capture in data)? encodeURIComponent(data[capture]) : ''
+  ))
+}
 
-const tweetLink = (title, path) => [
-  `https://twitter.com/intent/tweet`,
-  `?text=`, encodeURIComponent(title),
-  `&url=`, url(path),
-  `&via=transitionbydesign&hashtags=HomemakerOxford`,
-].join('')
-
-const facebookLink = (path) => [
-  `https://www.facebook.com/sharer/sharer.php`,
-  `?u=`, url(path), 
-].join('')
-
-const linkedInLink = (title, path) => [
-  `https://www.linkedin.com/shareArticle`,
-  `?mini=true&url=`, url(path),
-  `&title=`, encodeURIComponent(title),
-  `&source=`, encodeURIComponent(title),
-].join('')
+const linkTemplates = {
+  twitter: "https://twitter.com/intent/tweet"+
+           "?text=\${title}"+
+           "&url=\${url}"+
+           "&via=transitionbydesign&hashtags=HomemakerOxford",
+  facebook: "https://www.facebook.com/sharer/sharer.php"+
+            "?u=\${url}",
+  linkedin: "https://www.linkedin.com/shareArticle"+
+            "?mini=true&url=\${url}"+
+            "&title=\${title}"+
+            "&source=\${title}",
+}
 
 export default (props) => {
   // Ensure that whatever happens, the modal state flag is set
   // This ensures the pages and layouts are correct.
   const location = useLocation();
   location.state = { ...location.state = {}, modal: true };
-
+    
   // This gets the data passed to the template
   const data = props.data.markdownRemark
   const youtube = data.frontmatter.youtube_url
   const title = data.frontmatter.title
+  const linkParams = {
+    title,
+    url: location.href,
+  }  
 
   return (
     <ModalPage
@@ -52,19 +57,19 @@ export default (props) => {
         <>
           <Link to="/map" className={windowStyles.button}>BACK TO MAP</Link>
           <div className={windowStyles.linkIcons}>
-            <SocialLink to={tweetLink(title, location)}
+            <SocialLink to={createLink(linkTemplates.twitter, linkParams)}
               logo={twitterIcon} alt="Twitter"
               title="Click to tweet"
             >
               Click to Share
             </SocialLink>
-            <SocialLink to={facebookLink(location)}
+            <SocialLink to={createLink(linkTemplates.facebook, linkParams)}
               logo={facebookIcon} alt="Facebook"
               title="Click to post on Facebook"
             >
               Click to Share
             </SocialLink>
-            <SocialLink to={linkedInLink(title, location)}
+            <SocialLink to={createLink(linkTemplates.linkedin, linkParams)}
               logo={linkedInIcon} alt="Linked In"
               title="Click to post on LinkedIn"
             >
