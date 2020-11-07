@@ -1,6 +1,6 @@
 ---
 apposition: solution
-latitude: 
+latitude: 51.75264
 longitude: -1.28961
 title: The DIY House
 summary: ''
