@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Helmet from "react-helmet"
 import articleTemplateStyles from "../styles/templates/article.module.scss"
 import { useLocation } from '@reach/router'
 import ModalPage from '../components/ModalPage'
@@ -41,6 +42,8 @@ export default (props) => {
   const linkParams = {
     title,
     url: location.href,
+    summary: data.frontmatter.summary || data.excerpt || '',
+    image: data.frontmatter.hero_image || '',
   }  
 
   return (
@@ -72,6 +75,18 @@ export default (props) => {
           </div>
         </>
       }>
+      <Helmet>
+        <meta property="og:url"
+          content={linkParams.url} />
+        <meta property="og:type"
+          content="article" />
+        <meta property="og:title"
+          content={linkParams.title} />
+        <meta property="og:description"
+          content={linkParams.summary} />
+        <meta property="og:image"
+          content={linkParams.image} />
+      </Helmet>
       <div className={articleTemplateStyles.wrapper}>
         <div className={articleTemplateStyles.left}>
           <div
@@ -131,6 +146,7 @@ export const getPostData = graphql`
         is_published
       }
       html
+      excerpt(pruneLength: 200)
     }
   }
 `
