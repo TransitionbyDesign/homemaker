@@ -39,7 +39,6 @@
                             modal-max-width)
   using($t, $s, $h, $b, $mw) {
     height: $h;
-    max-width: $mw;
     img.logo {
       height: $h - $t - $b;
     }
