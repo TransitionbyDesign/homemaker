@@ -8,5 +8,5 @@
   ],
   "share_on_twitter_link_template": "https://twitter.com/intent/tweet?text=${title}&url=${url}&via=transitionbydesign&hashtags=HomemakerOxford",
   "share_on_facebook_link_template": "https://www.facebook.com/sharer/sharer.php?u=${url}",
-  "share_on_linkedin_link_template": "https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&source=${title}"
+  "share_on_linkedin_link_template": "https://www.linkedin.com/sharing/share-offsite/?url=${url}"
 }
