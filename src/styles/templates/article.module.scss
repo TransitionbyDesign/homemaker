@@ -90,17 +90,19 @@
 @media (max-width: 768px) {
   .wrapper {
     overflow-y: scroll;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .article {
   }
   .left {
     overflow-y: unset;
+    order: 2;
   }
   .right {
     overflow: unset;
     padding: 0 0 1.5rem 0;
+    order: 1;
   }
   .body {
     padding: 0;
