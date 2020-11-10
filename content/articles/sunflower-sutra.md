@@ -1,6 +1,6 @@
 ---
 title: Oxford North
-hero_image: "/content/assets/190924b-website-graphs-01_orig.png"
+hero_image: "/content/assets/190927-oxfordnorth-facebook.png"
 region: |-
   {
     "type": "FeatureCollection",
