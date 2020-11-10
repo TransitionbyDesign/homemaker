@@ -3,7 +3,9 @@ apposition: solution
 latitude: 51.752875
 longitude: -1.267695
 title: The DIY House
-summary: ''
+summary: 'The DIY House follows a rapid retrofit approach of an existing building
+  and includes its future residents in the design and construction process to create
+  a safe and comfortable home. '
 hero_image: "/content/assets/the-diy-house.png"
 youtube_url: ''
 region: ''
