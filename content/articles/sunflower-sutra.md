@@ -475,8 +475,8 @@ region: |-
       }
     ]
   }
-latitude: ''
-longitude: ''
+latitude: 51
+longitude: 1
 apposition: situation
 is_published: true
 summary: St John's College has proposed to subtract 72 affordable homes from their
