@@ -4,7 +4,7 @@ hero_image: "/content/assets/ren-ran-bBiuSdck8tU-unsplash.jpg"
 latitude: 51.7459
 longitude: -1.252
 apposition: solution
-is_published: false
+is_published: true
 summary: |-
   The quick _brown_ fox _jumped_ **over** the lazy dogs
 
