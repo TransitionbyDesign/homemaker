@@ -35,3 +35,5 @@ fields:
   label: button link
   description: Indicates where the footer button should link to. This should be an
     URL or a local path.
+pages:
+- content/data/sidebar.json
