@@ -9,6 +9,9 @@ sections:
 - type: document
   path: content/data/welcome.json
   label: Welcome Page
+- type: document
+  path: content/data/sidebar.json
+  label: Sidebar
 - type: directory
   path: content/articles
   label: Articles
