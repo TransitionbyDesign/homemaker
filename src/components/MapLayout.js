@@ -212,6 +212,14 @@ export default (props) => {
         </div>
         <div className={mapLayout.overlay}>
           {props.children}
+          <>
+            <InfoPopup
+              title={sidebar.frontmatter.title}
+              text={sidebar.html}
+              footerText={sidebar.frontmatter.footer_text}
+              buttonLink={sidebar.frontmatter.button_link}
+            />
+          </>
         </div>
 
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
