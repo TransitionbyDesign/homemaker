@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
 import Map from '../components/Map';
 import CloseIcon from '../components/CloseIcon';
+import MinimiseIcon from '../components/MinimiseIcon';
 import Window from '../components/Window';
 import windowStyles from '../styles/components/window.module.scss'
 import { Marker, Popup, GeoJSON } from "react-leaflet";
@@ -70,6 +71,54 @@ function buildIcons() {
     },
   };
 }
+
+const InfoPopup = ({ title, buttonLink, text, footerText }) => {
+  const [isMinimised, setIsMinimised] = useState(false);
+  const closePopup = () => { setIsMinimised(!isMinimised) };
+  return (
+    <div className={mapLayout.infoPopupWrapper}>
+      <div className={cn(mapLayout.minimisable, {[mapLayout.minimised]: isMinimised})}>
+        <Window
+          className={cn(mapLayout.infoPopup, 'situation')}
+          header={
+          <>
+            <div>{title}</div>
+            <button className={windowStyles.closer} onClick={closePopup}
+              aria-label="Minimise">
+              <MinimiseIcon />
+            </button>
+          </>
+        }
+        footer={
+          <div>
+            <div dangerouslySetInnerHTML={{__html: footerText}} />
+            <button className={windowStyles.button}
+              onClick={() => {
+                closePopup()
+                navigate(
+                  buttonLink,
+                  {
+                    state: { modal: true },
+                  }
+                )
+              }}
+            >
+              READ MORE
+            </button>
+          </div>
+        }
+    >
+    <div className={windowStyles.col}>
+      <div
+        dangerouslySetInnerHTML={{__html: text}} />
+    </div>
+      </Window>
+      </div>
+    </div>
+  );
+}
+
+
 
 const CustomPopup = ({ node }) => {
   const popup = useRef(null);
@@ -148,17 +197,26 @@ export default (props) => {
     icons = buildIcons();
   }
   const mapData = useMapData()
+  const sidebar = mapData.sidebar
   console.log("mapData",mapData);
   return (
     <Layout { ...props } eventPassThru>
       <div className={mapLayout.layout}>
         <div className={mapLayout.overlay}>
+          <InfoPopup
+            title={sidebar.frontmatter.title}
+            text={sidebar.html}
+            footerText={sidebar.frontmatter.footer_text}
+            buttonLink={sidebar.frontmatter.button_link}
+          />
+        </div>
+        <div className={mapLayout.overlay}>
           {props.children}
         </div>
-        
+
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
           <Map settings={mapSettings}>
-            {mapData
+            {mapData.pins
               .filter((item) => item?.node?.frontmatter?.is_published)
               .map(item => {
                 const node = item.node

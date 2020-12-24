@@ -10,7 +10,7 @@ module.exports = {
     about: config.about,
     contact: config.contact,
     primaryColor: config.primary_color,
-    welcomeData: welcomeData
+    welcomeData: welcomeData,
   },
   pathPrefix: "/homemaker",
   plugins: [

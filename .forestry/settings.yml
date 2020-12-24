@@ -10,7 +10,7 @@ sections:
   path: content/data/welcome.json
   label: Welcome Page
 - type: document
-  path: content/data/sidebar.json
+  path: content/data/sidebar.md
   label: Sidebar
 - type: directory
   path: content/articles

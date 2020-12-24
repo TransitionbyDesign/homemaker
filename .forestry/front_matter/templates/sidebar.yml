@@ -8,16 +8,6 @@ fields:
     required: false
   label: title
   description: This title goes in the sidebar header
-- name: text
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: html-blocks
-  label: text
-  description: This is the main text in the side-bar
 - name: footer_text
   type: textarea
   default: ''
@@ -36,4 +26,4 @@ fields:
   description: Indicates where the footer button should link to. This should be an
     URL or a local path.
 pages:
-- content/data/sidebar.json
+- content/data/sidebar.md

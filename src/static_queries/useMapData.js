@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 export default function useMapData() {
   const data = useStaticQuery(graphql`
     query getMapData {
-      allMarkdownRemark {
+      pins: allMarkdownRemark(filter: {frontmatter: {is_published: {eq: true}}}) {
         edges {
           node {
             id
@@ -32,7 +32,22 @@ export default function useMapData() {
           }
         }
       }
+      sidebar: markdownRemark(
+        fields: {
+          slug: {eq: "sidebar"},
+          media: {eq: "data"},
+        }
+      )
+      {
+        id
+        frontmatter {
+          title
+          footer_text
+          button_link
+        }
+        html
+      }
     }
   `)
-  return data.allMarkdownRemark.edges
+  return { sidebar: data.sidebar, pins: [ ...data.pins.edges ] }
 }
