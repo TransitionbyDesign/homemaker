@@ -183,7 +183,7 @@ const CustomPopup = ({ node }) => {
               </div>
             }
           </div>
-          <div>{summary}</div>
+          <div dangerouslySetInnerHTML={{__html: summary}} />
         </div>
       </Window>
     </Popup>
