@@ -1,4 +1,53 @@
 const path = require("path")
+const remark = require(`remark`)
+const html = require(`remark-html`)
+
+// Adapted from https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#createresolvers-api
+exports.createSchemaCustomization = ({ actions }) => {
+  // Define the @md tag to mark a field which should be interpreted as markdown
+  // and converted to HTML
+  actions.createFieldExtension({
+    name: "md",
+    args: {
+      sanitize: {
+        type: "Boolean!",
+        defaultValue: true,
+      },
+    },
+    // The extension `args` (above) are passed to `extend` as
+    // the first argument (`options` below)
+    extend(options, prevFieldConfig) {
+      return {
+        args: {
+          sanitize: "Boolean",
+        },
+        resolve(source, args, context, info) {
+          const fieldValue = context.defaultFieldResolver(
+            source,
+            args,
+            context,
+            info
+          )
+          const shouldSanitize =
+            args.sanitize != null ? args.sanitize : options.sanitize
+          const processor = remark().use(html, { sanitize: shouldSanitize })
+          return processor.processSync(fieldValue).contents
+        },
+      }
+    },
+  })
+
+
+  // Add a type definition for this field which marks
+  // `summary` as a markdown field. Note, `MarkdownRemarkFrontmatter`
+  // is empirically the type name of frontmatter objects (and not
+  // `Frontmatter` as in some of the docs)
+  actions.createTypes(`
+    type MarkdownRemarkFrontmatter {
+     summary: String! @md
+    }
+  `)
+}
 
 module.exports.onCreateNode = ({ node, actions }) => {
   // Transform the new node here and create a new node or
