@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { navigate } from 'gatsby'
 import Layout from "../components/Layout";
 import mapLayout from "../styles/components/mapLayout.module.scss";
+import textLayout from "../styles/components/text.module.scss";
 import Map from '../components/Map';
 import CloseIcon from '../components/CloseIcon';
 import MinimiseIcon from '../components/MinimiseIcon';
@@ -107,7 +108,7 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
           </div>
         }
         >
-          <div className={windowStyles.col}>
+          <div className={cn(windowStyles.col, textLayout.body)}>
             <div dangerouslySetInnerHTML={{__html: text}} />
             <div>
               <h2>Legend</h2>

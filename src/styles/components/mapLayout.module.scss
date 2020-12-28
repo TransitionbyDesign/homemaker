@@ -104,6 +104,13 @@
   svg {
     fill: currentColor;
   }
+
+  font-size: 0.9rem;
+  
+  h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 // These are for the InfoPopup dialog
@@ -127,28 +134,31 @@
   }
 }
 
-.legend-table td {
-  padding: 0;
-  border: 0;
-  vertical-align: top;
-}
-.legend-img {
-  width: 1.5em;
-  margin: 0;
-}
-.legend-span {
-  width: 1.5em;
-  height: 1.5em;
-  display: block;
-  background: red;
-}
-.legend-problem {
-  background: palette.$region-fill-prob;
-  opacity: 0.5;
-}
-.legend-solution {
-  background: palette.$region-fill-soln;
-  opacity: 0.5;
+.legend-table {
+  
+  & td {
+    padding: 0.1em;
+    border: 0;
+    vertical-align: top;
+    
+    .legend-img {
+      width: 1.5em;
+      margin: 0;
+    }
+    .legend-span {
+      width: 1.5em;
+      height: 1.5em;
+      display: block;
+    }
+    .legend-problem {
+      background: palette.$region-fill-prob;
+      opacity: 0.5;
+    }
+    .legend-solution {
+      background: palette.$region-fill-soln;
+      opacity: 0.5;
+    }
+  }
 }
 
 .custom-popup {
