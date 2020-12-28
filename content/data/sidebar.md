@@ -11,9 +11,3 @@ You can explore what the Homemaker Project has done in Oxford by scrolling aroun
 
 * What are the problems? - shown in blue.
 * What are the solutions? - shown in pink.
-
-## Legend
-
-| ![](/content/assets/Video pointer pink.png)<img src="/content/assets/Video pointer blue.png"> | <img src="/content/assets/Video pointer pink.png"> | Written piece |
-| <img src="/content/assets/Text pointer blue.png"> | <img src="/content/assets/Text pointer pink.png"> | Audio |
-| <img src="/content/assets/Audio pointer blue.png"> | <img src="/content/assets/Audio pointer pink.png"> | Video |
