@@ -15,7 +15,7 @@ fields:
     required: false
     wysiwyg: true
     schema:
-      format: html-blocks
+      format: markdown
   label: footer text
   description: This text goes in the footer above the read-more button
 - name: button_link
