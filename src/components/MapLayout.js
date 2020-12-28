@@ -91,7 +91,6 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
         }
         footer={
           <div>
-            <div dangerouslySetInnerHTML={{__html: footerText}} />
             <button className={windowStyles.button}
               onClick={() => {
                 closePopup()
@@ -107,12 +106,63 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
             </button>
           </div>
         }
-    >
-    <div className={windowStyles.col}>
-      <div
-        dangerouslySetInnerHTML={{__html: text}} />
-    </div>
-      </Window>
+        >
+          <div className={windowStyles.col}>
+            <div dangerouslySetInnerHTML={{__html: text}} />
+            <div>
+              <h2>Legend</h2>
+              <table className={mapLayout.legendTable}>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img className={mapLayout.legendImg} alt="Problem Article Pointer" title="Problem Article" src={articleIconBlue} />
+                    </td>
+                    <td>
+                      <img className={mapLayout.legendImg} alt="Solution Article Pointer" title="Solution Article" src={articleIconPink} />
+                    </td>
+                    <td>
+                      Written piece
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img className={mapLayout.legendImg} alt="Problem Audio Pointer" title="Problem Audio" src={audioIconBlue} />
+                    </td>
+                    <td>
+                      <img className={mapLayout.legendImg} alt="Solution Audio Pointer" title="Solution Audio" src={audioIconPink} />
+                    </td>
+                    <td>
+                      Audio
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img className={mapLayout.legendImg} alt="Problem Video Pointer" title="Problem Video" src={videoIconBlue} />
+                    </td>
+                    <td>
+                      <img className={mapLayout.legendImg} alt="Solution Video Pointer" title="Solution Video" src={videoIconPink} />
+                    </td>
+                    <td>
+                      Video
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span className={cn(mapLayout.legendSpan,mapLayout.legendProblem)} title="Problem Region" />
+                    </td>
+                    <td>
+                      <span className={cn(mapLayout.legendSpan,mapLayout.legendSolution)} title="Solution Region" />
+                    </td>
+                    <td>
+                      Neighbourhood story
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div dangerouslySetInnerHTML={{__html: footerText}} />
+          </div>
+        </Window>
       </div>
     </div>
   );
@@ -212,14 +262,6 @@ export default (props) => {
         </div>
         <div className={mapLayout.overlay}>
           {props.children}
-          <>
-            <InfoPopup
-              title={sidebar.frontmatter.title}
-              text={sidebar.html}
-              footerText={sidebar.frontmatter.footer_text}
-              buttonLink={sidebar.frontmatter.button_link}
-            />
-          </>
         </div>
 
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>

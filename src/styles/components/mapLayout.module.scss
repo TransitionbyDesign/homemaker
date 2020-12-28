@@ -127,6 +127,30 @@
   }
 }
 
+.legend-table td {
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+}
+.legend-img {
+  width: 1.5em;
+  margin: 0;
+}
+.legend-span {
+  width: 1.5em;
+  height: 1.5em;
+  display: block;
+  background: red;
+}
+.legend-problem {
+  background: palette.$region-fill-prob;
+  opacity: 0.5;
+}
+.legend-solution {
+  background: palette.$region-fill-soln;
+  opacity: 0.5;
+}
+
 .custom-popup {
   border-radius: 0;
 }
