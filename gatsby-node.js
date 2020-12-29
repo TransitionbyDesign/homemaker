@@ -41,11 +41,21 @@ exports.createSchemaCustomization = ({ actions }) => {
   // Add a type definition for this field which marks
   // `summary` as a markdown field. Note, `MarkdownRemarkFrontmatter`
   // is empirically the type name of frontmatter objects (and not
-  // `Frontmatter` as in some of the docs)
+  // `Frontmatter` as in some of the docs). We define some other fields
+  // which can be optional so as to avoid errors if Gatsby does not
+  // find any examples and therefore can't infer their existence.
+  // hero_image is an exception, as I've not discovered how to define it correctly.
   actions.createTypes(`
     type MarkdownRemarkFrontmatter {
-     summary: String! @md
-     footer_text: String! @md
+      title: String!
+      summary: String @md
+      apposition: String
+      youtube_url: String
+      latitude: Float
+      longitude: Float
+      region: String
+      is_published: Boolean
+      footer_text: String @md
     }
   `)
 }
