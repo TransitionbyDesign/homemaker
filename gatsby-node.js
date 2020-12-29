@@ -45,6 +45,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type MarkdownRemarkFrontmatter {
      summary: String! @md
+     footer_text: String! @md
     }
   `)
 }
