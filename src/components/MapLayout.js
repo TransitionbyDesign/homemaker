@@ -146,17 +146,6 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
                        Video
                      </td>
                    </tr>
-                   <tr>
-                     <td>
-                       <span className={cn(mapLayout.legendSpan,mapLayout.legendProblem)} title="Problem Region" />
-                     </td>
-                     <td>
-                       <span className={cn(mapLayout.legendSpan,mapLayout.legendSolution)} title="Solution Region" />
-                     </td>
-                     <td>
-                       Neighbourhood story
-                     </td>
-                   </tr>
                  </tbody>
               </table>
             <div dangerouslySetInnerHTML={{__html: footerText}} />
