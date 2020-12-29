@@ -80,7 +80,7 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
     <div className={mapLayout.infoPopupWrapper}>
       <div className={cn(mapLayout.minimisable, {[mapLayout.minimised]: isMinimised})}>
         <Window
-          className={cn(mapLayout.infoPopup, 'situation')}
+          className={cn(mapLayout.infoPopupWindow, 'situation')}
           header={
           <>
             <div>{title}</div>

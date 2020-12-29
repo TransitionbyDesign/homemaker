@@ -105,12 +105,23 @@
     fill: currentColor;
   }
 
-  font-size: 0.9rem;
-  
+  font-size: 0.9rem;  
+}
+
+
+// The div prefix here bumps these styles specificity above those in
+// the window CSS module, allowing us to override them.
+div.info-popup-window {
   h1, h2, h3, h4 {
-    padding: 0;
     margin: 0;
   }
+
+  header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
 }
 
 // These are for the InfoPopup dialog
@@ -126,9 +137,12 @@
   bottom: 0;
 }
 .minimised > div {
-  left: calc(4rem - 100%) !important;
-  bottom: calc(3.75rem - 100%) !important;
+  left: calc(2.2rem - 100%) !important;
+  bottom: calc(2.2rem - 100%) !important;
   opacity: 0.5;
+  header {
+    padding-right: 0.1rem;
+  }
   button {
     transform: rotateX(180deg);
   }
