@@ -108,7 +108,7 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
           </div>
         }
         >
-          <div className={cn(windowStyles.col, textLayout.body)}>
+          <div className={cn(windowStyles.col, windowStyles.scrollY, textLayout.body)}>
             <div dangerouslySetInnerHTML={{__html: text}} />
             <h3>Legend</h3>
               <table className={mapLayout.legendTable}>
