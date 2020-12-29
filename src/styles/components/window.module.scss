@@ -34,7 +34,7 @@ $welcome-pad-side: 8%;
     color: palette.$head-text-splash;
     font-family: Klima-Medium,"Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.5em;
-    padding: 1rem;
+    padding: 1rem $content-pad-side;
     margin: 0;
     flex: 0 0 auto;
 
