@@ -1,0 +1,26 @@
+// common body 
+.body {
+  a {
+    padding-bottom: 1.5rem;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    padding: 1.5rem;
+  }
+  ul {
+    list-style: initial;
+  }
+  ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.45rem;
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}
+

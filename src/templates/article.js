@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Helmet from "react-helmet"
+import textStyles from "../styles/components/text.module.scss"
 import articleTemplateStyles from "../styles/templates/article.module.scss"
 import { useLocation } from '@reach/router'
 import ModalPage from '../components/ModalPage'
@@ -90,7 +91,7 @@ export default (props) => {
       <div className={articleTemplateStyles.wrapper}>
         <div className={articleTemplateStyles.left}>
           <div
-            className={articleTemplateStyles.body}
+            className={cn(articleTemplateStyles.body, textStyles.body)}
             dangerouslySetInnerHTML={{ __html: data.html }}
           ></div>
         </div>
