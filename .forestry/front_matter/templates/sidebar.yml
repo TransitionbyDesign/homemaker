@@ -18,12 +18,12 @@ fields:
       format: markdown
   label: legend text
   description: This text goes below the legend icons
-- name: button_link
+- name: button_url
   type: text
   config:
     required: true
-  label: button link
+  label: button URL
   description: Indicates where the footer button should link to. This should be an
-    URL or a local path.
+    URL (like https://example.com/) or a local path (like /map/some-page-slug)
 pages:
 - content/data/sidebar.md

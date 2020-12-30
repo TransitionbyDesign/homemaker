@@ -43,7 +43,7 @@ export default function useMapData() {
         frontmatter {
           title
           legend_text
-          button_link
+          button_url
         }
         html
       }

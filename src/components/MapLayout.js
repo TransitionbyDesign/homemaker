@@ -245,7 +245,7 @@ export default (props) => {
             title={sidebar.frontmatter.title}
             text={sidebar.html}
             footerText={sidebar.frontmatter.legend_text}
-            buttonLink={sidebar.frontmatter.button_link}
+            buttonLink={sidebar.frontmatter.button_url}
           />
         </div>
         <div className={mapLayout.overlay}>
