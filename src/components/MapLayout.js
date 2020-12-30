@@ -213,7 +213,7 @@ export default (props) => {
                   );
                 }
                 console.warn(`article has no location, icon, or region: `+
-                             `id=${node.id} slug=${node.slug}`);
+                             `id=${node.id} slug=${node.fields.slug}`);
                 return '';
             })}
           </Map>
