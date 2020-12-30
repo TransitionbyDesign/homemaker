@@ -6,6 +6,7 @@ $content-pad-side: 2rem;
 $content-pad-top: 2rem;
 $content-pad-bottom: 2rem;
 $welcome-pad-side: 8%;
+$footer-link-padding-top: 0.8rem;
 
 // The wrapper div is the modal box, containing the header, footer, and content.
 // It should not expand off-screen.
@@ -46,16 +47,11 @@ $welcome-pad-side: 8%;
     
   footer {
     display: flex;
-    padding: 0.8rem 0 $content-pad-bottom 0;
+    padding: $footer-link-padding-top 0 $content-pad-bottom 0;
     margin: 0.5rem $content-pad-side 0 $content-pad-side;
     border-top: solid palette.$footer-border-splash 0.1rem;
     flex: 0 0 auto;
     justify-content: space-between;
-    
-    .button {
-      padding: 0.2rem 1rem;
-      margin: 0;
-    }
   }
     
   h1 {
@@ -98,10 +94,10 @@ $welcome-pad-side: 8%;
   .button {
     font-family: Klima-Regular,"Helvetica Neue", Helvetica, sans-serif;
     font-weight: bold;
-    margin: 0 auto;
     line-height: 2rem;
     border: 0;
-    padding: 1rem;
+    margin: 0;
+    padding: 0.2rem 1rem;
     border-radius: 0.3em;
     font-weight: bold;
 
@@ -150,11 +146,39 @@ a.button:hover {
 }
 
 // Special case on welcome page, increase padding
-.welcome .content {
-  overflow-y: scroll;
-  & > * {
-    padding-left: $welcome-pad-side;
-    padding-right: $welcome-pad-side;
+.welcome {
+
+
+  .content {
+    overflow-y: scroll;
+    & > * {
+      padding-left: $welcome-pad-side;
+      padding-right: $welcome-pad-side;
+    }
+  }
+
+  footer {
+    border: none;
+    padding-top: 0;
+  }
+  .footer {
+    align-items: stretch;
+    h1, h2, h3, h4 {
+      margin: 1rem 0 3rem 0;
+    }
+    .button {
+      margin: 0 auto;
+      padding: 1rem;
+    }
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  .links {
+    border-top: solid palette.$footer-border-splash 0.1rem;
+    padding-top: $footer-link-padding-top;
+    justify-content: space-between;
   }
 }
 

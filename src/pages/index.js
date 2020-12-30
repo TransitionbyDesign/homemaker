@@ -27,42 +27,47 @@ export default () => {
           className={windowStyles.welcome}
           header={welcomeData.header}
           footer={
-            <>
-              <div/>
-              {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
-                  logo={}
-                  >
-                  Email: {welcomeData.contact.email}
-                  </SocialLink>*/}
-              <div className={windowStyles.linkIcons}>
-                <SocialLink to={`https://twitter.com/${welcomeData.contact.twitter_handle}`}
-                  logo={twitterIcon} alt="Twitter"
-                >
-                  Twitter: @{welcomeData.contact.twitter_handle}
-                </SocialLink>
-                <SocialLink to={`https://facebook.com/${welcomeData.contact.facebook_id}`}
-                  logo={facebookIcon} alt="Facebook"
-                >
-                  Facebook: @{welcomeData.contact.facebook_id}
-                </SocialLink>
-                <SocialLink to={`https://www.linkedin.com/company/${welcomeData.contact.linkedin_profile}`}
-                  logo={linkedInIcon} alt="LinkedIn"
-                >
-                  LinkedIn: {welcomeData.contact.linkedin_profile}
-                </SocialLink>
+            <div className={cn(windowStyles.col, windowStyles.footer)}>
+              <div className={cn(windowStyles.row, windowStyles.center)}>
+                <h3>Homemaker Oxford, finding creative ways to fight the housing crisis.</h3>
               </div>
-            </>
-          }
-        >
-          <div dangerouslySetInnerHTML={{__html: welcomeData.intro}}/>
-          { !welcomeData.is_published? '' :
-            <div className={windowStyles.introButtons}>
-              <Link to="/map" className={windowStyles.button}>EXPLORE THE MAP</Link>
+              { !welcomeData.is_published? '' :
+                <div className={cn(windowStyles.introButtons, windowStyles.row, windowStyles.center)}>
+                  <Link to="/map" className={windowStyles.button}>EXPLORE THE MAP</Link>
+                </div>
+              }
+              <div className={cn(windowStyles.row, windowStyles.links)}>
+                <div/>
+                {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
+                    logo={}
+                    >
+                    Email: {welcomeData.contact.email}
+                    </SocialLink>*/}
+                <div className={windowStyles.linkIcons}>
+                  <SocialLink to={`https://twitter.com/${welcomeData.contact.twitter_handle}`}
+                    logo={twitterIcon} alt="Twitter"
+                  >
+                    Twitter: @{welcomeData.contact.twitter_handle}
+                  </SocialLink>
+                  <SocialLink to={`https://facebook.com/${welcomeData.contact.facebook_id}`}
+                    logo={facebookIcon} alt="Facebook"
+                  >
+                    Facebook: @{welcomeData.contact.facebook_id}
+                  </SocialLink>
+                  <SocialLink to={`https://www.linkedin.com/company/${welcomeData.contact.linkedin_profile}`}
+                    logo={linkedInIcon} alt="LinkedIn"
+                  >
+                    LinkedIn: {welcomeData.contact.linkedin_profile}
+                  </SocialLink>
+                </div>
+              </div>
             </div>
           }
-          <div
-            className={cn(windowStyles.columned)}
-            dangerouslySetInnerHTML={{__html: welcomeData.text}} />
+    >
+    <div dangerouslySetInnerHTML={{__html: welcomeData.intro}}/>
+    <div
+      className={cn(windowStyles.columned)}
+      dangerouslySetInnerHTML={{__html: welcomeData.text}} />
         </Splash>
       </div>
     </Layout>
