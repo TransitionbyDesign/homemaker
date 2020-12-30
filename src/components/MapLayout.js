@@ -177,7 +177,7 @@ const CustomPopup = ({ node }) => {
       <Window
         header={
           <>
-            <div>{title}</div>
+            <div className={windowStyles.truncate}>{title}</div>
             <button className={windowStyles.closer} onClick={closePopup}
               aria-label="Close">
               <CloseIcon/>
