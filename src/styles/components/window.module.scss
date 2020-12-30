@@ -60,7 +60,10 @@ $welcome-pad-side: 8%;
     
   h1 {
     position: relative;
-    padding: 1rem;
+    padding: 1rem 1rem 2.5rem 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    
     
     // Inserts an underline below the header
     &:after {
@@ -68,7 +71,7 @@ $welcome-pad-side: 8%;
       height: 1px;
       background: palette.$text-splash;
       position: absolute;
-      bottom: -0.8rem;
+      bottom: 0rem;
     }
     
     @include layout.all-media(header-underline-width)
