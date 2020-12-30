@@ -244,7 +244,7 @@ export default (props) => {
           <InfoPopup
             title={sidebar.frontmatter.title}
             text={sidebar.html}
-            footerText={sidebar.frontmatter.footer_text}
+            footerText={sidebar.frontmatter.legend_text}
             buttonLink={sidebar.frontmatter.button_link}
           />
         </div>

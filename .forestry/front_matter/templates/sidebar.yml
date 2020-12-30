@@ -8,7 +8,7 @@ fields:
     required: false
   label: title
   description: This title goes in the sidebar header
-- name: footer_text
+- name: legend_text
   type: textarea
   default: ''
   config:
@@ -16,8 +16,8 @@ fields:
     wysiwyg: true
     schema:
       format: markdown
-  label: footer text
-  description: This text goes in the footer above the read-more button
+  label: legend text
+  description: This text goes below the legend icons
 - name: button_link
   type: text
   config:

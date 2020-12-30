@@ -42,7 +42,7 @@ export default function useMapData() {
         id
         frontmatter {
           title
-          footer_text
+          legend_text
           button_link
         }
         html

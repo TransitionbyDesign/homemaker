@@ -55,7 +55,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       longitude: Float
       region: String
       is_published: Boolean
-      footer_text: String @md
+      legend_text: String @md
     }
   `)
 }
