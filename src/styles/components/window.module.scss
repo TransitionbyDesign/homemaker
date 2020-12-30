@@ -7,6 +7,7 @@ $content-pad-top: 1.1rem;
 $content-pad-bottom: 1.1rem;
 $welcome-pad-side: 8%;
 $footer-link-padding-top: 0.8rem;
+$footer-link-margin-top: 0.8rem;
 
 // The wrapper div is the modal box, containing the header, footer, and content.
 // It should not expand off-screen.
@@ -48,7 +49,7 @@ $footer-link-padding-top: 0.8rem;
   footer {
     display: flex;
     padding: $footer-link-padding-top 0 $content-pad-bottom 0;
-    margin: 0.5rem $content-pad-side 0 $content-pad-side;
+    margin: $footer-link-margin-top $content-pad-side 0 $content-pad-side;
     border-top: solid palette.$footer-border-splash 0.1rem;
     flex: 0 0 auto;
     justify-content: space-between;
