@@ -7,6 +7,8 @@
     "solution"
   ],
   "map": {
+    "tileLayerUrl": "https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}?access_token={token}",
+    "attribution": "Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>",
     "pinSize": 32,
     "settings": {
       "center": [51.7522, -1.2560],
