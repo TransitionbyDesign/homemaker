@@ -17,6 +17,82 @@ fields:
   label: Appositions
   description: Defines the ways in which articles etc. can be apposite to the problem
     of homelessness
+- name: map
+  type: field_group
+  config: {}
+  fields:
+  - name: tileLayerUrl
+    type: text
+    config:
+      required: false
+    label: tile layer URL
+    description: 'The tile server URL template to use. It contains certain placeholders,
+      as described in the <a href="https://leafletjs.com/reference-1.7.1.html#tilelayer"
+      title="" target="_blank">LeafletJS documentation on TileLayer</a>, with one
+      addition: <code>{token}</code> for inserting the access token, if required.<br><br>If
+      not set, the default used is:<br><br>    https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png<br><br>'
+  - name: attribution
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: html
+    label: attribution
+    description: 'The attribution text to insert. If omitted a default attribution
+      to OpenStreetMap is used.<br><br>Note: whatever is used, LeafletJS will prepend
+      an attribution to itself.'
+  - name: pinSize
+    type: number
+    label: pin size
+    description: Sets the size of map pin icons, in pixels.
+    default: 32
+    required: true
+    config:
+      min: 1
+      max: 
+      step: 
+  - name: settings
+    type: field_group
+    label: BaseMap settings
+    description: Configuration for the BaseMap element
+    config: {}
+    fields:
+    - name: zoom
+      type: number
+      label: initial zoom level
+      description: The initial map zoom level
+      default: 4
+      required: true
+      config:
+        min: 1
+        max: 16
+        step: 
+    - name: minZoom
+      type: number
+      label: minimum zoom level
+      description: If present, sets the minimum zoom level
+      default: 0
+      required: true
+      config:
+        min: 1
+        max: 16
+        step: 
+    - name: latitude
+      type: number
+      label: latitude
+      description: 'The default map center latitude'
+      default: 0
+      required: true
+    - name: longitude
+      type: number
+      label: longitude
+      description: 'The default map center longitude'
+      default: 0
+      required: true
+  label: map
+  description: Map related configuration
 - name: share_on_twitter_link_template
   type: text
   config:

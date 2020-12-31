@@ -11,7 +11,8 @@
     "attribution": "Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>",
     "pinSize": 32,
     "settings": {
-      "center": [51.7522, -1.2560],
+      "latitude": 51.7522,
+      "longitude": -1.2560,
       "zoom": 13,
       "minZoom": 12
     }

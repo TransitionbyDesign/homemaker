@@ -34,13 +34,19 @@ const Map = ({ children, settings, url, attribution }) => {
     );
   }
 
+  // We have to work around forestry.io's limitations in the fields it can provide.
+  // Specifically, it doesn't yet support an array of numbers, so we have to convert two fields
+  // into the `center` array.
+  const center = [settings.latitude || 0, settings.longitude || 0]
   const mapSettings = {
     className: mapStyles.mapBase,
     zoomControl: false,
-    center: [0, 0],
+    center: center,
     zoom: 4,
     ...settings
   };
+  delete mapSettings.latitude;
+  delete mapSettings.longitude;
 
   return (
     <div className={mapStyles.map}>
