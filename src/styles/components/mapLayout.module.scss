@@ -126,9 +126,11 @@ div.info-popup-window {
 
 // These are for the InfoPopup dialog
 .minimisable {
-  overflow: hidden;
   height: 100%;
   width: 100%;
+}
+.minimised {
+  overflow: hidden;
 }
 .minimisable > div {
   position: relative;
