@@ -6,6 +6,14 @@
     "situation",
     "solution"
   ],
+  "map": {
+    "pinSize": 32,
+    "settings": {
+      "center": [51.7522, -1.2560],
+      "zoom": 13,
+      "minZoom": 12
+    }
+  },
   "share_on_twitter_link_template": "https://twitter.com/intent/tweet?text=${title}&url=${url}&via=transitionbydesign&hashtags=HomemakerOxford",
   "share_on_facebook_link_template": "https://www.facebook.com/sharer/sharer.php?u=${url}",
   "share_on_linkedin_link_template": "https://www.linkedin.com/sharing/share-offsite/?url=${url}"

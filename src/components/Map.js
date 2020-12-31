@@ -6,6 +6,11 @@ import mapStyles from './Map.module.css';
 
 const isDomAvailable = typeof window !== 'undefined';
 
+const accessToken = process.env.GATSBY_MAP_ACCESS_TOKEN || '';
+const defaultTileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const defaultAttribution =
+  '<a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors';
+
 if ( isDomAvailable ) {
   // To get around an issue with the default icon not being set up right between using React
   // and importing the leaflet library, we need to reset the image imports
@@ -20,7 +25,7 @@ if ( isDomAvailable ) {
   });
 }
 
-const Map = ({ children, settings }) => {
+const Map = ({ children, settings, url, attribution }) => {
   if ( !isDomAvailable ) {
     return (
       <div className={mapStyles.map}>
@@ -40,7 +45,10 @@ const Map = ({ children, settings }) => {
   return (
     <div className={mapStyles.map}>
       <BaseMap {...mapSettings}>
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
+        <TileLayer
+          url={(url || defaultTileUrl).replace('{token}', accessToken)}
+          attribution={attribution || defaultAttribution}
+        />
         <ZoomControl position="topright" />
         { children }
       </BaseMap>

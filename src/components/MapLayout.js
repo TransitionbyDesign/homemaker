@@ -17,19 +17,12 @@ import videoIconBlue from "../icons/video_ptr_blue.svg";
 import videoIconPink from "../icons/video_ptr_pink.svg";
 import tbdLogo from "../icons/TbD-logo.svg";
 import useMapData from "../static_queries/useMapData"
+import config from "../../config.json"
 import cn from 'classnames';
 import L from 'leaflet';
 import Img from 'gatsby-image'
 
-// The map content is defined here as it's the same wherever the map is used.
-
-const mapSettings = {
-  center: [51.7522, -1.2560],
-  zoom: 13,
-  minZoom: 12,
-};
-const pinSize = 32;
-
+const pinSize = config.map.pinSize;
 let icons = null;
 
 function selectIcon(pin, activePinId) {
@@ -253,8 +246,12 @@ export default (props) => {
         </div>
 
         <div className={cn(mapLayout.map, {[mapLayout.disabled]: props.mapDisabled})}>
-          <Map settings={mapSettings}>
-            {mapData.pins
+          <Map settings={config.map.settings}
+            attribution={config.map.attribution}
+            url={config.map.tileLayerUrl}
+          >
+            {mapData
+              .pins
               .filter((item) => item?.node?.frontmatter?.is_published)
               .map(item => {
                 const node = item.node
