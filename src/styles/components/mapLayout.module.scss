@@ -200,11 +200,6 @@ div.info-popup-window {
 }
 
 :global {
-  // Turn OSM grey
-  .leaflet-tile-pane {
-    filter: grayscale(100%);
-  }
-
   // This is a hacky workaround for not being able to abut an ampersand
   // to `:global`.
   // See https://github.com/css-modules/css-modules/issues/295#issuecomment-404873976
