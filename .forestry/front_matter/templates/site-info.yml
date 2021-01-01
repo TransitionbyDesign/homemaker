@@ -82,13 +82,13 @@ fields:
     - name: latitude
       type: number
       label: latitude
-      description: 'The default map center latitude'
+      description: The default map center latitude
       default: 0
       required: true
     - name: longitude
       type: number
       label: longitude
-      description: 'The default map center longitude'
+      description: The default map center longitude
       default: 0
       required: true
   label: map

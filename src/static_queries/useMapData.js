@@ -10,6 +10,9 @@ export default function useMapData() {
             frontmatter {
               title
               summary
+              custom_icon {
+                publicURL
+              }
               apposition
               hero_image {
                 childImageSharp {

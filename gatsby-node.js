@@ -49,6 +49,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemarkFrontmatter {
       title: String!
       summary: String @md
+      custom_icon: File
       apposition: String
       youtube_url: String
       latitude: Float

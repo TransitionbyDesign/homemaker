@@ -43,6 +43,15 @@ fields:
   label: hero image
   description: Enter hero image for audio here
   default: ''
+- name: custom_icon
+  type: file
+  config:
+    maxSize: '10'
+  label: custom pin icon
+  description: If set, this selects a custom image to use as a pin icon for this article.
+    Avoid using large images for this, something which works at about 32 pixels is
+    ideal.
+  default: ''
 - name: youtube_url
   type: text
   config:

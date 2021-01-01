@@ -30,7 +30,10 @@ function selectIcon(pin, activePinId) {
 
   const media = pin?.fields?.media
   const apposition = pin?.frontmatter?.apposition
-
+  const custom = icons.custom[pin?.frontmatter?.custom_icon?.publicURL]
+  if (custom)
+    return custom;
+  
   const mediaIcons = icons[media];
   if (!mediaIcons) return;
 
@@ -49,8 +52,20 @@ const newIcon = (url, size) => new L.Icon({
   className: mapLayout.customMarker,
 })
 
-function buildIcons() {
+function buildIcons(mapData) {
+  const custom = mapData
+    .pins
+    .filter((item) => item?.node?.frontmatter?.is_published)
+    .filter((item) => item?.node?.frontmatter?.custom_icon)
+    .map(item => {
+      const { custom_icon } = item.node.frontmatter
+      return {
+        [custom_icon.publicURL]: newIcon(custom_icon.publicURL, pinSize)
+      }
+    })
+      console.log("custom", custom);
   return {
+    custom: Object.assign( {}, ...custom ),
     articles: {
       situation: newIcon(articleIconBlue, pinSize),
       solution: newIcon(articleIconPink, pinSize),
@@ -223,11 +238,11 @@ const CustomPopup = ({ node }) => {
 
 export default (props) => {
   const [activePinId, setActivePinId] = useState(null)
+  const mapData = useMapData()
   // This window check is a work-around to some leaflet issues
   if (!icons && typeof window !== 'undefined') {
-    icons = buildIcons();
+    icons = buildIcons(mapData);
   }
-  const mapData = useMapData()
   const sidebar = mapData.sidebar
   console.log("mapData",mapData);
   return (
