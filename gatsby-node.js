@@ -44,12 +44,33 @@ exports.createSchemaCustomization = ({ actions }) => {
   // `Frontmatter` as in some of the docs). We define some other fields
   // which can be optional so as to avoid errors if Gatsby does not
   // find any examples and therefore can't infer their existence.
-  // hero_image is an exception, as I've not discovered how to define it correctly.
+  // Note well: any File fields are an exception, as I've not
+  // discovered how to define these correctly. (Simply specifying, e.g.
+  // `hero_image: File` does not work.) I suspect a bug in Gatsby.
+  // I find myself caught between errors related to File fields being objects,
+  // which need at least one subfield in the query, and errors related to
+  // the fields being interpreted as strings, which cannot have subfields,
+  // or simply being missing. I also get "Cannot read property 'contentDigest'
+  // of undefined` for publicURL", as in this thread:
+  //
+  // https://spectrum.chat/gatsby-js/general/cannot-read-property-contentdigest-of-undefined-for-publicurl~b3f62193-936b-4b84-acea-66a6f4f4876f
+  //
+  // Overall, *not* declaring image/file fields expicitly and allowing Gatsby
+  // to infer them seems to work least badly, at least for now. I do worry that
+  // this is fragile, however, I don't seem to have a lot of choice, as I don't have
+  // the time to write a full bug report for the Gatsby project and/or experiment further.
+  //
+  // [later] Indeed it is fragile.
+  // I believe that the order in which gatsby encounters the articles
+  // changes the outcome (success, or one of various errors) by changing
+  // the way it infers the fields - sometimes inferring a string and sometimes
+  // inferring a File. This may be a consequence of custom_icon and
+  // hero_image being optional, I think, and therefore not consistently a file.
+  //  
   actions.createTypes(`
     type MarkdownRemarkFrontmatter {
       title: String!
       summary: String @md
-      custom_icon: File
       apposition: String
       youtube_url: String
       latitude: Float
