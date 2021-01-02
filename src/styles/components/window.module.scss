@@ -133,7 +133,7 @@ a.button:hover {
   text-decoration: none;
 }
 
-.introButtons {
+.intro-buttons {
   display: flex;
   margin-bottom: 1.45rem;
 }
@@ -145,6 +145,10 @@ a.button:hover {
   margin: 0;
   padding: $content-pad-top $content-pad-side 0 $content-pad-side;
   overflow-y: hidden;
+}
+
+.footer {
+  overflow: hidden;
 }
 
 // Special case on welcome page, increase padding
@@ -159,28 +163,45 @@ a.button:hover {
     }
   }
 
-  footer {
-    border: none;
-    padding-top: 0;
-  }
-  .footer {
-    align-items: stretch;
-    h1, h2, h3, h4 {
-      margin: 1rem 0 3rem 0;
+  // This is to prevent the large button and strapline
+  // use up the whole window on smallish mobile displays
+  @media (max-width: 768px) {
+    .strapline {
+      display: none;
     }
-    .button {
-      margin: 0 auto;
-      padding: 1rem;
+    .footer {
+      flex-direction: row;
+      .intro-buttons {
+        white-space: nowrap;
+        margin-bottom: 0;
+      }
     }
   }
-  .center {
-    display: flex;
-    justify-content: center;
-  }
-  .links {
-    border-top: solid palette.$footer-border-splash 0.1rem;
-    padding-top: $footer-link-padding-top;
-    justify-content: space-between;
+  
+  @media (min-width: 768px) {
+    footer { 
+      border: none;
+      padding-top: 0;
+    }
+    .footer {
+      align-items: stretch;
+      .strapline {
+        margin: 1rem 0 3rem 0;
+      }
+      .button {
+        margin: 0 auto;
+        padding: 1rem;
+      }
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+    .links {
+      border-top: solid palette.$footer-border-splash 0.1rem;
+      padding-top: $footer-link-padding-top;
+      justify-content: space-between;
+    }
   }
 }
 

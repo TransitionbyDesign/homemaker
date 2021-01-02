@@ -29,9 +29,11 @@ export default () => {
           footer={
             <div className={cn(windowStyles.col, windowStyles.footer)}>
               <div className={cn(windowStyles.row, windowStyles.center)}>
-                <h3>Homemaker Oxford, finding creative ways to fight the housing crisis.</h3>
+                <h3 className={windowStyles.strapline}>
+                  Homemaker Oxford, finding creative ways to fight the housing crisis.
+                </h3>
               </div>
-              { !welcomeData.is_published? '' :
+              { !welcomeData.is_published? <div className={cn(windowStyles.introButtons, windowStyles.row)}/> :
                 <div className={cn(windowStyles.introButtons, windowStyles.row, windowStyles.center)}>
                   <Link to="/map" className={windowStyles.button}>EXPLORE THE MAP</Link>
                 </div>
