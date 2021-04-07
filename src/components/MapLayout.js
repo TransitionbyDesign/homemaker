@@ -166,11 +166,12 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
 
 
 
-const CustomPopup = ({ node }) => {
+const CustomPopup = ({ node, onClose }) => {
   const popup = useRef(null);
   const closePopup = () => {
     // See https://stackoverflow.com/a/54874575/2960236
-    popup.current.leafletElement.options.leaflet.map.closePopup()
+    if (popup.current)
+      popup.leafletElement.options.leaflet.map.closePopup()
   };
   const image = node.frontmatter?.hero_image?.childImageSharp?.fluid
   const title = node.frontmatter.title
@@ -179,8 +180,9 @@ const CustomPopup = ({ node }) => {
   const summary = node.frontmatter.summary || node.excerpt
   return (
     <Popup
-      ref={popup}
+      autoPan={false}
       className={cn(mapLayout.customPopup, node.frontmatter.apposition)}
+      onClose={() => onClose && onClose()}
     >
       <Window
         header={
@@ -236,6 +238,17 @@ const CustomPopup = ({ node }) => {
   );
 }
 
+// Makes a popup pan into view
+function panTo(popup) {
+  // We want to pan, but not autopan!
+  // Seems to be no public method for that, so be naughty
+  // and use the private one...
+  const oldVal = popup.options.autoPan;
+  popup.options.autoPan = true;
+  popup._adjustPan();
+  popup.options.autoPan = oldVal;
+}
+
 export default (props) => {
   const [activePinId, setActivePinId] = useState(null)
   const mapData = useMapData()
@@ -273,7 +286,8 @@ export default (props) => {
                 const icon = selectIcon(node, activePinId)
                 const latitude = node.frontmatter.latitude
                 const longitude = node.frontmatter.longitude
-
+                const marker = useRef(null);
+                
                 // If an article has a region field defined, use that preferentially
                 const geojson = node.frontmatter.region
                 if (geojson) {
@@ -289,6 +303,8 @@ export default (props) => {
                       onClick={(e) => {
                         const classList = e.target.getLayers()[0].getElement().classList
                         classList.add(mapLayout.active)
+                        setActivePinId(null); // Can't set to this region, but clear the pins
+                        panTo(e.target.getPopup());
                       }}
                     >
                       <CustomPopup
@@ -304,18 +320,43 @@ export default (props) => {
                     <Marker
                       key={node.id}
                       icon={icon}
+                      ref={marker}
                       position={[latitude, longitude]}
                       className={cn(mapLayout.customMarker, node.frontmatter.apposition)}
                       riseOnHover={true}
                       closeButton={false}
                       onClick={(e) => {
-                        setActivePinId(node.id);
-                        const classList = e.target.getElement().classList
-                        classList.add(mapLayout.active);
+                        const classList = e.target.getElement().classList;
+                        const elem = marker.current.leafletElement;
+                        if (activePinId === node.id) {
+                          // Deactivate
+                          classList.remove(mapLayout.active);
+                          elem.closePopup(); // triggers setActivePinId(null)
+                        }
+                        else {
+                          // Activate
+                          classList.add(mapLayout.active);
+                          setActivePinId(node.id);
+                          if (!elem.isPopupOpen())
+                            elem.openPopup();
+
+                          panTo(elem.getPopup());
+                        }
+                      }}
+		                  onMouseOver={() => {
+                        if (!activePinId)
+                          marker.current.leafletElement.openPopup();
+                      }}
+		                  onMouseOut={() => {
+                        if (activePinId !== node.id)
+                          marker.current.leafletElement.closePopup();
                       }}
                     >
                       <CustomPopup
                         node={node}
+                        onClose={() => {
+                          setActivePinId(null);
+                        }}
                       />
                     </Marker>
                   );
