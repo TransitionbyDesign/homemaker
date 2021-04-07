@@ -301,8 +301,6 @@ export default (props) => {
                                       node.frontmatter.apposition)
                       })}
                       onClick={(e) => {
-                        const classList = e.target.getLayers()[0].getElement().classList
-                        classList.add(mapLayout.active)
                         setActivePinId(null); // Can't set to this region, but clear the pins
                         panTo(e.target.getPopup());
                       }}
@@ -326,16 +324,13 @@ export default (props) => {
                       riseOnHover={true}
                       closeButton={false}
                       onClick={(e) => {
-                        const classList = e.target.getElement().classList;
                         const elem = marker.current.leafletElement;
                         if (activePinId === node.id) {
                           // Deactivate
-                          classList.remove(mapLayout.active);
                           elem.closePopup(); // triggers setActivePinId(null)
                         }
                         else {
                           // Activate
-                          classList.add(mapLayout.active);
                           setActivePinId(node.id);
                           if (!elem.isPopupOpen())
                             elem.openPopup();

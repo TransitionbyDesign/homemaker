@@ -64,10 +64,6 @@
   background: palette.$transparent_gradient !important;
 }
 
-.active {
-  --dummy: unset; // Only present to prevent this class being optimised away
-}
-
 .disabled {
   pointer-events: none;
 }
