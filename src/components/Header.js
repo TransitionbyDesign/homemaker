@@ -16,9 +16,10 @@ import blueLogo from "../icons/homemaker_logo_blue.svg"
 export default function Header(props) {
   // Use the right logo, which depends on the background, which
   // depends on the modal flag
-  const { state } = useLocation();
+  const { state, pathname } = useLocation();
   const logo = state?.modal ? whiteLogo : blueLogo;
-  
+  const destination = pathname.match('^/map/?$')? '/' : '/map/'; // Where to link the logo to
+
   return (
     <header
       className={headerStyles.header}
@@ -30,9 +31,9 @@ export default function Header(props) {
           aria-label="main navigation"
         >
 
-          <Link to="/"><img className={headerStyles.logo} alt="Logo: Homemaker Oxford" src={logo} /></Link>
+          <Link to={destination}><img className={headerStyles.logo} alt="Logo: Homemaker Oxford" src={logo} /></Link>
           <h1>
-            <Link to="/">{props.title}</Link>
+            <Link to={destination}>{props.title}</Link>
           </h1>
         </nav>
       </div>
