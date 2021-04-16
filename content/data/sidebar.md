@@ -1,6 +1,6 @@
 ---
 title: Homemaker Oxford
-legend_text: <iframe width="560" height="315" src="[https://www.youtube.com/embed/VWCmUQ4vSm0](https://www.youtube.com/embed/VWCmUQ4vSm0
+legend_text: <iframe width="100%" height="315" src="[https://www.youtube.com/embed/VWCmUQ4vSm0](https://www.youtube.com/embed/VWCmUQ4vSm0
   "https://www.youtube.com/embed/VWCmUQ4vSm0")" title="YouTube video player" frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen></iframe>
