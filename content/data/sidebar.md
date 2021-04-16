@@ -1,12 +1,10 @@
 ---
 title: Homemaker Oxford
-legend_text: Homemaker Oxford is an action research project which began in December
-  2017. The first year of the project was based on listening, the second year was
-  based out of an unused shop called Open House and the third year pushed provocations.
-button_url: /map/about-homemaker-oxford
+legend_text: <iframe width="560" height="315" src="[https://www.youtube.com/embed/VWCmUQ4vSm0](https://www.youtube.com/embed/VWCmUQ4vSm0
+  "https://www.youtube.com/embed/VWCmUQ4vSm0")" title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+button_url: "/map/about-homemaker-oxford"
 
 ---
-You can explore what the Homemaker Project has done in Oxford by scrolling around the map. Click on the icons to see the various parts of the project and you can click through to find out a bit more. The map is organised through asking two questions:
-
-* What are the problems? - shown in blue.
-* What are the solutions? - shown in pink.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VWCmUQ4vSm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
