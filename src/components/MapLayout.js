@@ -171,7 +171,7 @@ const CustomPopup = ({ node, onClose }) => {
   const closePopup = () => {
     // See https://stackoverflow.com/a/54874575/2960236
     if (popup.current)
-      popup.leafletElement.options.leaflet.map.closePopup()
+      popup.current.leafletElement.options.leaflet.map.closePopup()
   };
   const image = node.frontmatter?.hero_image?.childImageSharp?.fluid
   const title = node.frontmatter.title
@@ -180,6 +180,7 @@ const CustomPopup = ({ node, onClose }) => {
   const summary = node.frontmatter.summary || node.excerpt
   return (
     <Popup
+      ref={popup}
       autoPan={false}
       className={cn(mapLayout.customPopup, node.frontmatter.apposition)}
       onClose={() => onClose && onClose()}
