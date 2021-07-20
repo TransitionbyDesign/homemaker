@@ -99,5 +99,4 @@ fields:
     will be omitted.
   default: false
 pages:
-- content/articles/lucy-warin-is-the-boss.md
 - content/articles/the-diy-house.md
