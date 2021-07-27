@@ -3,23 +3,40 @@ apposition: solution
 latitude: 51.752875
 longitude: -1.267695
 title: The DIY House
-summary: The **DIY House** follows a rapid retrofit approach of an existing building
-  and includes its future residents in the design and construction process to create
-  a safe and comfortable home.
-hero_image: "/content/assets/the-diy-house.png"
+summary: _How could empty buildings help people to recover from a period of homelessness
+  and get back into more permanent housing?_
+hero_image: "/content/assets/screen-shot-2021-07-27-at-11-28-30.png"
 youtube_url: ''
 region: ''
 is_published: true
+custom_icon: ''
 
 ---
-The DIY House follows a rapid retrofit approach of an existing building and includes its future residents in the design and construction process to create a safe and comfortable home. The DIY House is designed to be a high-quality bridging accommodation for people who are low-no needs and require a home where they can rebuild confidence and networks in order to regain autonomy of their lives. Integral to this being done well is the separation of housing costs from support costs.
+Not interested in the background? Click here to jump straight in and explore the DIY House.
 
-Physically, it makes meanwhile use of city-centre locations which are in transition, usually empty with no immediate occupation planned. A pipeline of these spaces is maintained via carefully nurtured relationships with meanwhile space pioneer Makespace Oxford, as well as with Oxford Collages and other landlords in the city.
+In 2018 we began running a weekly class for Crisis Members called ‘How to Build a House’. Every week, in the basement workshop at Crisis Skylight in Oxford we’d spend 3-hours teaching architectural design, sketching, CAD, and the basics of community-led housing design to a wonderfully eclectic group of folks experiencing homelessness. Many of the practical sessions touched on plumbing, electrics, joinery, construction, and painting and decorating, and we were struck by how many of those in our group both had experience working in the trades, and also wanted to get back into that sort of work.
 
-Thanks to strong partnerships with key organisations across the city, future residents can be identified early on in the design process allowing them to be a part of the enabling works required prior to moving in. They have access to the materials and inspiration they need to make the house a great home in relation to where it is in the city. Psychologically Informed Environment (PIE) design principles allow for every-day frustrations of living with others in close proximity to be minimised and even designed out where possible. The kitchen, bathrooms and utilities are ample and well-designed; bright, spacious and equipped for use. There are two comfortably sized living room spaces with a dining table for shared meals and a comfy sofa and chairs to catch the latest episode of that programme together. The living rooms are important spaces for residents to take ownership of, away from their private bedrooms.
+Many of those we worked with were living in what is known as ‘move-on’ accommodation, temporary or bridging homes that are offered to people who are leaving emergency accommodation such as a shelter, hostel, prison or an extended stay in hospital. It is generally considered as only for people with ‘_low or no support needs_’ meaning any problems that a person might have with their mental health or with drug and alcohol addictions are manageable by them with minimal support. Homelessness charities and housing providers often describe this as ‘_the temporary place before a forever home_’ (with some people moving on to Council homes, and most into private rented accommodation), but it rarely is. In many cases it is neither temporary nor leads to permanent housing.
 
-While a home first and foremost, the new residents are not left without support. Floating support is provided during set-times but there is no space within the property that does not look homely. Individuals can have private chats with their support worker at the community coffee shop round the corner or receive general advice over a jigsaw puzzle in the living room. In the early days the support worker may facilitate weekly house meetings between the residents; increasing their capacity in managing the house on cooperative principles, with a ‘1 member, 1 vote’ style decision making process. These weekly meetings will cover items from the cleaning rota to having guests over, changes to utilities providers and what to spend the communal budget on that month. Each tenant pays into the monthly pot which is match funded by the project budget to spend on shared meals, a new board game or even an escape room! Some decisions are harder to make than others and facilitation of these meetings is possible in the longer-term if felt needed.
+A great deal of ‘move-on’ accommodation is of poor quality. People don’t invest their time in money which is temporary, which isn’t ‘theirs’. People don’t get much of a choice as to where they live or who they live with and buildings often have an institutional feel and are frequently targeted by criminals looking for people to exploit. In addition, these ‘temporary’ solutions often become people’s homes for years.
 
-The building is only available to the project on a meanwhile lease at a minimum of 2 years. This is discussed opening with the tenants and built into the support and programme design. Thanks to saving money on empty property tax, the freeholder agrees to provide the building to the leaseholder on a peppercorn rent which is passed down to the tenants through reduced accommodation costs. Links to formal training to learn new or refresh old skills in the trades is built into the programme. In partnership with local organisations a regular How to Build House class is run, incorporating meanwhile development, community-led housing, renters cooperatives and practical renovation and construction skills in its teachings. Even if an individual secures employment and their housing allowance is adjusted, their rent remains truly affordable allowing them to save for a deposit on a private rental, a car or something else. This is a crucial difference to other forms of accommodation typically provided under a rapid housing approach with low barriers to entry, such as hostels, and is important if individuals are to truly take back autonomy of their lives.
+Whilst the intentions of move-on housing might be good - to get people away from the often-chaotic environment of emergency accommodation into somewhere more private and settled as quickly as possible - in reality, it often simply throws up a new set of challenges.
 
-The elements of the DIY House are understood from the beginning and built into the budget and programme. As a result, a rapid retrofit approach and an easy to use cost-calculator are developed and can be rolled out across other buildings, limiting cost and waste along the way as the project moves through the city, making best use of each site.
+To do move-on housing well we need to ask ourselves some key questions:
+
+* **How can a temporary home feel settled and nurturing?**
+* **What can architecture and urban design offer to make supporting people in move-on accommodation easier?**
+* **How can a physical building engage with what else is going on in someone’s life at a moment of transition to create a ‘home’?**
+* **How does the system of move-on fit with a private rental sector (PRS) that is out of control and a chronic lack of social housing?**
+
+In March 2020, the government initiated the ‘[Everybody In](https://commonslibrary.parliament.uk/research-briefings/cbp-9057/)’ scheme, where anyone experiencing homelessness was offered a room for the duration of the Covid 19 pandemic. Making the most of the temporarily empty hotel and hostel rooms, Oxford City Council were able to [quickly clear the streets](https://www.oxford.gov.uk/news/article/1733/everyone_in_response_to_pandemic_halves_the_number_of_people_experiencing_rough_sleeping_in_oxfordshire) of people rough sleeping by providing settled accommodation in hotels to many of Oxford’s population of people considered ‘hidden homeless’.
+
+In late Summer, as lockdown restrictions began to ease and hotels began to think about reopening, and unwilling to simply turf people from the hotels back onto the streets, Oxford City Council and the city’s housing and homelessness providers began casting around for new ideas. As well as an immediate need for ‘move-on’ accommodation, there was also the impending challenge of providing services throughout the Winter (a much busier period) without the ability to host people in dormitory accommodation, and with the need to socially distance. The city needed space.
+
+The Homemaker team came together with [Makespace Oxford](https://makespaceoxford.org/) and [Aspire Oxford](https://www.aspireoxfordshire.org/) to explore how a row of five empty buildings, owned by a College and previously used as small hotels and B&B’s might be able to help. [Together, we housed sixteen people](https://www.bbc.co.uk/news/uk-england-oxfordshire-56086392), including a home just for women.
+
+Whilst working with the people moving in and those people helping support them, we created a vision for what future projects like this could look like, we called it ‘the DIY House’. The DIY House uses the temporary nature of meanwhile leases on empty properties as a design feature rather than a flaw, it uses tenant’s skill sets to aid the project and build new skills and confidence, it creates work opportunities and meaningful uses of tenants’ time, it connects residents to local communities to provide a permanence beyond the house, and it makes the chance of actually moving on to more permanent and settled housing much more likely.
+
+Click through to explore the DIY House.
+
+If you’re a housing provider thinking about how you might better provide move-on accommodation then we’d love to hear from you about your experience or how we might work together. [Please get in touch.](mailto:info@transitionbydesign.org)
