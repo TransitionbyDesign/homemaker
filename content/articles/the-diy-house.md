@@ -12,8 +12,6 @@ is_published: true
 custom_icon: ''
 
 ---
-Not interested in the background? Click here to jump straight in and explore the DIY House.
-
 In 2018 we began running a weekly class for Crisis Members called ‘How to Build a House’. Every week, in the basement workshop at Crisis Skylight in Oxford we’d spend 3-hours teaching architectural design, sketching, CAD, and the basics of community-led housing design to a wonderfully eclectic group of folks experiencing homelessness. Many of the practical sessions touched on plumbing, electrics, joinery, construction, and painting and decorating, and we were struck by how many of those in our group both had experience working in the trades, and also wanted to get back into that sort of work.
 
 Many of those we worked with were living in what is known as ‘move-on’ accommodation, temporary or bridging homes that are offered to people who are leaving emergency accommodation such as a shelter, hostel, prison or an extended stay in hospital. It is generally considered as only for people with ‘_low or no support needs_’ meaning any problems that a person might have with their mental health or with drug and alcohol addictions are manageable by them with minimal support. Homelessness charities and housing providers often describe this as ‘_the temporary place before a forever home_’ (with some people moving on to Council homes, and most into private rented accommodation), but it rarely is. In many cases it is neither temporary nor leads to permanent housing.
