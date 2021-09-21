@@ -2,7 +2,7 @@
 apposition: solution
 latitude: 51.752875
 longitude: -1.267695
-title: The DIY House
+title: Could empty hotels improve how we do 'move-on' housing?
 summary: _How could empty buildings help people to recover from a period of homelessness
   and get back into more permanent housing?_
 hero_image: "/content/assets/screen-shot-2021-07-27-at-11-28-30.png"
