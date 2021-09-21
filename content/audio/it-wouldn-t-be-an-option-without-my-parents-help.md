@@ -9,7 +9,7 @@ summary: Matt & Michael are both white men in their early 30's who have recently
   feel about becoming landlords.
 hero_image: ''
 custom_icon: ''
-youtube_url: ''
+youtube_url: https://youtu.be/zYDJZw4PyRc
 region: ''
 is_published: true
 
