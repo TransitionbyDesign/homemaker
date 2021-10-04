@@ -10,6 +10,6 @@ hero_image: "/content/assets/screen-shot-2021-09-21-at-13-28-50.png"
 custom_icon: ''
 youtube_url: https://www.youtube.com/watch?v=V4hwuE4bPCY
 region: ''
-is_published: false
+is_published: true
 
 ---
