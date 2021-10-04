@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 0
-longitude: 0
+latitude: 
+longitude: 
 title: Oxford's development sites
 summary: 'The development sites on the fringes of Oxford '
 hero_image: ''
@@ -1023,7 +1023,7 @@ region: |-
       }
     ]
   }
-is_published: false
+is_published: true
 
 ---
 Some test text for the main body story for this data.
