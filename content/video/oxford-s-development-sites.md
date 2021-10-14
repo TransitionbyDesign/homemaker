@@ -4,7 +4,7 @@ latitude: 51
 longitude: 1
 title: Oxford's development sites
 summary: 'The development sites on the fringes of Oxford '
-hero_image: ''
+hero_image: "/content/assets/frilled-neck-lizard_1.jpg"
 custom_icon: ''
 youtube_url: <iframe width="560" height="315" src="https://www.youtube.com/embed/IKO5FcdUUrc"
   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
