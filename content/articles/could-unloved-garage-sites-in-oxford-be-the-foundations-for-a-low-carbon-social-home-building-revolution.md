@@ -1,7 +1,7 @@
 ---
 apposition: solution
-latitude: 0
-longitude: 0
+latitude: 51.721637477911
+longitude: -1.2014205199505719
 title: Could unloved garage sites in Oxford be the foundations for a low-carbon social
   home-building revolution?
 summary: _Hidden within a patchwork of small urban development sites, Oxford has the
