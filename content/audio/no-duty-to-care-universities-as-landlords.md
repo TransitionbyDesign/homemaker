@@ -1,7 +1,7 @@
 ---
 apposition: situation
 latitude: 51.751682940193604
-longitude: 12382349357504316
+longitude: -1.2382349357504316
 title: No duty to care - Universities as landlords
 summary: ''
 hero_image: "/content/assets/housing-matters.png"
