@@ -7,11 +7,11 @@ title: Could unloved garage sites in Oxford be the foundations for a low-carbon 
 summary: _Hidden within a patchwork of small urban development sites, Oxford has the
   space we need to build new, low-carbon social homes within the city boundaries,
   so how do we make it happen_?
-hero_image: ''
+hero_image: "/content/assets/screen-shot-2021-12-08-at-11-29-25.png"
 custom_icon: ''
 youtube_url: ''
 region: ''
-is_published: false
+is_published: true
 
 ---
 Across Oxford there are hundreds of small, undeveloped sites of all shapes and sizes in well-connected locations which lie empty or underused. Travel anywhere in Oxford and you’ll spot these: garage sites, underused car parks, stalled development sites, spaces for which the potential becomes harder to ignore as the city’s housing crisis deepens and levels of homelessness rise.
