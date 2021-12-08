@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 
-longitude: 
+latitude: 51.75133231421725
+longitude: -1.2673805920369272
 title: The DIY House
 summary: 'Explore the DIY House, a ''self-help'' housing approach to turning empty
   hotels or other city-centre properties into recovery-focussed move-on housing. '
