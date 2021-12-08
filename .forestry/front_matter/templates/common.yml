@@ -22,7 +22,7 @@ fields:
       file: 
       path: 
   label: apposition
-  description: Indicates which one of several ways the audio is apposite to the issue
+  description: Indicates which one of several ways this story is apposite to the issue
     of homelessness
 - name: summary
   type: textarea
@@ -41,7 +41,7 @@ fields:
   config:
     maxSize: '10'
   label: hero image
-  description: Enter hero image for audio here
+  description: Enter hero image for article here
   default: ''
 - name: custom_icon
   type: file
@@ -62,7 +62,7 @@ fields:
 - name: latitude
   type: number
   label: latitude
-  description: The latitude of the associated location
+  description: The latitude of the associated location (51.234...)
   default: 0
   required: false
   config:
@@ -73,7 +73,7 @@ fields:
 - name: longitude
   type: number
   label: longitude
-  description: The longitude of the associated location
+  description: The longitude of the associated location (-1.234...)
   default: 0
   required: false
   config:
