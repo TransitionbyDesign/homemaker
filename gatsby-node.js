@@ -78,6 +78,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       region: String
       is_published: Boolean
       legend_text: String @md
+      custom_icon: File
+      hero_image: File
     }
   `)
 }
