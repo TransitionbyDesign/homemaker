@@ -95,8 +95,7 @@ fields:
 - name: is_published
   type: boolean
   label: is published
-  description: If true, the audio will be included on the website; if false the audio
-    will be omitted.
+  description: If this toggle is on the article will be included on the website
   default: false
 pages:
 - content/articles/could-unloved-garage-sites-in-oxford-be-the-foundations-for-a-low-carbon-social-home-building-revolution.md
