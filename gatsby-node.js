@@ -128,6 +128,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   
   // Create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach(edge => {
+    console.log("processing:", edge.node.fields.slug);
     if (!edge.node.frontmatter.is_published)
       return;
     const fields = edge.node.fields;
