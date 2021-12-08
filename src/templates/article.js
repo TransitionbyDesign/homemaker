@@ -97,7 +97,7 @@ export default (props) => {
         </div>
         <div className={articleTemplateStyles.right}>
           {
-            (youtube || !data.frontmatter.hero_image)? '' :
+            (youtube || !data.frontmatter.hero_image?.childImageSharp)? '' :
             <div className={cn(articleTemplateStyles.hero)}>
               <Img
                 fluid={data.frontmatter.hero_image.childImageSharp.fluid}
