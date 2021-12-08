@@ -8,6 +8,6 @@ hero_image: ''
 custom_icon: ''
 youtube_url: ''
 region: ''
-is_published: false
+is_published: true
 
 ---
