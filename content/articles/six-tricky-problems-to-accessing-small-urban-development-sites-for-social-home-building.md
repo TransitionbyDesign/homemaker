@@ -5,11 +5,11 @@ longitude: -1.202623769369915
 title: Six tricky problems to accessing small urban development sites for social home
   building
 summary: ''
-hero_image: ''
+hero_image: "/content/assets/screen-shot-2021-12-08-at-11-33-31.png"
 custom_icon: ''
 youtube_url: ''
 region: ''
-is_published: false
+is_published: true
 
 ---
 As we’ve explored in another post, our research suggests there are potentially huge benefits in using a patchwork of smaller urban development sites to develop new, low-carbon social homes. There are often very good reasons why vacant sites sit idle and wanting for life and activity, and we must be realistic about why so many remain empty. This post goes into the detail of some of the barriers to this kind of development, sharing some of our successes and many of our failures in the hope that we can draw a greater diversity of minds together to tackle these barriers.
