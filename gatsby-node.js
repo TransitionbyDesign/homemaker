@@ -79,7 +79,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       is_published: Boolean
       legend_text: String @md
       custom_icon: File
-      hero_image: File
+#      hero_image: File # inferrence works better for now
     }
   `)
 }
