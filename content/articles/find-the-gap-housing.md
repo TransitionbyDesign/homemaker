@@ -12,3 +12,4 @@ region: ''
 is_published: true
 
 ---
+![](/content/assets/gifgit-1.gif)
