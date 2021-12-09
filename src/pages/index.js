@@ -1,4 +1,23 @@
 import React from "react"
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+
+export default ({ location }) => {
+  const url = location.href ? location.href : '';
+
+  return (
+    <Helmet>
+      <meta
+        http-equiv="refresh"
+        content={`0;url=${url}/map`}
+      />
+    </Helmet>
+  );
+};
+
+/*
+// This old version displayed the splash. We no longer use it, but
+// are keeping it here for later restoration, in case it is needed again.
 import { Link } from 'gatsby'
 import { useLocation } from '@reach/router'
 import Layout from "../components/Layout"
@@ -40,11 +59,11 @@ export default () => {
               }
               <div className={cn(windowStyles.row, windowStyles.links)}>
                 <div/>
-                {/*<SocialLink to={`mailto:${welcomeData.contact.email}`}
+                {/ *<SocialLink to={`mailto:${welcomeData.contact.email}`}
                     logo={}
                     >
                     Email: {welcomeData.contact.email}
-                    </SocialLink>*/}
+                    </SocialLink>* /}
                 <div className={windowStyles.linkIcons}>
                   <SocialLink to={`https://twitter.com/${welcomeData.contact.twitter_handle}`}
                     logo={twitterIcon} alt="Twitter"
@@ -75,3 +94,4 @@ export default () => {
     </Layout>
   )
 }
+*/
