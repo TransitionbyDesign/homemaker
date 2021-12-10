@@ -6,11 +6,11 @@ title: Markdown text demo
 summary: |-
   Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
   Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. While Markdown's syntax has been influenced by several existing text-to-HTML filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html), [Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of inspiration for Markdown's syntax is the format of plain text email.
-hero_image: "/content/assets/giphy-1.gif"
+hero_image: ''
 is_published: true
 
 ---
-![](/content/assets/giphy-1.gif)
+<div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="https://giphy.com/embed/2YpPMIfrvIENFk9pfs" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/donnathomas-rodgers-the-turn-around-doctor-effect-2YpPMIfrvIENFk9pfs">via GIPHY</a></p>
 
 # Markdown: Syntax
 
@@ -310,7 +310,7 @@ _single underscores_
 
 ### Code
 
-To indicate a span of code, wrap it with backtick quotes (```).
+To indicate a span of code, wrap it with backtick quotes (\`\`\`).
 Unlike a pre-formatted code block, a code span indicates code within a
 normal paragraph. For example:
 
