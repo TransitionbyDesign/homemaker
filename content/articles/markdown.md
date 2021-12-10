@@ -10,7 +10,7 @@ hero_image: "/content/assets/giphy-1.gif"
 is_published: true
 
 ---
-<div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="[https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1](https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1 "https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1")" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="[https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1](https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1 "https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1")">via GIPHY</a></p>
+<div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="[https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1](https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1 "https://www.dropbox.com/s/57qnysb4e8glv5q/egg.gif?raw=1")" width="100%" height="100%" style="position:absolute" frameBorder="0" allowFullScreen></iframe></div></p>
 
 # Markdown: Syntax
 
