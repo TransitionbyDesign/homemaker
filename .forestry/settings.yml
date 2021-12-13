@@ -21,16 +21,16 @@ sections:
   templates:
   - common
 - type: directory
-  path: content/audio
-  label: Audio
+  path: content/video
+  label: Video/GIF hero
   create: documents
   match: "**/*"
   new_doc_ext: md
   templates:
   - common
 - type: directory
-  path: content/video
-  label: Video/GIF hero
+  path: content/audio
+  label: Audio
   create: documents
   match: "**/*"
   new_doc_ext: md
