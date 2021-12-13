@@ -7,7 +7,7 @@ summary: 'Could ''Find the Gap'' housing, which turns disused garage sites in Ea
   Oxford into new low-carbon social homes help us tackle Oxford''s housing crisis? '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://www.dropbox.com/s/5mdfjv179ic4qkm/gifgit.gif?raw=1
+youtube_url: https://giphy.com/gifs/donnathomas-rodgers-the-turn-around-doctor-effect-2YpPMIfrvIENFk9pfs
 region: ''
 is_published: true
 
