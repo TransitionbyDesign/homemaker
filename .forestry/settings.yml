@@ -14,7 +14,7 @@ sections:
   label: Sidebar
 - type: directory
   path: content/articles
-  label: Image hero
+  label: Articles
   create: documents
   match: "**/*"
   new_doc_ext: md
@@ -22,7 +22,7 @@ sections:
   - common
 - type: directory
   path: content/video
-  label: Video/GIF hero
+  label: Video
   create: documents
   match: "**/*"
   new_doc_ext: md
