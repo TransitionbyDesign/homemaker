@@ -129,7 +129,7 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
                       <img className={mapLayout.legendImg} alt="Solution Article Pointer" title="Solution Article" src={articleIconPink} />
                     </td>
                     <td>
-                      Written piece
+                      Article (test)
                     </td>
                   </tr>
                   <tr>
