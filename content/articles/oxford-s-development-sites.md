@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 
-longitude: 
+latitude: 51
+longitude: 1
 title: Oxford's development sites
 summary: Sites across Oxford that will be used by developers across the next ten years
   to 2030
