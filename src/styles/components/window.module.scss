@@ -75,7 +75,7 @@ $footer-link-margin-top: 0.8rem;
     using($huw) {
       &:after {
         width: $huw;
-        left: (100% - $huw)/2;
+        left: calc((100% - $huw)/2);
       }
     }
   }
