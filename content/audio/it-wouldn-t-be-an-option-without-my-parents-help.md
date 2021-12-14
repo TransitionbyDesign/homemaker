@@ -7,7 +7,7 @@ summary: 'Many young people now rely on their parents to help them buy their fir
   home. We asked Matt and Michael to tell us how that feels. '
 hero_image: "/content/assets/housing-matters.png"
 custom_icon: ''
-youtube_url: https://youtu.be/zYDJZw4PyRc
+youtube_url: https://youtube.com/zYDJZw4PyRc
 region: ''
 is_published: true
 
