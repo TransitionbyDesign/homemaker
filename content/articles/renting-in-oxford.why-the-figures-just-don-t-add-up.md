@@ -4,7 +4,7 @@ longitude: -1.261698
 apposition: situation
 title: Renting in Oxford. Why the figures just don't add up.
 summary: Oxford has just been voted the worst place to rent in the UK. How *bad* actually is it, and how does it relate to the city’s homelessness problem?
-hero_image: ''
+hero_image: '/content/assets/frilled-neck-lizard_1.jpg'
 is_published: true
 
 ---
