@@ -1,5 +1,5 @@
 ---
-apposition: situation
+apposition: solution
 latitude: 51.75133231421725
 longitude: -1.2673805920369272
 title: The DIY House
