@@ -5,7 +5,7 @@ longitude: -1.2628402695790029
 title: Open House - a shop that sold nothing but stories
 summary: ''
 hero_image: "/content/assets/openhouse-12.jpg"
-custom_icon: ''
+custom_icon: "/content/assets/open_house_ptr.svg"
 youtube_url: ''
 region: ''
 is_published: true
