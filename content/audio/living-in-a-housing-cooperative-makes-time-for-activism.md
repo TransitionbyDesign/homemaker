@@ -1,5 +1,5 @@
 ---
-apposition: situation
+apposition: solution
 latitude: 51.733800607856736
 longitude: -1.226260458371154
 title: Living in a housing cooperative makes time for activism
