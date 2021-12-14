@@ -78,6 +78,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       region: String
       is_published: Boolean
       legend_text: String @md
+      button_url: String
       custom_icon: File
 #      hero_image: File # inferrence works better for now
     }
