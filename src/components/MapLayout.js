@@ -63,7 +63,7 @@ function buildIcons(mapData) {
         [custom_icon.publicURL]: newIcon(custom_icon.publicURL, pinSize)
       }
     })
-      console.log("custom", custom);
+
   return {
     custom: Object.assign( {}, ...custom ),
     articles: {
@@ -258,7 +258,7 @@ export default (props) => {
     icons = buildIcons(mapData);
   }
   const sidebar = mapData.sidebar
-  console.log("mapData",mapData);
+
   return (
     <Layout { ...props } eventPassThru>
       <div className={mapLayout.layout}>
