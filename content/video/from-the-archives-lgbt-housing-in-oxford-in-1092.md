@@ -1,7 +1,7 @@
 ---
 apposition: situation
 latitude: 51.751691313470864
-longitude: 12575211203766559
+longitude: -1.22
 title: 'From the archives: LGBT Housing in Oxford in 1982'
 summary: This clip from the BFI archives shows a clip from Central Television's Left
   Right focussing on a lesbian couple struggling to get council housing.

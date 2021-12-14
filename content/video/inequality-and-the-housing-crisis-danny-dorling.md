@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: '051.74574460970037'
-longitude: 12314644995657504
+latitude: 51.74574460970037
+longitude: -1.22
 title: 'Inequality and the Housing Crisis: Danny Dorling'
 summary: Speaking at House of the Commons 2016 on 'The Un-landed Generation - Oxford
   University's Professor of Geography, Danny Dorling, connects the global situation
