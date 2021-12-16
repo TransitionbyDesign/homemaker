@@ -28,7 +28,7 @@
     "gatsby-plugin-modal-routing": "https://github.com/wu-lee/gatsby-plugin-modal-routing/",
     "gatsby-plugin-react-helmet": "^3.3.6",
     "gatsby-plugin-react-leaflet": "^2.0.13",
-    "gatsby-plugin-sass": "^2.3.7",
+    "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^2.6.14",
     "gatsby-remark-images": "^3.3.14",
     "gatsby-remark-normalize-paths": "^1.0.0",
