@@ -79,10 +79,19 @@ exports.createSchemaCustomization = ({ actions }) => {
       is_published: Boolean
       legend_text: String @md
       button_url: String
-      custom_icon: File
-#      hero_image: File # inferrence works better for now
+      custom_icon: File @fileByRelativePath
+      hero_image: File @fileByRelativePath
     }
     `)
+  // @fileByRelativePath seems to be required for gatsby-transformer-sharp to
+  // find the files successfully when explicitly defining the schema here.
+  // Without this I get "You can't use childImageSharp together with undefined.undefined"
+  // errors (and no images).
+  // 
+  // Clues to this from:
+  // https://stackoverflow.com/questions/69738768
+  // Which refers to:
+  // https://github.com/gatsbyjs/gatsby/issues/18271#issuecomment-547097964
 }
 
 module.exports.onCreateNode = ({ node, actions }) => {
