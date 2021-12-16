@@ -357,8 +357,11 @@ export default (props) => {
                     </Marker>
                   );
                 }
-                console.warn(`article has no location, icon, or region: `+
-                             `id=${node.id} slug=${node.fields.slug}`);
+
+                if ('undefined' !== typeof window) {
+                  console.warn(`article has no location, icon, or region: `+
+                               `id=${node.id} slug=${node.fields.slug}`);
+                }
                 return '';
             })}
           </Map>
