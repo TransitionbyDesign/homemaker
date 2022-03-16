@@ -7,7 +7,7 @@ summary: This video is of Sharron Maasz, who died tragically in January 2019. In
   video, shot by the Invisible People project, Sharron describes her own path from
   homelessness support worker into homelessness herself, and what it's like to be
   rough sleeping as a woman.
-hero_image: "/content/assets/screen-shot-2021-09-21-at-13-40-41.png"
+hero_image: ''
 custom_icon: ''
 youtube_url: https://www.youtube.com/watch?v=qz3cAS84lSY
 region: ''
