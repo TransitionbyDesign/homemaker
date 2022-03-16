@@ -12,3 +12,6 @@ region: ''
 is_published: true
 
 ---
+If you found this video interesting, you can also explore the ideas behind 'the DIY House' through exploring the house yourself, or watch a recording of the project team discussing the impacts of phase one of the project.
+
+You can also download a more in depth learnings report.
