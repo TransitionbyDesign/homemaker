@@ -9,7 +9,7 @@ hero_image: ''
 custom_icon: ''
 youtube_url: https://player.bfi.org.uk/free/film/watch-oxford-housing-1982-online?fbclid=IwAR3eO8X-QuxmOiG7avbP8vLZs4xfzVe0Nzjjl87FBWzpwgQSVemx4fmd56U
 region: ''
-is_published: false
+is_published: true
 
 ---
 Another small step towards equality came in 1982 when same sex couples in Oxford were able to register for council housing. There were conditions of course: couples had to be over 35 years old and able to demonstrate that they had a 'stable' relationship, a vague sounding stipulation that heterosexual applicants did not have to adhere to. Even this small concession was contested by the Conservative group on the council, which was hoping to reverse the decision once in power.
