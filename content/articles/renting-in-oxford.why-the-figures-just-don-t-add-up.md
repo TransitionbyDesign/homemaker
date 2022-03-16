@@ -3,8 +3,9 @@ latitude: 51.754027
 longitude: -1.261698
 apposition: situation
 title: Renting in Oxford. Why the figures just don't add up.
-summary: Oxford has just been voted the worst place to rent in the UK. How *bad* actually is it, and how does it relate to the city’s homelessness problem?
-hero_image: '/content/assets/frilled-neck-lizard_1.jpg'
+summary: Oxford has just been voted the worst place to rent in the UK. How *bad* actually
+  is it, and how does it relate to the city’s homelessness problem?
+hero_image: "/content/assets/screenshot-2022-03-16-at-10-55-48.png"
 is_published: true
 
 ---
