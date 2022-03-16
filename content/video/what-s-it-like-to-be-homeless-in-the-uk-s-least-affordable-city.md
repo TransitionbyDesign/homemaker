@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 51.783859
-longitude: 1.265013
+latitude: 51.74656796753246
+longitude: -1.2328385577459935
 title: What's it like to be homeless in the UK's least affordable city?
 summary: 'In 2015, InsightShare supported a group of people who had experienced homelessness
   to talk to their peers about what it was like to be homeless in the UK''s least
