@@ -14,3 +14,5 @@ is_published: true
 
 ---
 If you found this video interesting, you can also explore the ideas behind 'the DIY House' through exploring the house yourself, and watch an interview with residents Simon and Paul.
+
+You can also download a more in depth learnings report.
