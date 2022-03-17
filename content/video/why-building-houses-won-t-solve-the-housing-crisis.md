@@ -8,7 +8,7 @@ summary: Political economist Beth Stratford maps the various drivers of the hous
   demand-side problems, like speculation and excessive mortgage credit.
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/1htLUXs_P7E
+youtube_url: https://www.youtube.com/watch?v=1htLUXs_P7E
 region: ''
 is_published: true
 
