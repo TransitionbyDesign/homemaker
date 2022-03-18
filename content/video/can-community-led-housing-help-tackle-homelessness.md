@@ -8,7 +8,7 @@ summary: 'This roundtable discussion brings together housing providers, homeless
   how community led housing could help tackle homelessness. '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/S8nLRwxFfxo
+youtube_url: https://www.youtube.com/embed/S8nLRwxFfxo
 region: ''
 is_published: true
 

@@ -8,7 +8,7 @@ summary: 'In this video, the project team behind the Becket Street project, a ho
   from its first phase. '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/OdkaeOh-z6A
+youtube_url: https://www.youtube.com/embed/OdkaeOh-z6A
 region: ''
 is_published: true
 
