@@ -8,7 +8,7 @@ summary: 'In 2015, InsightShare supported a group of people who had experienced 
   affordable city. '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/V4hwuE4bPCY
+youtube_url: https://www.youtube.com/embed/V4hwuE4bPCY
 region: ''
 is_published: true
 
