@@ -8,7 +8,7 @@ summary: Speaking at House of the Commons 2016 on 'The Un-landed Generation - Ox
   to where we can act today in relation to the housing crisis.
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/k8FbUtunhic
+youtube_url: https://www.youtube.com/embed/k8FbUtunhic
 region: ''
 is_published: true
 

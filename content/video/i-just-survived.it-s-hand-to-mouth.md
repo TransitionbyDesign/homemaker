@@ -9,7 +9,7 @@ summary: This video is of Sharron Maasz, who died tragically in January 2019. In
   rough sleeping as a woman.
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/qz3cAS84lSY
+youtube_url: https://www.youtube.com/embed/qz3cAS84lSY
 region: ''
 is_published: true
 
