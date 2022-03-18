@@ -6,7 +6,7 @@ title: Living in a housing cooperative makes time for activism
 summary: ''
 hero_image: "/content/assets/housing-matters.png"
 custom_icon: ''
-youtube_url: https://youtu.be/enFhGgrUqWw
+youtube_url: https://www.youtube.com/embed/enFhGgrUqWw
 region: ''
 is_published: false
 

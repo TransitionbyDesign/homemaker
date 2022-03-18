@@ -6,7 +6,7 @@ title: No duty to care - Universities as landlords
 summary: ''
 hero_image: "/content/assets/housing-matters.png"
 custom_icon: ''
-youtube_url: https://youtu.be/QF--qHh20Ws
+youtube_url: https://www.youtube.com/embed/QF--qHh20Ws
 region: ''
 is_published: false
 
