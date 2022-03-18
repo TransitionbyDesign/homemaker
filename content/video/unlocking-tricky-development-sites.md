@@ -8,7 +8,7 @@ summary: 'In this roundtable discussion you can hear Transition by Design talkin
   be used to build new social homes. '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/_peTpvyoQiA
+youtube_url: https://www.youtube.com/embed/_peTpvyoQiA
 region: ''
 is_published: true
 
