@@ -7,7 +7,7 @@ summary: 'Simon and Paul both live in our Becket Street project. In this video t
   talk to Andy from Transition by Design about what it''s like to live there. '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://youtu.be/_WKhG8Di8aM
+youtube_url: https://www.youtube.com/embed/_WKhG8Di8aM
 region: ''
 is_published: true
 
