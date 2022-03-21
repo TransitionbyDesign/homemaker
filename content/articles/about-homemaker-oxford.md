@@ -3,8 +3,8 @@ title: About Homemaker Oxford
 hero_image: "/content/assets/openhouse-3.jpg"
 apposition: situation
 is_published: true
-latitude: 51.76781049442013
-longitude: -1.2690997728112783
+latitude: 51.763063
+longitude: -1.260601
 
 ---
 Homemaker Oxford began in late 2017, setting out to explore how empty and underused space in Oxford might be used to help tackle extreme housing need in the city. Funded by the [Reva and David Logan Foundatio](https://www.loganfdn.org/)n, this three-year programme of action research was intended to ignite a conversion within the city about what it means to call Oxford home and how as a society we enable some of the most vulnerable amongst us to live well, and to generate some prototype solutions.
