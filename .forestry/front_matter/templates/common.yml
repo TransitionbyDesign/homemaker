@@ -58,7 +58,8 @@ fields:
     required: false
   label: youtube url
   description: An URL to a YouTube video to embed on this page, or blank, in which
-    case the hero image will be used instead.
+    case the hero image will be used instead. The field must look like www.youtube.com/embed/RYqq4O3a_
+    with the youtube ID at the end
 - name: latitude
   type: number
   label: latitude
