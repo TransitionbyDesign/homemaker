@@ -3679,4 +3679,4 @@ is_published: true
 ---
 Oxford's urban form will shift heavily in the coming decade as large sites start coming through the latter stages of the planning process and become visible. Some might see the beginning of the planning process as the first time an outline planning application is submitted, however the effects of the planning system are felt as early as the purchase of the site or the first time a landowner submits their field for allocation in a Local Plan. This might be years or decades before the wider community can begin engaging in shaping the development process, by which time many of the key decisions have been made by virtue of there being a 'hope value' on the land.
 
-<iframe src="https://gcp-europe-west1.app.carto.com/map/a6c6eb0a-7846-4e17-806e-816452bf876c" height="1000" width="1000" title="Oxford development sites"></iframe>
+<iframe src="https://gcp-europe-west1.app.carto.com/map/a6c6eb0a-7846-4e17-806e-816452bf876c" height="1000" width="600" title="Oxford development sites"></iframe>
