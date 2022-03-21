@@ -3677,3 +3677,7 @@ region: |-
 is_published: true
 
 ---
+
+<iframe src="[https://gcp-europe-west1.app.carto.com/map/a6c6eb0a-7846-4e17-806e-816452bf876c](https://gcp-europe-west1.app.carto.com/map/a6c6eb0a-7846-4e17-806e-816452bf876c "https://gcp-europe-west1.app.carto.com/map/a6c6eb0a-7846-4e17-806e-816452bf876c")" title="_Oxford development sites_"></iframe>
+
+Oxford's urban form will shift heavily in the coming decade as new  
