@@ -5,7 +5,7 @@ longitude: -1.2628402695790029
 title: Keeping the door open for conversations about housing
 summary: ''
 hero_image: "/content/assets/openhouse-12.jpg"
-custom_icon: ''
+custom_icon: "/content/assets/open_house_ptr.svg"
 youtube_url: ''
 region: ''
 is_published: true
