@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 51.72374295704182
-longitude: -1.202623769369915
+latitude: 51.717856
+longitude: -1.198508
 title: Six tricky problems to accessing small urban development sites for social home
   building
 summary: ''
