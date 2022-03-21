@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 51.75121491123776
-longitude: -1.2687061906431123
+latitude: 51.751593
+longitude: -1.271081
 title: Can 'meanwhile' leases help us provide better 'move-on' housing?
 summary: 'In this video, the project team behind the Becket Street project, a housing
   scheme inspired by The DIY House model discuss the project and what can be learnt
