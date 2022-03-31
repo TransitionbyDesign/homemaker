@@ -2,7 +2,7 @@
 apposition: solution
 latitude: 51.754489
 longitude: -1.266182
-title: Could empty hotels improve how we do 'move-on' housing?
+title: 'Building Better ''Move-On'' Homes '
 summary: _How could empty buildings help people to recover from a period of homelessness
   and get back into more permanent housing?_
 hero_image: "/content/assets/screen-shot-2021-07-27-at-11-28-30.png"
