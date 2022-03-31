@@ -2,8 +2,7 @@
 apposition: solution
 latitude: 51.721637477911
 longitude: -1.2014205199505719
-title: Could unloved garage sites in Oxford be the foundations for a low-carbon social
-  home-building revolution?
+title: Turning Empty Garages into Low Carbon Homes
 summary: _Hidden within a patchwork of small urban development sites, Oxford has the
   space we need to build new, low-carbon social homes within the city boundaries,
   so how do we make it happen_?
