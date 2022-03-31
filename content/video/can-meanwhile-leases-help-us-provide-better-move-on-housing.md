@@ -2,10 +2,11 @@
 apposition: situation
 latitude: 51.751593
 longitude: -1.271081
-title: Can 'meanwhile' leases help us provide better 'move-on' housing?
-summary: 'In this video, the project team behind the Becket Street project, a housing
-  scheme inspired by The DIY House model discuss the project and what can be learnt
-  from its first phase. '
+title: 'Meanwhile ''Move-on'' '
+summary: Can 'meanwhile' leases help us provide better 'move-on' housing? In this
+  video, the project team behind the Becket Street project, a housing scheme inspired
+  by The DIY House model discuss the project and what can be learnt from its first
+  phase.
 hero_image: ''
 custom_icon: ''
 youtube_url: https://www.youtube.com/embed/OdkaeOh-z6A
