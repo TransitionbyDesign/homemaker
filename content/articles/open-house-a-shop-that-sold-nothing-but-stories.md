@@ -2,7 +2,7 @@
 apposition: situation
 latitude: 51.75811616200661
 longitude: -1.2628402695790029
-title: Keeping the door open for conversations about housing
+title: Opening Doors for Conversations on Housing
 summary: ''
 hero_image: "/content/assets/openhouse-12.jpg"
 custom_icon: "/content/assets/open_house_ptr.svg"
