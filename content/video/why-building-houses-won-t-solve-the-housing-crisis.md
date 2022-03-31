@@ -2,7 +2,7 @@
 apposition: situation
 latitude: 51.74808288728261
 longitude: -1.2377007652994163
-title: Why building houses won't solve the housing crisis
+title: Building homes won't solve housing
 summary: Political economist Beth Stratford maps the various drivers of the housing
   crisis, with visual props, facts and figures – and a focus on the widely neglected
   demand-side problems, like speculation and excessive mortgage credit.
