@@ -2,9 +2,9 @@
 apposition: situation
 latitude: 51.717856
 longitude: -1.198508
-title: Six tricky problems to accessing small urban development sites for social home
-  building
-summary: ''
+title: 6 Tricky Problems
+summary: Six tricky problems to accessing small urban development sites for social
+  home building
 hero_image: "/content/assets/screen-shot-2021-12-08-at-11-33-31.png"
 custom_icon: ''
 youtube_url: ''
