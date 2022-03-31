@@ -1,5 +1,5 @@
 ---
-title: Oxford North
+title: Why you should care about Oxford North
 hero_image: "/content/assets/190927-oxfordnorth-facebook.png"
 region: |-
   {
