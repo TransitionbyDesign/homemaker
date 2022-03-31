@@ -2,10 +2,11 @@
 apposition: situation
 latitude: 51.75009943252459
 longitude: -1.3096291228845294
-title: Can community-led housing help tackle homelessness?
-summary: 'This roundtable discussion brings together housing providers, homelessness
-  support agencies, and representatives from the community-led housing sector to discuss
-  how community led housing could help tackle homelessness. '
+title: Can Communities do it Better?
+summary: Can community-led housing help tackle homelessness? This roundtable discussion
+  brings together housing providers, homelessness support agencies, and representatives
+  from the community-led housing sector to discuss how community led housing could
+  help tackle homelessness.
 hero_image: ''
 custom_icon: ''
 youtube_url: https://www.youtube.com/embed/S8nLRwxFfxo
@@ -25,4 +26,4 @@ The conversation is then split into 3 parts;
 
 • Housing as a service not a product
 
-Since this recording was made, the Oxfordshire Community Land Trust have made progress on their 'Dean Court' development which will build eight cooperatively managed homes for people coming from the housing register. You can read more about the project on their [website](https://www.oclt.org.uk/projects/dean-court-oxford/ "website"). 
+Since this recording was made, the Oxfordshire Community Land Trust have made progress on their 'Dean Court' development which will build eight cooperatively managed homes for people coming from the housing register. You can read more about the project on their [website](https://www.oclt.org.uk/projects/dean-court-oxford/ "website").
