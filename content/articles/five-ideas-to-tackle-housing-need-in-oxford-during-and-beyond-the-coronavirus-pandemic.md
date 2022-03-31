@@ -2,8 +2,7 @@
 apposition: solution
 latitude: 51.76770397209951
 longitude: -1.269771103908298
-title: Five Ideas to tackle housing need in Oxford during, and beyond the Coronavirus
-  Pandemic
+title: Five Ideas to Tackle Housing Need, Now
 summary: 'The Coronavirus pandemic has made the need for new housing solutions in
   Oxford even more acute. We put our thinking caps on and found 5 ideas that we think
   could work in Oxford to help us provide more homes for those that need them most,
@@ -23,4 +22,4 @@ Whilst no two people’s journeys into, or out of homelessness are the same, the
 
 These ideas don’t offer an alternative to the hard work that has started and must continue; to build social housing, to reconsider houses as _homes_ and not _assets_ and to reform the private rental sector. But they do offer hope for providing people with decent places to live in a manner which might inch us closer to longer-term reform. They draw on many well-tested precedents and follow the findings of our own research as to what might work for Oxford.
 
-To read the full article, please [click here](https://medium.com/@lucywarin/five-ideas-to-tackle-housing-need-in-oxford-during-and-beyond-the-coronavirus-pandemic-376eec5dcdad "click here"). 
+To read the full article, please [click here](https://medium.com/@lucywarin/five-ideas-to-tackle-housing-need-in-oxford-during-and-beyond-the-coronavirus-pandemic-376eec5dcdad "click here").
