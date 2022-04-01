@@ -8,7 +8,7 @@ summary: 'A recording of a conversation from Open House in 2019 between author a
   Owns England. '
 hero_image: ''
 custom_icon: ''
-youtube_url: https://www.youtube.com/embed/aKzC1Vy4v-s
+youtube_url: https://www.youtube.com/embed/aKzC1Vy4v-s?&autoplay=1
 region: ''
 is_published: true
 
