@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 51.751593
-longitude: -1.271081
+latitude: 51.751663
+longitude: -1.280386
 title: 'Meanwhile ''Move-on'' '
 summary: Can 'meanwhile' leases help us provide better 'move-on' housing? In this
   video, the project team behind the Becket Street project, a housing scheme inspired
