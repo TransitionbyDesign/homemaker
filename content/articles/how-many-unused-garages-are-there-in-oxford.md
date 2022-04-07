@@ -2,7 +2,7 @@
 apposition: situation
 latitude: 51.783805
 longitude: -1.26413
-title: How many unused garages are there in Oxford?
+title: Counting Oxford's unused garages
 summary: "People often point to a map of the city and ask 'just where would we build?
   The city is so small! The greenbelt is strangling us!'. This is part of the complexity
   of a housing market but that doesn't mean there aren't any sites. You just need
