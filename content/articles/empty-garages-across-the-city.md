@@ -1,7 +1,7 @@
 ---
 apposition: situation
-latitude: 0
-longitude: 0
+latitude: 51.74985
+longitude: -1.198833
 title: Empty garages across the city
 summary: ''
 hero_image: ''
