@@ -34,10 +34,8 @@ region: |
 is_published: true
 
 ---
-Oxford's urban form will shift heavily in the coming decade as large sites start coming through the latter stages of the planning process and become visible. 
+Oxford's urban form will shift heavily in the coming decade as large sites start coming through the latter stages of the planning process and become visible.
 
 Some might see the beginning of the planning process as the first time an outline planning application is submitted. However the effects of the planning system are felt as early as the purchase of the site or the first time a landowner submits their field for allocation in a Local Plan. This might be years or decades before the wider community can begin engaging in shaping the development process, by which time many of the key decisions have been made by virtue of there being a 'hope value' on the land.
 
 We've added a few of the upcoming 'allocated' sites [to our map here](https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed) and will add more over time.
-
-<iframe width="100%" height="1000" frameborder="0" src="[https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed](https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed "https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed")"</iframe>
