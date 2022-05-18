@@ -12,8 +12,7 @@ import linkedInIcon from "../icons/social_icon_linkedin.svg"
 import facebookIcon from "../icons/social_icon_facebook.svg"
 import siteConfig from "../../config.json"
 import cn from 'classnames';
-//this component handles the blur img & fade-ins
-import Img from 'gatsby-image'
+
 
 // Replaces substrings matching `${ ... }` with the URI-encoded value
 // of the equivalent property of `data` (which should be an object)
@@ -38,7 +37,6 @@ export default (props) => {
     
   // This gets the data passed to the template
   const data = props.data.markdownRemark
-  const youtube = data.frontmatter.youtube_url
   const title = data.frontmatter.title
   const linkParams = {
     title,
@@ -89,31 +87,11 @@ export default (props) => {
           content={linkParams.image} />
       </Helmet>
       <div className={articleTemplateStyles.wrapper}>
-        <div className={articleTemplateStyles.left}>
+        <div className={articleTemplateStyles.liner}>
           <div
             className={cn(articleTemplateStyles.body, textStyles.body)}
             dangerouslySetInnerHTML={{ __html: data.html }}
           ></div>
-        </div>
-        <div className={articleTemplateStyles.right}>
-          {
-            (youtube || !data.frontmatter.hero_image?.childImageSharp)? '' :
-            <div className={cn(articleTemplateStyles.hero)}>
-              <Img
-                fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-                alt={title}
-              />
-            </div>
-          }
-          {
-            !youtube? '' :
-            <div className={windowStyles.youtube}>
-              <iframe className={windowStyles.aspectRatio} src={youtube}
-                frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
-                allowFullScreen title={title}>
-              </iframe>
-            </div>
-          }
         </div>
       </div>
     </ModalPage>
