@@ -397,11 +397,11 @@ is_published: true
 
 _by_ [**_Lucy Warin_**](https://www.linkedin.com/in/lucywarin/)
 
-![](/content/assets/screen-shot-2021-12-08-at-11-29-25.png "The Champion Way proposal  in Littlemore")
-
 Across Oxford there are hundreds of small, undeveloped sites of all shapes and sizes in well-connected locations which lie empty or underused. Travel anywhere in Oxford and you’ll spot these: garage sites, underused car parks, stalled development sites, spaces for which the potential becomes harder to ignore as the city’s housing crisis deepens and levels of homelessness rise.
 
 Empty sites are most commonly found in estates, between terraced streets along major transport routes, or small infill plots between existing buildings, but can also appear as expanses of land in city centres where long term redevelopment plans have stalled. These sites are often overlooked, victims of delayed development processes, land banking, and a myriad of other real and significant blocks to development.
+
+![](/content/assets/screen-shot-2021-12-08-at-11-29-25.png "The Champion Way proposal  in Littlemore")
 
 Throughout our research working with people experiencing homelessness or extreme housing need in Oxford we’ve explored in great detail the importance of where a house is located, and the connections it enables to people and place.
 
