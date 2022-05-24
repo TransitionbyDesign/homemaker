@@ -393,7 +393,7 @@ region: |-
 is_published: true
 
 ---
-# Find the Gap
+## Find the Gap
 
 _by_ [**_Lucy Warin_**](https://www.linkedin.com/in/lucywarin/)
 
