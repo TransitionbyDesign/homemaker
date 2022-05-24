@@ -393,6 +393,10 @@ region: |-
 is_published: true
 
 ---
+# Find the Gap
+
+_by_ [**_Lucy Warin_**](https://www.linkedin.com/in/lucywarin/)
+
 Across Oxford there are hundreds of small, undeveloped sites of all shapes and sizes in well-connected locations which lie empty or underused. Travel anywhere in Oxford and you’ll spot these: garage sites, underused car parks, stalled development sites, spaces for which the potential becomes harder to ignore as the city’s housing crisis deepens and levels of homelessness rise.
 
 Empty sites are most commonly found in estates, between terraced streets along major transport routes, or small infill plots between existing buildings, but can also appear as expanses of land in city centres where long term redevelopment plans have stalled. These sites are often overlooked, victims of delayed development processes, land banking, and a myriad of other real and significant blocks to development.
