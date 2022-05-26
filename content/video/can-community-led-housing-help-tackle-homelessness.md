@@ -14,15 +14,17 @@ region: ''
 is_published: true
 
 ---
-In November 2020, we gathered a group of housing providers, homelessness support agencies, and representatives form the community-led housing sector to explore what role community led housing might play in housing those that need it most. 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/S8nLRwxFfxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The session will start with a short ‘food-for-thought’ presentation by Angelique Retief who has recently completed a piece of research on behalf of Black South West Network on housing BAME communities in Bristol using a community-led approach. 
+In November 2020, we gathered a group of housing providers, homelessness support agencies, and representatives form the community-led housing sector to explore what role community led housing might play in housing those that need it most.
 
-The conversation is then split into 3 parts; 
+The session will start with a short ‘food-for-thought’ presentation by Angelique Retief who has recently completed a piece of research on behalf of Black South West Network on housing BAME communities in Bristol using a community-led approach.
 
-• Designing with people rather than for them 
+The conversation is then split into 3 parts;
 
-• Ownership & ‘hackability’ 
+• Designing with people rather than for them
+
+• Ownership & ‘hackability’
 
 • Housing as a service not a product
 
