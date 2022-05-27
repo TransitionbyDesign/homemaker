@@ -9,7 +9,7 @@ hero_image: "/content/assets/screenshot-2022-05-27-at-11-52-01.png"
 custom_icon: ''
 youtube_url: ''
 region: ''
-is_published: false
+is_published: true
 
 ---
 There is much hope held, including by us, for a housing future which embraces modular construction. But is it all it's cracked up to be? The Centre for Homelessness Impact, part of the (What Works network of research centres) has been looking at the rise of modular housing and its potential for solving housing need. 
