@@ -13,6 +13,7 @@ region: ''
 is_published: true
 
 ---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_peTpvyoQiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Across Oxford there are hundreds of small, undeveloped sites of all shapes and sizes in well-connected locations which lie empty or underused: garage sites, underused car parks, stalled development sites which could be transformed into community led and genuinely affordable homes. 
 
 We know there is potential for these sites, and yet there are many challenges to bringing them forward for development. As a result we have seen very few examples coming forward in Oxford to date. 
