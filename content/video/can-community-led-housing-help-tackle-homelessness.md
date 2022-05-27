@@ -15,6 +15,7 @@ is_published: true
 
 ---
     <iframe width="560" height="315" src="https://www.youtube.com/embed/S8nLRwxFfxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
 
 In November 2020, we gathered a group of housing providers, homelessness support agencies, and representatives form the community-led housing sector to explore what role community led housing might play in housing those that need it most.
 
