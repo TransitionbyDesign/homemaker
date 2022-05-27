@@ -10,7 +10,7 @@ hero_image: "/content/assets/housing-matters.png"
 custom_icon: ''
 youtube_url: https://youtube.com/embed/zYDJZw4PyRc
 region: ''
-is_published: false
+is_published: true
 
 ---
 Matt & Michael are both white men in their early 30's who have recently bought their first homes, with the help of inherited wealth, gifted from their parents. In this clip they discuss how this has impacted their decisions and how they each feel about becoming landlords.
