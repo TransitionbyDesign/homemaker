@@ -12,4 +12,6 @@ region: ''
 is_published: true
 
 ---
-[210628-homemaker-diy-house-v2-lw.pdf](/content/assets/210628-homemaker-diy-house-v2-lw.pdf "210628-homemaker-diy-house-v2-lw.pdf")
+![](/content/assets/screenshot-2022-05-26-at-16-29-25.png)
+
+[Zoom in!](https://www.dropbox.com/s/90e25tzq0o7bqkh/210628%20homemaker%20diy%20house%20V2%20LW.pdf?dl=0)
