@@ -35,6 +35,6 @@ The Homemaker team came together with [Makespace Oxford](https://makespaceoxford
 
 Whilst working with the people moving in and those people helping support them, we created a vision for what future projects like this could look like, we called it ‘the DIY House’. The DIY House uses the temporary nature of meanwhile leases on empty properties as a design feature rather than a flaw, it uses tenant’s skill sets to aid the project and build new skills and confidence, it creates work opportunities and meaningful uses of tenants’ time, it connects residents to local communities to provide a permanence beyond the house, and it makes the chance of actually moving on to more permanent and settled housing much more likely.
 
-Click through to explore the DIY House.
+[Click through to explore the DIY House](https://homemakeroxford.org/map/the-diy-house-1).
 
 If you’re a housing provider thinking about how you might better provide move-on accommodation then we’d love to hear from you about your experience or how we might work together. [Please get in touch.](mailto:info@transitionbydesign.org)
