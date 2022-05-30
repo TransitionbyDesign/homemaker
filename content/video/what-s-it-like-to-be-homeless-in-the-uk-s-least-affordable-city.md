@@ -15,3 +15,5 @@ is_published: true
 
 ---
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/V4hwuE4bPCY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+What's it like to be homeless in the UK's least affordable city? In 2015, [InsightShare](https://insightshare.org/) supported a group of people who had experienced homelessness to talk to their peers about what it was like to be homeless in the UK's least affordable city.
