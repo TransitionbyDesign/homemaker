@@ -12,7 +12,6 @@ region: ''
 is_published: true
 
 ---
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_WKhG8Di8aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/_WKhG8Di8aM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you found this video interesting, you can also explore the ideas behind '[the DIY House](https://homemakeroxford.org/map/the-diy-house-1)' through exploring the house yourself, or watch a recording of the project team discussing the impacts of phase one of the project.
