@@ -40,4 +40,4 @@ Some might see the beginning of the planning process as the first time an outlin
 
 We've added a few of the upcoming 'allocated' sites [to our map here](https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed) and will add more over time.
 
-<iframe width="100%" height="520" frameborder="0" src="[https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed](https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed "https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed")" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<iframe width="100%" height="520" frameborder="0" src="https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
