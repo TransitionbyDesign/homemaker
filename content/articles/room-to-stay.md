@@ -6,7 +6,7 @@ title: Room to Stay?
 summary: 'The average home in Oxford has 2.7 spare rooms. How could we make simple
   adaptations to homes and neighbourhoods to encourage better use of these rooms as
   homes for those that don''t have them? '
-hero_image: ''
+hero_image: "/content/assets/800px-houses_in_bradmore_road-_oxford.jpg"
 custom_icon: ''
 youtube_url: ''
 region: ''
@@ -19,9 +19,10 @@ The average house in Oxford has 2.7 spare bedrooms. That’s furnished, heated r
 
 There are very good reasons for this. Our ‘need’ for housing changes, almost constantly. Who needs housing, what type of housing they need, for how long, and how housing need intersects with other needs changes as governments, social attitudes, and the economy does. But this change is entirely uncoupled from our housing stock. Built twenty, fifty or even a hundred years ago, much of our housing is built to a set of societal norms and an understanding of housing need which is increasingly out of date. As a result, we are shoehorning 21st Century problems into 20th (sometimes even 19th) Century solutions.
 
+![](/content/assets/800px-houses_in_bradmore_road-_oxford.jpg)
+
 Much of our housing is built with a nuclear family in mind. Two up, two down, a family bathroom, and a single kitchen and dining room. The design assumes a household wants to spend as much time as possible together, that one meal will be cooked and eaten each night, and that bedrooms are for night-time use only.
 
-  
 But only some of these family homes are lived in by families, and for many households this means living with work-arounds. A household of adults sharing must put up with limited kitchen storage, socialising in small bedrooms, and a queue for the shower in the morning. A house divided into two flats leaves one small family without access to the garden and limited storage space, and denies another family of light and views.
 
 But more pressingly, the out-of-date design of our homes is leading to a chronic problem of under-occupation. If a homeowner finds themselves with a spare room and a desire to help someone in need of a home, the decision isn’t simply whether or not to give them a room, but rather if they are prepared to have a stranger live with them. For both the home-owner and the new tenant, this is rarely a simple decision.
@@ -52,8 +53,6 @@ As well as enabling comfortable living as an immediate benefit, the home improve
 
 As fundamental to spatial design is the design of the social systems that support these tenancies. The bedrooms and homes in which people stay are anchored in existing communities and so too is the support network. Room to Stay leverages the informal peer networks which many people rely on – for support, advice, friendship, care, or job and professional opportunities. Room to Stay operates on the fundamental premise that humans were built to care for each other, and that under the right circumstances, we will each act to help our neighbour.
 
-  
 The complimentary support system has two strands, the physical and the social. The social element operates as a community-wrap around, connecting guests and hosts with each other and with existing people and organisations around them that are already locally rooted in the community. It operates on the basis that having a home is a good start but that a home alone cannot give you everything you need to be sustainable.
 
-  
 The physical element manifests itself as a common house, drawing on examples from cohousing schemes and providing a place away from the home for guests and hosts to use as their own. Living in the same house as other people is great and can also come with it’s own quirks, requiring you to make compromises in the common areas mostly around activity and noise. The common house is somewhere you can go to take a break from your shared household, somewhere to make a mess while you cook, spend time with friends and family or read a book in solitude or snooze peacefully in the garden.
