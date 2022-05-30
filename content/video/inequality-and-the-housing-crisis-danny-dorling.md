@@ -13,4 +13,6 @@ region: ''
 is_published: true
 
 ---
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k8FbUtunhic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/k8FbUtunhic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Speaking at House of the Commons 2016 on 'The Un-landed Generation - Oxford University's Professor of Geography, Danny Dorling, connects the global situation to where we can act today in relation to the housing crisis.
