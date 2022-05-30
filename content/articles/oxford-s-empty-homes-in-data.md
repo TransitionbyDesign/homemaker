@@ -11,7 +11,9 @@ region: ''
 is_published: true
 
 ---
-![](/content/assets/screenshot-2022-05-27-at-11-43-39.png)There are over 650 empty properties in Oxford, which is about 0.01% of the total domestic properties in the city. Maybe you were expecting more? However, in 2020 there was 2,355 households waiting for housing, many of which are in crowded or unsuitable properties elsewhere in the city.
+![](/content/assets/screenshot-2022-05-27-at-11-43-39.png)
+
+There are over 650 empty properties in Oxford, which is about 0.01% of the total domestic properties in the city. Maybe you were expecting more? However, in 2020 there was 2,355 households waiting for housing, many of which are in crowded or unsuitable properties elsewhere in the city.
 
 With almost a thousand homes owned by people who have a bought a second property ([Oxford Mail, 2021](https://www.oxfordmail.co.uk/news/19542521.revealed-937-second-homes-oxford/)), we should be questioning what we could do to incentivise these homes to come back into use.
 
