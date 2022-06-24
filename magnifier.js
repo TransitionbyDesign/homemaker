@@ -16,7 +16,7 @@
  */
 
 export const magnifierClass = "img-magnifing-glass";
-export const magnifierSize = "25vw";
+export const magnifierSize = "35vw";
 
 // Adapted from: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
 export function magnify(img, zoom) {
