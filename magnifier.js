@@ -15,44 +15,56 @@
    }
  */
 
-export const magnifierClass = "img-magnifing-glass";
+export const magnifierClass = "img-magnifying-glass";
 export const magnifierSize = "35vw";
 
 // Adapted from: https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
 export function magnify(img, zoom) {
 
-  // Find largest srcset image, if present
-  let largestImgUrl = findLargestImgUrl(img, img.src);
-  
-  // Create magnifier glass div
-  const magNode = document.createElement("div");
-  magNode.setAttribute("class", magnifierClass);
+  // Stop the magnifier triggering scrollbars on the the body element
+  // when it touches the edge of the screen.
+  document.body.style.overflow = "hidden";
 
   // Calculate size of zoomed image
   const zoomedWidth = img.width * zoom;
   const zoomedHeight = img.height * zoom;
   
-  // Set background properties for it
-  magNode.style.width = magNode.style.height = magnifierSize;
-  magNode.style.position = "absolute";
-  magNode.style.backgroundRepeat = "no-repeat";
-  magNode.style.borderRadius = "50%";
-  magNode.style.backgroundImage = `url('${largestImgUrl}')`;
-  magNode.style.backgroundSize = `${zoomedWidth}px ${zoomedHeight}px`;
+  // Find largest srcset image, if present
+  const largestImgUrl = findLargestImgUrl(img, img.src);
+  const backgroundImage = `url("${largestImgUrl}")`;
   
-  // Insert it at the top level
-  document.body.appendChild(magNode);
-  
-  // Get half the magnifier's width and height in pixels
-  const magNodeWidth2 = magNode.offsetWidth / 2; 
-  const magNodeHeight2 = magNode.offsetHeight / 2;
+  // Find any pre-existing magnifier (should be one per image)
+  let magNode = document.querySelector(`.${magnifierClass}[style*='${backgroundImage}']`);
+  if (!magNode) {
+    // Create a magnifier glass div
+    magNode = document.createElement("div");
+    magNode.setAttribute("class", magnifierClass);
+    magNode.id = magnifierClass;
+    
+    
+    // Set background properties for it
+    magNode.style.width = magNode.style.height = magnifierSize;
+    magNode.style.position = "absolute";
+    magNode.style.backgroundRepeat = "no-repeat";
+    magNode.style.borderRadius = "50%";
+    magNode.style.backgroundSize = `${zoomedWidth}px ${zoomedHeight}px`;
+    magNode.style.backgroundImage = backgroundImage;
+    
+    // Insert it at the top level
+    document.body.appendChild(magNode);
+    
+    // Handle move events over the magnifier
+    magNode.addEventListener("mousemove", moveMagnifier);
+    magNode.addEventListener("touchmove", moveMagnifier);
+  }
 
-  // Execute a function when someone moves the magnifier glass over
-  // the image (via mouse or touch event)
-  magNode.addEventListener("mousemove", moveMagnifier);
-  magNode.addEventListener("touchmove", moveMagnifier);
+  // Since we're changing routes, always hide the magnifier
+  magNode.style.display = "none";
+
   img.addEventListener("mousemove", moveMagnifier);
   img.addEventListener("touchmove", moveMagnifier);
+
+  // These events make the magnifier disappear when the cursor is not over the image
   img.addEventListener("mouseenter", () => magNode.style.display = "block");
   img.addEventListener("mouseleave", () => magNode.style.display = "none");
   
@@ -86,9 +98,18 @@ export function magnify(img, zoom) {
   function moveMagnifier(e) {
     // Prevent any other actions that may occur when moving over the image
     e.preventDefault();
+
+    // Make the magnifier visible if it isn't
+    magNode.style.display = "block";
+
+    // Get half the magnifier's width and height in pixels, for use later
+    // (this is computed to include any border and padding styled)
+    const magNodeWidth2 = magNode.offsetWidth / 2; 
+    const magNodeHeight2 = magNode.offsetHeight / 2;
     
-    // Get the cursor's x and y positions
-    let [x, y] = getCursorPos(e);
+    // Get the cursor's x and y pixel positions relative to the page
+    const x = e.pageX - window.pageXOffset;
+    const y = e.pageY - window.pageYOffset;
     
     // Get the x and y positions of the image
     const imgBounds = img.getBoundingClientRect();
@@ -119,20 +140,6 @@ export function magnify(img, zoom) {
       `${-magNodeFullX}px ${-magNodeFullY}px`;
 
     // console.debug("move", [x, y], [fCursorImgX, fCursorImgY], [magNodeFullX, magNodeFullY]); // DEBUG    
-  }
-
-  function getCursorPos(e) {
-    e = e || window.event;
-    
-    // Calculate the cursor's x and y coordinates, in pixels, relative to the image
-    let x = e.pageX// - imgBounds.left;
-    let y = e.pageY// - imgBounds.top;
-
-    // Consider any page scrolling
-    x = x - window.pageXOffset;
-    y = y - window.pageYOffset;
-
-    return [x, y];
   }
 }
 
