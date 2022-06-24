@@ -14,7 +14,7 @@ is_published: true
 ---
 As we’ve explored in another post, our research suggests there are potentially huge benefits in using a patchwork of smaller urban development sites to develop new, low-carbon social homes. There are often very good reasons why vacant sites sit idle and wanting for life and activity, and we must be realistic about why so many remain empty. This post goes into the detail of some of the barriers to this kind of development, sharing some of our successes and many of our failures in the hope that we can draw a greater diversity of minds together to tackle these barriers.
 
-![](/content/assets/screen-shot-2021-12-08-at-11-33-31.png)
+![](/content/assets/screen-shot-2021-12-08-at-11-33-31.png "(magnified)")
 
 **Market fluctuations** are a feature of the financialised housing system, leading to stalled developments and land banking. In England more than 1 million homes [with planning permission remain unbuilt](https://www.local.gov.uk/housing-backlog-more-million-homes-planning-permission-not-yet-built). With housing delivery in the UK dominated by private house builders who benefit from limiting supply to drive up prices, there is a financial incentive to slow down building which leaves development sites vacant for longer.
 
@@ -38,4 +38,4 @@ From Citu’s Climate Innovation District in Leeds which is turning a central br
 
 If you’d like more detail, you might also be interested in watching the recording of an online roundtable discussion we hosted in November 2021 which brought together practitioners form Bristol and Oxford to share knowledge on unlocking small urban development sites. You might also like to- [explore ‘Find the Gap](https://homemakeroxford.org/map/could-unloved-garage-sites-in-oxford-be-the-foundations-for-a-low-carbon-social-home-building-revolution)’, our project idea for turning vacant garage sites into new low-carbon social homes.
 
-![](/content/assets/screen-shot-2021-12-07-at-17-19-33.png "Find the Gap ")
+![](/content/assets/screen-shot-2021-12-07-at-17-19-33.png "Find the Gap (magnified)")
