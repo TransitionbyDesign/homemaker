@@ -1,13 +1,18 @@
 //for importing global styles
 import "./src/styles/reset.scss"
 import "./src/styles/global.scss"
-import { magnify } from "./magnifier";
+import { magnify, magnifierClass } from "./magnifier";
 
 const magnifierZoom = 4; // How much to zoom in the magnifier
 const titleKeyword = "(magnified)"; // Only make images zoomable if this is in the title
 const imageWrapperClass = 'gatsby-resp-image-image';
 
 function insertMagnifier() {
+  // Clear all existing magnifiers. Successive path changes can
+  // otherwise accumulate magnifier elements!
+  const magnifiers = document.querySelectorAll('.'+magnifierClass);
+  magnifiers.forEach(magnifier => magnifier.remove());
+    
   // https://css-tricks.com/snippets/javascript/loop-queryselectorall-matches/
   // for cross-browser looping through NodeList without polyfills
   const imageWrappers = document.querySelectorAll(`[title*='${titleKeyword}']`);
