@@ -29,6 +29,28 @@ const linkTemplates = {
   linkedin: siteConfig.share_on_linkedin_link_template,
 }
 
+const content = (data) => {
+  // If embedded_content_url set, embed this URL in an iframe
+  if (data.frontmatter.embedded_content_url) {
+    return (
+        <iframe className={windowStyles.embedIframe} src={data.frontmatter.embedded_content_url} title={data.frontmatter.title}
+          frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
+          allowFullScreen>
+        </iframe>
+    );
+  }
+
+  // Otherwise, show the article content
+  return (
+      <div className={articleTemplateStyles.liner}>
+      <div
+        className={cn(articleTemplateStyles.body, textStyles.body)}
+        dangerouslySetInnerHTML={{ __html: data.html }}
+      ></div>
+    </div>
+  );
+}
+
 export default (props) => {
   // Ensure that whatever happens, the modal state flag is set
   // This ensures the pages and layouts are correct.
@@ -87,12 +109,7 @@ export default (props) => {
           content={linkParams.image} />
       </Helmet>
       <div className={articleTemplateStyles.wrapper}>
-        <div className={articleTemplateStyles.liner}>
-          <div
-            className={cn(articleTemplateStyles.body, textStyles.body)}
-            dangerouslySetInnerHTML={{ __html: data.html }}
-          ></div>
-        </div>
+        { content(data) }
       </div>
     </ModalPage>
   )
@@ -118,6 +135,7 @@ export const getPostData = graphql`
             }
           }
         }
+        embedded_content_url
         youtube_url
         latitude
         longitude

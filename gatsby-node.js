@@ -72,6 +72,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String!
       summary: String @md
       apposition: String
+      embedded_content_url: String
       youtube_url: String
       latitude: Float
       longitude: Float
