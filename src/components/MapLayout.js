@@ -164,7 +164,30 @@ const InfoPopup = ({ title, buttonLink, text, footerText }) => {
   );
 }
 
-
+const imageContent = (title, image, youtube) => {
+  if (image)
+    return (
+      <div className={mapLayout.heroWrapper}>
+        <Img className={mapLayout.hero}
+             fluid={image}
+             alt={title}
+        />
+      </div>
+    );
+  
+  if (youtube)
+    return (
+      <div
+        className={windowStyles.youtube}>
+        <iframe className={windowStyles.aspectRatio} src={youtube} title={title}
+          frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
+          allowFullScreen>
+        </iframe> 
+      </div>
+    );
+  
+  return '';
+}
 
 const CustomPopup = ({ node, onClose }) => {
   const popup = useRef(null);
@@ -213,24 +236,7 @@ const CustomPopup = ({ node, onClose }) => {
       >
         <div className={windowStyles.col}>
           <div className={windowStyles.row}>
-            { (youtube || !image)? '' :
-              <div className={mapLayout.heroWrapper}>
-                <Img className={mapLayout.hero}
-                  fluid={image}
-                  alt={title}
-                />
-              </div>
-            }
-            {
-              !youtube? '' :
-              <div
-                className={windowStyles.youtube}>
-                <iframe className={windowStyles.aspectRatio} src={youtube} title={title}
-                  frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope"
-                  allowFullScreen>
-                </iframe> 
-              </div>
-            }
+            { imageContent(title, youtube, image) }
           </div>
           <div dangerouslySetInnerHTML={{__html: summary}} />
         </div>
