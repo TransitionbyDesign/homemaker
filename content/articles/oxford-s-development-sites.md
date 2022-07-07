@@ -32,6 +32,7 @@ region: |
   ]
   }
 is_published: true
+embedded_content_url: https://transitionbydesign.carto.com/builder/694a0e5f-072d-4841-9303-32c79280384a/embed
 
 ---
 Oxford's urban form will shift heavily in the coming decade as large sites start coming through the latter stages of the planning process and become visible.
