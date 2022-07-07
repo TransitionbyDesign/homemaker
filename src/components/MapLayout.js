@@ -189,6 +189,17 @@ const imageContent = (title, image, youtube) => {
   return '';
 }
 
+const content = (title, summary, image, youtube) => {
+  return (
+    <>
+      <div className={windowStyles.row}>
+        { imageContent(title, youtube, image) }
+      </div>
+      <div dangerouslySetInnerHTML={{__html: summary}} />
+    </>
+  );
+}
+
 const CustomPopup = ({ node, onClose }) => {
   const popup = useRef(null);
   const closePopup = () => {
@@ -235,10 +246,7 @@ const CustomPopup = ({ node, onClose }) => {
         }
       >
         <div className={windowStyles.col}>
-          <div className={windowStyles.row}>
-            { imageContent(title, youtube, image) }
-          </div>
-          <div dangerouslySetInnerHTML={{__html: summary}} />
+          { content(title, summary, youtube, image) }
         </div>
       </Window>
     </Popup>
