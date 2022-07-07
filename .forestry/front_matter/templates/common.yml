@@ -60,6 +60,14 @@ fields:
   description: An URL to a YouTube video to embed on this page, or blank, in which
     case the hero image will be used instead. The field must look like www.youtube.com/embed/RYqq4O3a_
     with the youtube ID at the end
+- name: embedded_content_url
+  type: text
+  config:
+    required: false
+  label: embedded content url
+  description: If this is defined and an URL, that URL's webpage will be embedded
+    in an IFrame, as the full-screen page content.<br><br>This means that the article
+    text and any value for `youtube_url` will be ignored.
 - name: latitude
   type: number
   label: latitude
