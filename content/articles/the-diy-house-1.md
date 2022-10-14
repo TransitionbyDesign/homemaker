@@ -10,8 +10,11 @@ custom_icon: ''
 youtube_url: ''
 region: ''
 is_published: true
+embedded_content_url: ''
 
 ---
 ![](/content/assets/screenshot-2022-05-26-at-16-29-25.png "The DIY House (magnified)")
 
-[Zoom in on a bigger image here!](https://www.dropbox.com/s/90e25tzq0o7bqkh/210628%20homemaker%20diy%20house%20V2%20LW.pdf?dl=0)
+Explore the DIY House, a 'self-help' housing approach to turning empty hotels or other city-centre properties into recovery-focussed move-on housing.
+
+[Zoom in on a bigger image here!](https://www.dropbox.com/s/90e25tzq0o7bqkh/210628%20homemaker%20diy%20house%20V2%20LW.pdf?dl=0) ![](/content/assets/screenshot-2022-05-26-at-16-29-25.png)
